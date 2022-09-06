@@ -1,1 +1,1 @@
-# ledger-ternoa
+# Ledger Ternoa App
