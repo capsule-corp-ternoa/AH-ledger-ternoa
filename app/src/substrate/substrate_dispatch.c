@@ -27,7 +27,7 @@ parser_error_t _readMethod(
 {
     switch (c->tx_obj->transactionVersion) {
     case 1:
-        return _readMethod_V1(c, moduleIdx, callIdx, &method->V4);
+        return _readMethod_V1(c, moduleIdx, callIdx, &method->V1);
     default:
         return parser_tx_version_not_supported;
     }
@@ -79,7 +79,7 @@ parser_error_t _getMethod_ItemValue(uint32_t transactionVersion, pd_Method_t* m,
 {
     switch (transactionVersion) {
     case 1:
-        return _getMethod_ItemValue_V1(&m->V4, moduleIdx, callIdx, itemIdx, outValue,
+        return _getMethod_ItemValue_V1(&m->V1, moduleIdx, callIdx, itemIdx, outValue,
             outValueLen, pageIdx, pageCount);
     default:
         return parser_tx_version_not_supported;
