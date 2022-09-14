@@ -74,13 +74,13 @@ ifneq ($(TARGET_NAME),TARGET_NANOS)
 DEFINES += SUBSTRATE_PARSER_FULL
 endif
 APPNAME = "Ternoa"
-APPPATH = "44'/643'"
+APPPATH = "44'/995'"
 
 else ifeq ($(COIN),CAPS_XL)
 # XL app configuration
 DEFINES += APP_STANDARD SUBSTRATE_PARSER_FULL
 APPNAME = "Ternoa XL"
-APPPATH = "44'/643'"
+APPPATH = "44'/995'"
 
 else
 define error_message

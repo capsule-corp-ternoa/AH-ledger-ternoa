@@ -20,97 +20,97 @@ extern "C" {
 #endif
 
 #include "parser_common.h"
-#include "substrate_methods_V4.h"
-#include "substrate_types_V4.h"
+#include "substrate_methods_V1.h"
+#include "substrate_types_V1.h"
 #include <stddef.h>
 #include <stdint.h>
 
 // Read functions
-parser_error_t _readAccountId_V4(parser_context_t* c, pd_AccountId_V4_t* v);
-parser_error_t _readCompactAccountIndex_V4(parser_context_t* c, pd_CompactAccountIndex_V4_t* v);
-parser_error_t _readKeys_V4(parser_context_t* c, pd_Keys_V4_t* v);
-parser_error_t _readLookupasStaticLookupSource_V4(parser_context_t* c, pd_LookupasStaticLookupSource_V4_t* v);
-parser_error_t _readOpaqueCall_V4(parser_context_t* c, pd_OpaqueCall_V4_t* v);
-parser_error_t _readOptionTimepoint_V4(parser_context_t* c, pd_OptionTimepoint_V4_t* v);
-parser_error_t _readPerbill_V4(parser_context_t* c, pd_Perbill_V4_t* v);
-parser_error_t _readTimepoint_V4(parser_context_t* c, pd_Timepoint_V4_t* v);
-parser_error_t _readVecAccountId_V4(parser_context_t* c, pd_VecAccountId_V4_t* v);
-parser_error_t _readVestingInfo_V4(parser_context_t* c, pd_VestingInfo_V4_t* v);
-parser_error_t _readWeight_V4(parser_context_t* c, pd_Weight_V4_t* v);
+parser_error_t _readAccountId_V1(parser_context_t* c, pd_AccountId_V1_t* v);
+parser_error_t _readCompactAccountIndex_V1(parser_context_t* c, pd_CompactAccountIndex_V1_t* v);
+parser_error_t _readKeys_V1(parser_context_t* c, pd_Keys_V1_t* v);
+parser_error_t _readLookupasStaticLookupSource_V1(parser_context_t* c, pd_LookupasStaticLookupSource_V1_t* v);
+parser_error_t _readOpaqueCall_V1(parser_context_t* c, pd_OpaqueCall_V1_t* v);
+parser_error_t _readOptionTimepoint_V1(parser_context_t* c, pd_OptionTimepoint_V1_t* v);
+parser_error_t _readPerbill_V1(parser_context_t* c, pd_Perbill_V1_t* v);
+parser_error_t _readTimepoint_V1(parser_context_t* c, pd_Timepoint_V1_t* v);
+parser_error_t _readVecAccountId_V1(parser_context_t* c, pd_VecAccountId_V1_t* v);
+parser_error_t _readVestingInfo_V1(parser_context_t* c, pd_VestingInfo_V1_t* v);
+parser_error_t _readWeight_V1(parser_context_t* c, pd_Weight_V1_t* v);
 
 // toString functions
-parser_error_t _toStringAccountId_V4(
-    const pd_AccountId_V4_t* v,
+parser_error_t _toStringAccountId_V1(
+    const pd_AccountId_V1_t* v,
     char* outValue,
     uint16_t outValueLen,
     uint8_t pageIdx,
     uint8_t* pageCount);
 
-parser_error_t _toStringCompactAccountIndex_V4(
-    const pd_CompactAccountIndex_V4_t* v,
+parser_error_t _toStringCompactAccountIndex_V1(
+    const pd_CompactAccountIndex_V1_t* v,
     char* outValue,
     uint16_t outValueLen,
     uint8_t pageIdx,
     uint8_t* pageCount);
 
-parser_error_t _toStringKeys_V4(
-    const pd_Keys_V4_t* v,
+parser_error_t _toStringKeys_V1(
+    const pd_Keys_V1_t* v,
     char* outValue,
     uint16_t outValueLen,
     uint8_t pageIdx,
     uint8_t* pageCount);
 
-parser_error_t _toStringLookupasStaticLookupSource_V4(
-    const pd_LookupasStaticLookupSource_V4_t* v,
+parser_error_t _toStringLookupasStaticLookupSource_V1(
+    const pd_LookupasStaticLookupSource_V1_t* v,
     char* outValue,
     uint16_t outValueLen,
     uint8_t pageIdx,
     uint8_t* pageCount);
 
-parser_error_t _toStringOpaqueCall_V4(
-    const pd_OpaqueCall_V4_t* v,
+parser_error_t _toStringOpaqueCall_V1(
+    const pd_OpaqueCall_V1_t* v,
     char* outValue,
     uint16_t outValueLen,
     uint8_t pageIdx,
     uint8_t* pageCount);
 
-parser_error_t _toStringOptionTimepoint_V4(
-    const pd_OptionTimepoint_V4_t* v,
+parser_error_t _toStringOptionTimepoint_V1(
+    const pd_OptionTimepoint_V1_t* v,
     char* outValue,
     uint16_t outValueLen,
     uint8_t pageIdx,
     uint8_t* pageCount);
 
-parser_error_t _toStringPerbill_V4(
-    const pd_Perbill_V4_t* v,
+parser_error_t _toStringPerbill_V1(
+    const pd_Perbill_V1_t* v,
     char* outValue,
     uint16_t outValueLen,
     uint8_t pageIdx,
     uint8_t* pageCount);
 
-parser_error_t _toStringTimepoint_V4(
-    const pd_Timepoint_V4_t* v,
+parser_error_t _toStringTimepoint_V1(
+    const pd_Timepoint_V1_t* v,
     char* outValue,
     uint16_t outValueLen,
     uint8_t pageIdx,
     uint8_t* pageCount);
 
-parser_error_t _toStringVecAccountId_V4(
-    const pd_VecAccountId_V4_t* v,
+parser_error_t _toStringVecAccountId_V1(
+    const pd_VecAccountId_V1_t* v,
     char* outValue,
     uint16_t outValueLen,
     uint8_t pageIdx,
     uint8_t* pageCount);
 
-parser_error_t _toStringVestingInfo_V4(
-    const pd_VestingInfo_V4_t* v,
+parser_error_t _toStringVestingInfo_V1(
+    const pd_VestingInfo_V1_t* v,
     char* outValue,
     uint16_t outValueLen,
     uint8_t pageIdx,
     uint8_t* pageCount);
 
-parser_error_t _toStringWeight_V4(
-    const pd_Weight_V4_t* v,
+parser_error_t _toStringWeight_V1(
+    const pd_Weight_V1_t* v,
     char* outValue,
     uint16_t outValueLen,
     uint8_t pageIdx,
