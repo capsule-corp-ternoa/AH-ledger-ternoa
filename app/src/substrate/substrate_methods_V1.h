@@ -27,8 +27,8 @@ extern "C" {
 #include <stdint.h>
 
 #define PD_CALL_SYSTEM_V1 0
-#define PD_CALL_TIMESTAMP_V1 4
-#define PD_CALL_BALANCES_V1 5
+#define PD_CALL_TIMESTAMP_V1 3
+#define PD_CALL_BALANCES_V1 4
 #define PD_CALL_SESSION_V1 10
 #define PD_CALL_ELECTIONS_V1 12
 #define PD_CALL_VESTING_V1 14

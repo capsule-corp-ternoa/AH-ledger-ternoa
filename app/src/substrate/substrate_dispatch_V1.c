@@ -275,16 +275,16 @@ parser_error_t _readMethod_V1(
 
     switch (callPrivIdx) {
 
-    case 1280: /* module 5 call 0 */
+    case 1024: /* module 4 call 0 */
         CHECK_ERROR(_readMethod_balances_transfer_V1(c, &method->nested.balances_transfer_V1))
         break;
-    case 1282: /* module 5 call 2 */
+    case 1026: /* module 4 call 2 */
         CHECK_ERROR(_readMethod_balances_force_transfer_V1(c, &method->nested.balances_force_transfer_V1))
         break;
-    case 1283: /* module 5 call 3 */
+    case 1027: /* module 4 call 3 */
         CHECK_ERROR(_readMethod_balances_transfer_keep_alive_V1(c, &method->nested.balances_transfer_keep_alive_V1))
         break;
-    case 1284: /* module 5 call 4 */
+    case 1028: /* module 4 call 4 */
         CHECK_ERROR(_readMethod_balances_transfer_all_V1(c, &method->basic.balances_transfer_all_V1))
         break;
     case 2560: /* module 10 call 0 */
@@ -319,9 +319,9 @@ parser_error_t _readMethod_V1(
     case 8: /* module 0 call 8 */
         CHECK_ERROR(_readMethod_system_remark_with_event_V1(c, &method->nested.system_remark_with_event_V1))
         break;
-    case 1024: /* module 4 call 0 */
-        CHECK_ERROR(_readMethod_timestamp_set_V1(c, &method->basic.timestamp_set_V1))
-        break;
+    // case 1024: /* module 4 call 0 */
+    //     CHECK_ERROR(_readMethod_timestamp_set_V1(c, &method->basic.timestamp_set_V1))
+    //     break;
     case 1281: /* module 5 call 1 */
         CHECK_ERROR(_readMethod_balances_set_balance_V1(c, &method->nested.balances_set_balance_V1))
         break;
