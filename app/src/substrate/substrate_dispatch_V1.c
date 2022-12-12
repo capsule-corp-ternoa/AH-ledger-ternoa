@@ -2742,7 +2742,7 @@ parser_error_t _getMethod_ItemValue_V1(
 case 1024: /* module 04 call 00 pallet:balances call:transfer */
         switch (itemIdx) {
         case 0: /* balances_transfer_V1 - dest */;
-            return _toStringAccountIdLookupOfT_V1(
+            return _toStringAccountId_V1(
                 &m->nested.balances_transfer_V1.dest,
                 outValue, outValueLen,
                 pageIdx, pageCount);
@@ -2757,12 +2757,12 @@ case 1024: /* module 04 call 00 pallet:balances call:transfer */
 case 1026: /* module 04 call 02 pallet:balances call:force_transfer */
         switch (itemIdx) {
         case 0: /* balances_force_transfer_V1 - source */;
-            return _toStringAccountIdLookupOfT_V1(
+            return _toStringAccountId_V1(
                 &m->nested.balances_force_transfer_V1.source,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         case 1: /* balances_force_transfer_V1 - dest */;
-            return _toStringAccountIdLookupOfT_V1(
+            return _toStringAccountId_V1(
                 &m->nested.balances_force_transfer_V1.dest,
                 outValue, outValueLen,
                 pageIdx, pageCount);
@@ -2777,7 +2777,7 @@ case 1026: /* module 04 call 02 pallet:balances call:force_transfer */
 case 1027: /* module 04 call 03 pallet:balances call:transfer_keep_alive */
         switch (itemIdx) {
         case 0: /* balances_transfer_keep_alive_V1 - dest */;
-            return _toStringAccountIdLookupOfT_V1(
+            return _toStringAccountId_V1(
                 &m->nested.balances_transfer_keep_alive_V1.dest,
                 outValue, outValueLen,
                 pageIdx, pageCount);
@@ -2792,7 +2792,7 @@ case 1027: /* module 04 call 03 pallet:balances call:transfer_keep_alive */
 case 1028: /* module 04 call 04 pallet:balances call:transfer_all */
         switch (itemIdx) {
         case 0: /* balances_transfer_all_V1 - dest */;
-            return _toStringAccountIdLookupOfT_V1(
+            return _toStringAccountId_V1(
                 &m->basic.balances_transfer_all_V1.dest,
                 outValue, outValueLen,
                 pageIdx, pageCount);
