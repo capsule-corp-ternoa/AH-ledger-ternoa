@@ -1167,37 +1167,37 @@ const char* _getMethod_ModuleName_V1(uint8_t moduleIdx)
     switch (moduleIdx) {
     case 4:
         return STR_MO_BALANCES;
-    case 6:
+    case 13:
         return STR_MO_STAKING;
-    case 8:
+    case 9:
         return STR_MO_SESSION;
-    case 24:
+    case 21:
         return STR_MO_UTILITY;
 
 #ifdef SUBSTRATE_PARSER_FULL
     case 0:
         return STR_MO_SYSTEM;
-    case 2:
+    case 3:
         return STR_MO_TIMESTAMP;
     case 10:
         return STR_MO_GRANDPA;
-    case 13:
+    case 26:
         return STR_MO_DEMOCRACY;
-    case 14:
+    case 24:
         return STR_MO_COUNCIL;
-    case 15:
-        return STR_MO_TECHNICALCOMMITTEE;
     case 17:
-        return STR_MO_TECHNICALMEMBERSHIP;
+        return STR_MO_TECHNICALCOMMITTEE;
     case 18:
+        return STR_MO_TECHNICALMEMBERSHIP;
+    case 20:
         return STR_MO_TREASURY;
-    case 25:
+    case 28:
         return STR_MO_IDENTITY;
-    case 31:
+    case 27:
         return STR_MO_MULTISIG;
-    case 32:
+    case 22:
         return STR_MO_PREIMAGE;
-    case 37:
+    case 15:
         return STR_MO_ELECTIONPROVIDERMULTIPHASE;
 #endif
     default:
