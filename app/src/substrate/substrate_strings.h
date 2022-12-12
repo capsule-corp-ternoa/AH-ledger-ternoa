@@ -22,7 +22,6 @@ extern "C" {
 // Modules names
 static const char* STR_MO_SYSTEM = "System";
 static const char* STR_MO_TIMESTAMP = "Timestamp";
-static const char* STR_MO_INDICES = "Indices";
 static const char* STR_MO_BALANCES = "Balances";
 static const char* STR_MO_STAKING = "Staking";
 static const char* STR_MO_SESSION = "Session";
@@ -30,13 +29,10 @@ static const char* STR_MO_GRANDPA = "Grandpa";
 static const char* STR_MO_DEMOCRACY = "Democracy";
 static const char* STR_MO_COUNCIL = "Council";
 static const char* STR_MO_TECHNICALCOMMITTEE = "Technicalcommittee";
-static const char* STR_MO_PHRAGMENELECTION = "Phragmenelection";
 static const char* STR_MO_TECHNICALMEMBERSHIP = "Technicalmembership";
 static const char* STR_MO_TREASURY = "Treasury";
-static const char* STR_MO_CLAIMS = "Claims";
 static const char* STR_MO_UTILITY = "Utility";
 static const char* STR_MO_IDENTITY = "Identity";
-static const char* STR_MO_SOCIETY = "Society";
 static const char* STR_MO_RECOVERY = "Recovery";
 static const char* STR_MO_VESTING = "Vesting";
 static const char* STR_MO_PROXY = "Proxy";
