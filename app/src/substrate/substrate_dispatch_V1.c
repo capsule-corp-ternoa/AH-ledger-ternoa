@@ -4089,12 +4089,12 @@ bool _getMethod_IsNestingSupported_V1(uint8_t moduleIdx, uint8_t callIdx)
 case 768: /* module 03 call 00 pallet:timestamp call:set */
 case 1028: /* module 04 call 04 pallet:balances call:transfer_all */
     case 1285: // Balances:Force unreserve
-case 3328: /* module 13 call 00 pallet:staking call:bond */
+// case 3328: /* module 13 call 00 pallet:staking call:bond */
 case 3329: /* module 13 call 01 pallet:staking call:bond_extra */
 case 3330: /* module 13 call 02 pallet:staking call:unbond */
 case 3331: /* module 13 call 03 pallet:staking call:withdraw_unbonded */
 case 3332: /* module 13 call 04 pallet:staking call:validate */
-case 3333: /* module 13 call 05 pallet:staking call:nominate */
+// case 3333: /* module 13 call 05 pallet:staking call:nominate */
 case 3334: /* module 13 call 06 pallet:staking call:chill */
 case 3335: /* module 13 call 07 pallet:staking call:set_payee */
 case 3336: /* module 13 call 08 pallet:staking call:set_controller */
