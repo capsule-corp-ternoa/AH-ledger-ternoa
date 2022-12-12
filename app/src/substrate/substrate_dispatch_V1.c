@@ -864,37 +864,37 @@ case 1027: /* module 04 call 03 pallet:balances call:transfer_keep_alive */
 case 1028: /* module 04 call 04 pallet:balances call:transfer_all */
         CHECK_ERROR(_readMethod_balances_transfer_all_V1(c, &method->basic.balances_transfer_all_V1))
         break;
-case 4864: /* module 13 call 00 pallet:staking call:bond */
+case 3328: /* module 13 call 00 pallet:staking call:bond */
         CHECK_ERROR(_readMethod_staking_bond_V1(c, &method->basic.staking_bond_V1))
         break;
-case 4865: /* module 13 call 01 pallet:staking call:bond_extra */
+case 3329: /* module 13 call 01 pallet:staking call:bond_extra */
         CHECK_ERROR(_readMethod_staking_bond_extra_V1(c, &method->basic.staking_bond_extra_V1))
         break;
-case 4866: /* module 13 call 02 pallet:staking call:unbond */
+case 3330: /* module 13 call 02 pallet:staking call:unbond */
         CHECK_ERROR(_readMethod_staking_unbond_V1(c, &method->basic.staking_unbond_V1))
         break;
-case 4867: /* module 13 call 03 pallet:staking call:withdraw_unbonded */
+case 3331: /* module 13 call 03 pallet:staking call:withdraw_unbonded */
         CHECK_ERROR(_readMethod_staking_withdraw_unbonded_V1(c, &method->basic.staking_withdraw_unbonded_V1))
         break;
-case 4868: /* module 13 call 04 pallet:staking call:validate */
+case 3332: /* module 13 call 04 pallet:staking call:validate */
         CHECK_ERROR(_readMethod_staking_validate_V1(c, &method->basic.staking_validate_V1))
         break;
-case 4869: /* module 13 call 05 pallet:staking call:nominate */
+case 3333: /* module 13 call 05 pallet:staking call:nominate */
         CHECK_ERROR(_readMethod_staking_nominate_V1(c, &method->basic.staking_nominate_V1))
         break;
-case 4870: /* module 13 call 06 pallet:staking call:chill */
+case 3334: /* module 13 call 06 pallet:staking call:chill */
         CHECK_ERROR(_readMethod_staking_chill_V1(c, &method->basic.staking_chill_V1))
         break;
-case 4871: /* module 13 call 07 pallet:staking call:set_payee */
+case 3335: /* module 13 call 07 pallet:staking call:set_payee */
         CHECK_ERROR(_readMethod_staking_set_payee_V1(c, &method->basic.staking_set_payee_V1))
         break;
-case 4872: /* module 13 call 08 pallet:staking call:set_controller */
+case 3336: /* module 13 call 08 pallet:staking call:set_controller */
         CHECK_ERROR(_readMethod_staking_set_controller_V1(c, &method->basic.staking_set_controller_V1))
         break;
-case 4888: /* module 13 call 18 pallet:staking call:payout_stakers */
+case 3346: /* module 13 call 18 pallet:staking call:payout_stakers */
         CHECK_ERROR(_readMethod_staking_payout_stakers_V1(c, &method->basic.staking_payout_stakers_V1))
         break;
-case 4889: /* module 13 call 19 pallet:staking call:rebond */
+case 3347: /* module 13 call 19 pallet:staking call:rebond */
         CHECK_ERROR(_readMethod_staking_rebond_V1(c, &method->basic.staking_rebond_V1))
         break;
 case 2304: /* module 09 call 00 pallet:session call:set_keys */
@@ -903,13 +903,13 @@ case 2304: /* module 09 call 00 pallet:session call:set_keys */
 case 2305: /* module 09 call 01 pallet:session call:purge_keys */
         CHECK_ERROR(_readMethod_session_purge_keys_V1(c, &method->basic.session_purge_keys_V1))
         break;
-case 8448: /* module 21 call 00 pallet:utility call:batch */
+case 5376: /* module 21 call 00 pallet:utility call:batch */
         CHECK_ERROR(_readMethod_utility_batch_V1(c, &method->basic.utility_batch_V1))
         break;
-case 8450: /* module 21 call 02 pallet:utility call:batch_all */
+case 5378: /* module 21 call 02 pallet:utility call:batch_all */
         CHECK_ERROR(_readMethod_utility_batch_all_V1(c, &method->basic.utility_batch_all_V1))
         break;
-case 8452: /* module 21 call 04 pallet:utility call:force_batch */
+case 5380: /* module 21 call 04 pallet:utility call:force_batch */
         CHECK_ERROR(_readMethod_utility_force_batch_V1(c, &method->basic.utility_force_batch_V1))
         break;
 
@@ -947,226 +947,226 @@ case 1027: /* module 04 call 03 pallet:balances call:transfer_keep_alive */
 case 1028: /* module 04 call 04 pallet:balances call:transfer_all */
         CHECK_ERROR(_readMethod_balances_transfer_all_V1(c, &method->basic.balances_transfer_all_V1))
         break;
-case 4873: /* module 13 call 09 pallet:staking call:set_validator_count */
+case 3337: /* module 13 call 09 pallet:staking call:set_validator_count */
         CHECK_ERROR(_readMethod_staking_set_validator_count_V1(c, &method->basic.staking_set_validator_count_V1))
         break;
-case 4880: /* module 13 call 10 pallet:staking call:increase_validator_count */
+case 3338: /* module 13 call 10 pallet:staking call:increase_validator_count */
         CHECK_ERROR(_readMethod_staking_increase_validator_count_V1(c, &method->basic.staking_increase_validator_count_V1))
         break;
-case 4882: /* module 13 call 12 pallet:staking call:force_no_eras */
+case 3340: /* module 13 call 12 pallet:staking call:force_no_eras */
         CHECK_ERROR(_readMethod_staking_force_no_eras_V1(c, &method->basic.staking_force_no_eras_V1))
         break;
-case 4883: /* module 13 call 13 pallet:staking call:force_new_era */
+case 3341: /* module 13 call 13 pallet:staking call:force_new_era */
         CHECK_ERROR(_readMethod_staking_force_new_era_V1(c, &method->basic.staking_force_new_era_V1))
         break;
-case 4884: /* module 13 call 14 pallet:staking call:set_invulnerables */
+case 3342: /* module 13 call 14 pallet:staking call:set_invulnerables */
         CHECK_ERROR(_readMethod_staking_set_invulnerables_V1(c, &method->basic.staking_set_invulnerables_V1))
         break;
-case 4885: /* module 13 call 15 pallet:staking call:force_unstake */
+case 3343: /* module 13 call 15 pallet:staking call:force_unstake */
         CHECK_ERROR(_readMethod_staking_force_unstake_V1(c, &method->basic.staking_force_unstake_V1))
         break;
-case 4886: /* module 13 call 16 pallet:staking call:force_new_era_always */
+case 3344: /* module 13 call 16 pallet:staking call:force_new_era_always */
         CHECK_ERROR(_readMethod_staking_force_new_era_always_V1(c, &method->basic.staking_force_new_era_always_V1))
         break;
-case 4887: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
+case 3345: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
         CHECK_ERROR(_readMethod_staking_cancel_deferred_slash_V1(c, &method->basic.staking_cancel_deferred_slash_V1))
         break;
-case 4896: /* module 13 call 20 pallet:staking call:reap_stash */
+case 3348: /* module 13 call 20 pallet:staking call:reap_stash */
         CHECK_ERROR(_readMethod_staking_reap_stash_V1(c, &method->basic.staking_reap_stash_V1))
         break;
-case 4897: /* module 13 call 21 pallet:staking call:kick */
+case 3349: /* module 13 call 21 pallet:staking call:kick */
         CHECK_ERROR(_readMethod_staking_kick_V1(c, &method->basic.staking_kick_V1))
         break;
-case 4899: /* module 13 call 23 pallet:staking call:chill_other */
+case 3351: /* module 13 call 23 pallet:staking call:chill_other */
         CHECK_ERROR(_readMethod_staking_chill_other_V1(c, &method->basic.staking_chill_other_V1))
         break;
-case 4900: /* module 13 call 24 pallet:staking call:force_apply_min_commission */
+case 3352: /* module 13 call 24 pallet:staking call:force_apply_min_commission */
         CHECK_ERROR(_readMethod_staking_force_apply_min_commission_V1(c, &method->basic.staking_force_apply_min_commission_V1))
         break;
-case 4098: /* module 10 call 02 pallet:grandpa call:note_stalled */
+case 2562: /* module 10 call 02 pallet:grandpa call:note_stalled */
         CHECK_ERROR(_readMethod_grandpa_note_stalled_V1(c, &method->basic.grandpa_note_stalled_V1))
         break;
-case 9728: /* module 26 call 00 pallet:democracy call:propose */
+case 6656: /* module 26 call 00 pallet:democracy call:propose */
         CHECK_ERROR(_readMethod_democracy_propose_V1(c, &method->nested.democracy_propose_V1))
         break;
-case 9729: /* module 26 call 01 pallet:democracy call:second */
+case 6657: /* module 26 call 01 pallet:democracy call:second */
         CHECK_ERROR(_readMethod_democracy_second_V1(c, &method->nested.democracy_second_V1))
         break;
-case 9730: /* module 26 call 02 pallet:democracy call:vote */
+case 6658: /* module 26 call 02 pallet:democracy call:vote */
         CHECK_ERROR(_readMethod_democracy_vote_V1(c, &method->nested.democracy_vote_V1))
         break;
-case 9731: /* module 26 call 03 pallet:democracy call:emergency_cancel */
+case 6659: /* module 26 call 03 pallet:democracy call:emergency_cancel */
         CHECK_ERROR(_readMethod_democracy_emergency_cancel_V1(c, &method->nested.democracy_emergency_cancel_V1))
         break;
-case 9732: /* module 26 call 04 pallet:democracy call:external_propose */
+case 6660: /* module 26 call 04 pallet:democracy call:external_propose */
         CHECK_ERROR(_readMethod_democracy_external_propose_V1(c, &method->nested.democracy_external_propose_V1))
         break;
-case 9733: /* module 26 call 05 pallet:democracy call:external_propose_majority */
+case 6661: /* module 26 call 05 pallet:democracy call:external_propose_majority */
         CHECK_ERROR(_readMethod_democracy_external_propose_majority_V1(c, &method->nested.democracy_external_propose_majority_V1))
         break;
-case 9734: /* module 26 call 06 pallet:democracy call:external_propose_default */
+case 6662: /* module 26 call 06 pallet:democracy call:external_propose_default */
         CHECK_ERROR(_readMethod_democracy_external_propose_default_V1(c, &method->nested.democracy_external_propose_default_V1))
         break;
-case 9735: /* module 26 call 07 pallet:democracy call:fast_track */
+case 6663: /* module 26 call 07 pallet:democracy call:fast_track */
         CHECK_ERROR(_readMethod_democracy_fast_track_V1(c, &method->nested.democracy_fast_track_V1))
         break;
-case 9736: /* module 26 call 08 pallet:democracy call:veto_external */
+case 6664: /* module 26 call 08 pallet:democracy call:veto_external */
         CHECK_ERROR(_readMethod_democracy_veto_external_V1(c, &method->nested.democracy_veto_external_V1))
         break;
-case 9737: /* module 26 call 09 pallet:democracy call:cancel_referendum */
+case 6665: /* module 26 call 09 pallet:democracy call:cancel_referendum */
         CHECK_ERROR(_readMethod_democracy_cancel_referendum_V1(c, &method->nested.democracy_cancel_referendum_V1))
         break;
-case 9744: /* module 26 call 10 pallet:democracy call:cancel_queued */
+case 6666: /* module 26 call 10 pallet:democracy call:cancel_queued */
         CHECK_ERROR(_readMethod_democracy_cancel_queued_V1(c, &method->nested.democracy_cancel_queued_V1))
         break;
-case 9745: /* module 26 call 11 pallet:democracy call:delegate */
+case 6667: /* module 26 call 11 pallet:democracy call:delegate */
         CHECK_ERROR(_readMethod_democracy_delegate_V1(c, &method->nested.democracy_delegate_V1))
         break;
-case 9746: /* module 26 call 12 pallet:democracy call:undelegate */
+case 6668: /* module 26 call 12 pallet:democracy call:undelegate */
         CHECK_ERROR(_readMethod_democracy_undelegate_V1(c, &method->nested.democracy_undelegate_V1))
         break;
-case 9747: /* module 26 call 13 pallet:democracy call:clear_public_proposals */
+case 6669: /* module 26 call 13 pallet:democracy call:clear_public_proposals */
         CHECK_ERROR(_readMethod_democracy_clear_public_proposals_V1(c, &method->nested.democracy_clear_public_proposals_V1))
         break;
-case 9748: /* module 26 call 14 pallet:democracy call:note_preimage */
+case 6670: /* module 26 call 14 pallet:democracy call:note_preimage */
         CHECK_ERROR(_readMethod_democracy_note_preimage_V1(c, &method->basic.democracy_note_preimage_V1))
         break;
-case 9749: /* module 26 call 15 pallet:democracy call:note_preimage_operational */
+case 6671: /* module 26 call 15 pallet:democracy call:note_preimage_operational */
         CHECK_ERROR(_readMethod_democracy_note_preimage_operational_V1(c, &method->basic.democracy_note_preimage_operational_V1))
         break;
-case 9750: /* module 26 call 16 pallet:democracy call:note_imminent_preimage */
+case 6672: /* module 26 call 16 pallet:democracy call:note_imminent_preimage */
         CHECK_ERROR(_readMethod_democracy_note_imminent_preimage_V1(c, &method->basic.democracy_note_imminent_preimage_V1))
         break;
-case 9751: /* module 26 call 17 pallet:democracy call:note_imminent_preimage_operational */
+case 6673: /* module 26 call 17 pallet:democracy call:note_imminent_preimage_operational */
         CHECK_ERROR(_readMethod_democracy_note_imminent_preimage_operational_V1(c, &method->basic.democracy_note_imminent_preimage_operational_V1))
         break;
-case 9752: /* module 26 call 18 pallet:democracy call:reap_preimage */
+case 6674: /* module 26 call 18 pallet:democracy call:reap_preimage */
         CHECK_ERROR(_readMethod_democracy_reap_preimage_V1(c, &method->nested.democracy_reap_preimage_V1))
         break;
-case 9753: /* module 26 call 19 pallet:democracy call:unlock */
+case 6675: /* module 26 call 19 pallet:democracy call:unlock */
         CHECK_ERROR(_readMethod_democracy_unlock_V1(c, &method->nested.democracy_unlock_V1))
         break;
-case 9760: /* module 26 call 20 pallet:democracy call:remove_vote */
+case 6676: /* module 26 call 20 pallet:democracy call:remove_vote */
         CHECK_ERROR(_readMethod_democracy_remove_vote_V1(c, &method->nested.democracy_remove_vote_V1))
         break;
-case 9761: /* module 26 call 21 pallet:democracy call:remove_other_vote */
+case 6677: /* module 26 call 21 pallet:democracy call:remove_other_vote */
         CHECK_ERROR(_readMethod_democracy_remove_other_vote_V1(c, &method->nested.democracy_remove_other_vote_V1))
         break;
-case 9762: /* module 26 call 22 pallet:democracy call:enact_proposal */
+case 6678: /* module 26 call 22 pallet:democracy call:enact_proposal */
         CHECK_ERROR(_readMethod_democracy_enact_proposal_V1(c, &method->nested.democracy_enact_proposal_V1))
         break;
-case 9764: /* module 26 call 24 pallet:democracy call:cancel_proposal */
+case 6680: /* module 26 call 24 pallet:democracy call:cancel_proposal */
         CHECK_ERROR(_readMethod_democracy_cancel_proposal_V1(c, &method->nested.democracy_cancel_proposal_V1))
         break;
-case 9216: /* module 24 call 00 pallet:council call:set_members */
+case 6144: /* module 24 call 00 pallet:council call:set_members */
         CHECK_ERROR(_readMethod_council_set_members_V1(c, &method->basic.council_set_members_V1))
         break;
-case 9217: /* module 24 call 01 pallet:council call:execute */
+case 6145: /* module 24 call 01 pallet:council call:execute */
         CHECK_ERROR(_readMethod_council_execute_V1(c, &method->basic.council_execute_V1))
         break;
-case 9218: /* module 24 call 02 pallet:council call:propose */
+case 6146: /* module 24 call 02 pallet:council call:propose */
         CHECK_ERROR(_readMethod_council_propose_V1(c, &method->basic.council_propose_V1))
         break;
-case 9219: /* module 24 call 03 pallet:council call:vote */
+case 6147: /* module 24 call 03 pallet:council call:vote */
         CHECK_ERROR(_readMethod_council_vote_V1(c, &method->basic.council_vote_V1))
         break;
-    case 3588: /* module x14 call 6  */
+case 6150: /* module 24 call 06 pallet:council call:close */
         CHECK_ERROR(_readMethod_council_close_V1(c, &method->basic.council_close_V1))
         break;
-case 9221: /* module 24 call 05 pallet:council call:disapprove_proposal */
+case 6149: /* module 24 call 05 pallet:council call:disapprove_proposal */
         CHECK_ERROR(_readMethod_council_disapprove_proposal_V1(c, &method->basic.council_disapprove_proposal_V1))
         break;
-case 5888: /* module 17 call 00 pallet:technicalcommittee call:set_members */
+case 4352: /* module 17 call 00 pallet:technicalcommittee call:set_members */
         CHECK_ERROR(_readMethod_technicalcommittee_set_members_V1(c, &method->basic.technicalcommittee_set_members_V1))
         break;
-case 5889: /* module 17 call 01 pallet:technicalcommittee call:execute */
+case 4353: /* module 17 call 01 pallet:technicalcommittee call:execute */
         CHECK_ERROR(_readMethod_technicalcommittee_execute_V1(c, &method->basic.technicalcommittee_execute_V1))
         break;
-case 5890: /* module 17 call 02 pallet:technicalcommittee call:propose */
+case 4354: /* module 17 call 02 pallet:technicalcommittee call:propose */
         CHECK_ERROR(_readMethod_technicalcommittee_propose_V1(c, &method->basic.technicalcommittee_propose_V1))
         break;
-case 5891: /* module 17 call 03 pallet:technicalcommittee call:vote */
+case 4355: /* module 17 call 03 pallet:technicalcommittee call:vote */
         CHECK_ERROR(_readMethod_technicalcommittee_vote_V1(c, &method->basic.technicalcommittee_vote_V1))
         break;
-case 5894: /* module 17 call 06 pallet:technicalcommittee call:close */
+case 4358: /* module 17 call 06 pallet:technicalcommittee call:close */
         CHECK_ERROR(_readMethod_technicalcommittee_close_V1(c, &method->basic.technicalcommittee_close_V1))
         break;
-case 5893: /* module 17 call 05 pallet:technicalcommittee call:disapprove_proposal */
+case 4357: /* module 17 call 05 pallet:technicalcommittee call:disapprove_proposal */
         CHECK_ERROR(_readMethod_technicalcommittee_disapprove_proposal_V1(c, &method->basic.technicalcommittee_disapprove_proposal_V1))
         break;
-case 6144: /* module 18 call 00 pallet:technicalmembership call:add_member */
+case 4608: /* module 18 call 00 pallet:technicalmembership call:add_member */
         CHECK_ERROR(_readMethod_technicalmembership_add_member_V1(c, &method->basic.technicalmembership_add_member_V1))
         break;
-case 6145: /* module 18 call 01 pallet:technicalmembership call:remove_member */
+case 4609: /* module 18 call 01 pallet:technicalmembership call:remove_member */
         CHECK_ERROR(_readMethod_technicalmembership_remove_member_V1(c, &method->basic.technicalmembership_remove_member_V1))
         break;
-case 6146: /* module 18 call 02 pallet:technicalmembership call:swap_member */
+case 4610: /* module 18 call 02 pallet:technicalmembership call:swap_member */
         CHECK_ERROR(_readMethod_technicalmembership_swap_member_V1(c, &method->basic.technicalmembership_swap_member_V1))
         break;
-case 6147: /* module 18 call 03 pallet:technicalmembership call:reset_members */
+case 4611: /* module 18 call 03 pallet:technicalmembership call:reset_members */
         CHECK_ERROR(_readMethod_technicalmembership_reset_members_V1(c, &method->basic.technicalmembership_reset_members_V1))
         break;
-case 6148: /* module 18 call 04 pallet:technicalmembership call:change_key */
+case 4612: /* module 18 call 04 pallet:technicalmembership call:change_key */
         CHECK_ERROR(_readMethod_technicalmembership_change_key_V1(c, &method->basic.technicalmembership_change_key_V1))
         break;
-case 6149: /* module 18 call 05 pallet:technicalmembership call:set_prime */
+case 4613: /* module 18 call 05 pallet:technicalmembership call:set_prime */
         CHECK_ERROR(_readMethod_technicalmembership_set_prime_V1(c, &method->basic.technicalmembership_set_prime_V1))
         break;
-case 6150: /* module 18 call 06 pallet:technicalmembership call:clear_prime */
+case 4614: /* module 18 call 06 pallet:technicalmembership call:clear_prime */
         CHECK_ERROR(_readMethod_technicalmembership_clear_prime_V1(c, &method->basic.technicalmembership_clear_prime_V1))
         break;
-case 10240: /* module 28 call 00 pallet:identity call:add_registrar */
+case 7168: /* module 28 call 00 pallet:identity call:add_registrar */
         CHECK_ERROR(_readMethod_identity_add_registrar_V1(c, &method->basic.identity_add_registrar_V1))
         break;
-case 10243: /* module 28 call 03 pallet:identity call:clear_identity */
+case 7171: /* module 28 call 03 pallet:identity call:clear_identity */
         CHECK_ERROR(_readMethod_identity_clear_identity_V1(c, &method->basic.identity_clear_identity_V1))
         break;
-case 10244: /* module 28 call 04 pallet:identity call:request_judgement */
+case 7172: /* module 28 call 04 pallet:identity call:request_judgement */
         CHECK_ERROR(_readMethod_identity_request_judgement_V1(c, &method->basic.identity_request_judgement_V1))
         break;
-case 10245: /* module 28 call 05 pallet:identity call:cancel_request */
+case 7173: /* module 28 call 05 pallet:identity call:cancel_request */
         CHECK_ERROR(_readMethod_identity_cancel_request_V1(c, &method->basic.identity_cancel_request_V1))
         break;
-case 10246: /* module 28 call 06 pallet:identity call:set_fee */
+case 7174: /* module 28 call 06 pallet:identity call:set_fee */
         CHECK_ERROR(_readMethod_identity_set_fee_V1(c, &method->basic.identity_set_fee_V1))
         break;
-case 10247: /* module 28 call 07 pallet:identity call:set_account_id */
+case 7175: /* module 28 call 07 pallet:identity call:set_account_id */
         CHECK_ERROR(_readMethod_identity_set_account_id_V1(c, &method->basic.identity_set_account_id_V1))
         break;
-case 10256: /* module 28 call 10 pallet:identity call:kill_identity */
+case 7178: /* module 28 call 10 pallet:identity call:kill_identity */
         CHECK_ERROR(_readMethod_identity_kill_identity_V1(c, &method->basic.identity_kill_identity_V1))
         break;
-case 10259: /* module 28 call 13 pallet:identity call:remove_sub */
+case 7181: /* module 28 call 13 pallet:identity call:remove_sub */
         CHECK_ERROR(_readMethod_identity_remove_sub_V1(c, &method->basic.identity_remove_sub_V1))
         break;
-case 10260: /* module 28 call 14 pallet:identity call:quit_sub */
+case 7182: /* module 28 call 14 pallet:identity call:quit_sub */
         CHECK_ERROR(_readMethod_identity_quit_sub_V1(c, &method->basic.identity_quit_sub_V1))
         break;
-case 9984: /* module 27 call 00 pallet:multisig call:as_multi_threshold_1 */
+case 6912: /* module 27 call 00 pallet:multisig call:as_multi_threshold_1 */
         CHECK_ERROR(_readMethod_multisig_as_multi_threshold_1_V1(c, &method->nested.multisig_as_multi_threshold_1_V1))
         break;
-case 9985: /* module 27 call 01 pallet:multisig call:as_multi */
+case 6913: /* module 27 call 01 pallet:multisig call:as_multi */
         CHECK_ERROR(_readMethod_multisig_as_multi_V1(c, &method->nested.multisig_as_multi_V1))
         break;
-case 9986: /* module 27 call 02 pallet:multisig call:approve_as_multi */
+case 6914: /* module 27 call 02 pallet:multisig call:approve_as_multi */
         CHECK_ERROR(_readMethod_multisig_approve_as_multi_V1(c, &method->nested.multisig_approve_as_multi_V1))
         break;
-case 9987: /* module 27 call 03 pallet:multisig call:cancel_as_multi */
+case 6915: /* module 27 call 03 pallet:multisig call:cancel_as_multi */
         CHECK_ERROR(_readMethod_multisig_cancel_as_multi_V1(c, &method->nested.multisig_cancel_as_multi_V1))
         break;
-case 8704: /* module 22 call 00 pallet:preimage call:note_preimage */
+case 5632: /* module 22 call 00 pallet:preimage call:note_preimage */
         CHECK_ERROR(_readMethod_preimage_note_preimage_V1(c, &method->basic.preimage_note_preimage_V1))
         break;
-case 8705: /* module 22 call 01 pallet:preimage call:unnote_preimage */
+case 5633: /* module 22 call 01 pallet:preimage call:unnote_preimage */
         CHECK_ERROR(_readMethod_preimage_unnote_preimage_V1(c, &method->basic.preimage_unnote_preimage_V1))
         break;
-case 8706: /* module 22 call 02 pallet:preimage call:request_preimage */
+case 5634: /* module 22 call 02 pallet:preimage call:request_preimage */
         CHECK_ERROR(_readMethod_preimage_request_preimage_V1(c, &method->basic.preimage_request_preimage_V1))
         break;
-case 8707: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
+case 5635: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
         CHECK_ERROR(_readMethod_preimage_unrequest_preimage_V1(c, &method->basic.preimage_unrequest_preimage_V1))
         break;
-case 5380: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
+case 3844: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
         CHECK_ERROR(_readMethod_electionprovidermultiphase_governance_fallback_V1(c, &method->basic.electionprovidermultiphase_governance_fallback_V1))
         break;
 #endif
@@ -1232,45 +1232,45 @@ const char* _getMethod_Name_V1(uint8_t moduleIdx, uint8_t callIdx)
     uint16_t callPrivIdx = ((uint16_t)moduleIdx << 8u) + callIdx;
 
     switch (callPrivIdx) {
-    case 1024: /* module x4 call 0 */
+case 1024: /* module 04 call 00 pallet:balances call:transfer */
         return STR_ME_TRANSFER;
-    case 1026: /* module x4 call 2 */
+case 1026: /* module 04 call 02 pallet:balances call:force_transfer */
         return STR_ME_FORCE_TRANSFER;
-    case 1027: /* module x4 call 3 */
+case 1027: /* module 04 call 03 pallet:balances call:transfer_keep_alive */
         return STR_ME_TRANSFER_KEEP_ALIVE;
-    case 1028: /* module x4 call 4 */
+case 1028: /* module 04 call 04 pallet:balances call:transfer_all */
         return STR_ME_TRANSFER_ALL;
-case 4864: /* module 13 call 00 pallet:staking call:bond */
+case 3328: /* module 13 call 00 pallet:staking call:bond */
         return STR_ME_BOND;
-case 4865: /* module 13 call 01 pallet:staking call:bond_extra */
+case 3329: /* module 13 call 01 pallet:staking call:bond_extra */
         return STR_ME_BOND_EXTRA;
-case 4866: /* module 13 call 02 pallet:staking call:unbond */
+case 3330: /* module 13 call 02 pallet:staking call:unbond */
         return STR_ME_UNBOND;
-case 4867: /* module 13 call 03 pallet:staking call:withdraw_unbonded */
+case 3331: /* module 13 call 03 pallet:staking call:withdraw_unbonded */
         return STR_ME_WITHDRAW_UNBONDED;
-case 4868: /* module 13 call 04 pallet:staking call:validate */
+case 3332: /* module 13 call 04 pallet:staking call:validate */
         return STR_ME_VALIDATE;
-case 4869: /* module 13 call 05 pallet:staking call:nominate */
+case 3333: /* module 13 call 05 pallet:staking call:nominate */
         return STR_ME_NOMINATE;
-case 4870: /* module 13 call 06 pallet:staking call:chill */
+case 3334: /* module 13 call 06 pallet:staking call:chill */
         return STR_ME_CHILL;
-case 4871: /* module 13 call 07 pallet:staking call:set_payee */
+case 3335: /* module 13 call 07 pallet:staking call:set_payee */
         return STR_ME_SET_PAYEE;
-case 4872: /* module 13 call 08 pallet:staking call:set_controller */
+case 3336: /* module 13 call 08 pallet:staking call:set_controller */
         return STR_ME_SET_CONTROLLER;
-case 4888: /* module 13 call 18 pallet:staking call:payout_stakers */
+case 3346: /* module 13 call 18 pallet:staking call:payout_stakers */
         return STR_ME_PAYOUT_STAKERS;
-case 4889: /* module 13 call 19 pallet:staking call:rebond */
+case 3347: /* module 13 call 19 pallet:staking call:rebond */
         return STR_ME_REBOND;
 case 2304: /* module 09 call 00 pallet:session call:set_keys */
         return STR_ME_SET_KEYS;
 case 2305: /* module 09 call 01 pallet:session call:purge_keys */
         return STR_ME_PURGE_KEYS;
-case 8448: /* module 21 call 00 pallet:utility call:batch */
+case 5376: /* module 21 call 00 pallet:utility call:batch */
         return STR_ME_BATCH;
-case 8450: /* module 21 call 02 pallet:utility call:batch_all */
+case 5378: /* module 21 call 02 pallet:utility call:batch_all */
         return STR_ME_BATCH_ALL;
-case 8452: /* module 21 call 04 pallet:utility call:force_batch */
+case 5380: /* module 21 call 04 pallet:utility call:force_batch */
         return STR_ME_FORCE_BATCH;
     default:
         return _getMethod_Name_V1_ParserFull(callPrivIdx);
@@ -1297,155 +1297,155 @@ case 8: /* module 00 call 08 pallet:system call:remark_with_event */
         return STR_ME_REMARK_WITH_EVENT;
 case 768: /* module 03 call 00 pallet:timestamp call:set */
         return STR_ME_SET;
-    case 1025: /* module x4 call 1 */
+case 1025: /* module 04 call 01 pallet:balances call:set_balance */
         return STR_ME_SET_BALANCE;
-    case 1029: /* module x4 call 5 */
+case 1029: /* module 04 call 05 pallet:balances call:force_unreserve */
         return STR_ME_FORCE_UNRESERVE;
-case 4873: /* module 13 call 09 pallet:staking call:set_validator_count */
+case 3337: /* module 13 call 09 pallet:staking call:set_validator_count */
         return STR_ME_SET_VALIDATOR_COUNT;
-case 4880: /* module 13 call 10 pallet:staking call:increase_validator_count */
+case 3338: /* module 13 call 10 pallet:staking call:increase_validator_count */
         return STR_ME_INCREASE_VALIDATOR_COUNT;
-case 4882: /* module 13 call 12 pallet:staking call:force_no_eras */
+case 3340: /* module 13 call 12 pallet:staking call:force_no_eras */
         return STR_ME_FORCE_NO_ERAS;
-case 4883: /* module 13 call 13 pallet:staking call:force_new_era */
+case 3341: /* module 13 call 13 pallet:staking call:force_new_era */
         return STR_ME_FORCE_NEW_ERA;
-case 4884: /* module 13 call 14 pallet:staking call:set_invulnerables */
+case 3342: /* module 13 call 14 pallet:staking call:set_invulnerables */
         return STR_ME_SET_INVULNERABLES;
-case 4885: /* module 13 call 15 pallet:staking call:force_unstake */
+case 3343: /* module 13 call 15 pallet:staking call:force_unstake */
         return STR_ME_FORCE_UNSTAKE;
-case 4886: /* module 13 call 16 pallet:staking call:force_new_era_always */
+case 3344: /* module 13 call 16 pallet:staking call:force_new_era_always */
         return STR_ME_FORCE_NEW_ERA_ALWAYS;
-case 4887: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
+case 3345: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
         return STR_ME_CANCEL_DEFERRED_SLASH;
-case 4896: /* module 13 call 20 pallet:staking call:reap_stash */
+case 3348: /* module 13 call 20 pallet:staking call:reap_stash */
         return STR_ME_REAP_STASH;
-case 4897: /* module 13 call 21 pallet:staking call:kick */
+case 3349: /* module 13 call 21 pallet:staking call:kick */
         return STR_ME_KICK;
-case 4899: /* module 13 call 23 pallet:staking call:chill_other */
+case 3351: /* module 13 call 23 pallet:staking call:chill_other */
         return STR_ME_CHILL_OTHER;
-case 4900: /* module 13 call 24 pallet:staking call:force_apply_min_commission */
+case 3352: /* module 13 call 24 pallet:staking call:force_apply_min_commission */
         return STR_ME_FORCE_APPLY_MIN_COMMISSION;
-case 4098: /* module 10 call 02 pallet:grandpa call:note_stalled */
+case 2562: /* module 10 call 02 pallet:grandpa call:note_stalled */
         return STR_ME_NOTE_STALLED;
-case 9728: /* module 26 call 00 pallet:democracy call:propose */
+case 6656: /* module 26 call 00 pallet:democracy call:propose */
         return STR_ME_PROPOSE;
-case 9729: /* module 26 call 01 pallet:democracy call:second */
+case 6657: /* module 26 call 01 pallet:democracy call:second */
         return STR_ME_SECOND;
-case 9730: /* module 26 call 02 pallet:democracy call:vote */
+case 6658: /* module 26 call 02 pallet:democracy call:vote */
         return STR_ME_VOTE;
-case 9731: /* module 26 call 03 pallet:democracy call:emergency_cancel */
+case 6659: /* module 26 call 03 pallet:democracy call:emergency_cancel */
         return STR_ME_EMERGENCY_CANCEL;
-case 9732: /* module 26 call 04 pallet:democracy call:external_propose */
+case 6660: /* module 26 call 04 pallet:democracy call:external_propose */
         return STR_ME_EXTERNAL_PROPOSE;
-case 9733: /* module 26 call 05 pallet:democracy call:external_propose_majority */
+case 6661: /* module 26 call 05 pallet:democracy call:external_propose_majority */
         return STR_ME_EXTERNAL_PROPOSE_MAJORITY;
-case 9734: /* module 26 call 06 pallet:democracy call:external_propose_default */
+case 6662: /* module 26 call 06 pallet:democracy call:external_propose_default */
         return STR_ME_EXTERNAL_PROPOSE_DEFAULT;
-case 9735: /* module 26 call 07 pallet:democracy call:fast_track */
+case 6663: /* module 26 call 07 pallet:democracy call:fast_track */
         return STR_ME_FAST_TRACK;
-case 9736: /* module 26 call 08 pallet:democracy call:veto_external */
+case 6664: /* module 26 call 08 pallet:democracy call:veto_external */
         return STR_ME_VETO_EXTERNAL;
-case 9737: /* module 26 call 09 pallet:democracy call:cancel_referendum */
+case 6665: /* module 26 call 09 pallet:democracy call:cancel_referendum */
         return STR_ME_CANCEL_REFERENDUM;
-case 9744: /* module 26 call 10 pallet:democracy call:cancel_queued */
+case 6666: /* module 26 call 10 pallet:democracy call:cancel_queued */
         return STR_ME_CANCEL_QUEUED;
-case 9745: /* module 26 call 11 pallet:democracy call:delegate */
+case 6667: /* module 26 call 11 pallet:democracy call:delegate */
         return STR_ME_DELEGATE;
-case 9746: /* module 26 call 12 pallet:democracy call:undelegate */
+case 6668: /* module 26 call 12 pallet:democracy call:undelegate */
         return STR_ME_UNDELEGATE;
-case 9747: /* module 26 call 13 pallet:democracy call:clear_public_proposals */
+case 6669: /* module 26 call 13 pallet:democracy call:clear_public_proposals */
         return STR_ME_CLEAR_PUBLIC_PROPOSALS;
-case 9748: /* module 26 call 14 pallet:democracy call:note_preimage */
+case 6670: /* module 26 call 14 pallet:democracy call:note_preimage */
         return STR_ME_NOTE_PREIMAGE;
-case 9749: /* module 26 call 15 pallet:democracy call:note_preimage_operational */
+case 6671: /* module 26 call 15 pallet:democracy call:note_preimage_operational */
         return STR_ME_NOTE_PREIMAGE_OPERATIONAL;
-case 9750: /* module 26 call 16 pallet:democracy call:note_imminent_preimage */
+case 6672: /* module 26 call 16 pallet:democracy call:note_imminent_preimage */
         return STR_ME_NOTE_IMMINENT_PREIMAGE;
-case 9751: /* module 26 call 17 pallet:democracy call:note_imminent_preimage_operational */
+case 6673: /* module 26 call 17 pallet:democracy call:note_imminent_preimage_operational */
         return STR_ME_NOTE_IMMINENT_PREIMAGE_OPERATIONAL;
-case 9752: /* module 26 call 18 pallet:democracy call:reap_preimage */
+case 6674: /* module 26 call 18 pallet:democracy call:reap_preimage */
         return STR_ME_REAP_PREIMAGE;
-case 9753: /* module 26 call 19 pallet:democracy call:unlock */
+case 6675: /* module 26 call 19 pallet:democracy call:unlock */
         return STR_ME_UNLOCK;
-case 9760: /* module 26 call 20 pallet:democracy call:remove_vote */
+case 6676: /* module 26 call 20 pallet:democracy call:remove_vote */
         return STR_ME_REMOVE_VOTE;
-case 9761: /* module 26 call 21 pallet:democracy call:remove_other_vote */
+case 6677: /* module 26 call 21 pallet:democracy call:remove_other_vote */
         return STR_ME_REMOVE_OTHER_VOTE;
-case 9762: /* module 26 call 22 pallet:democracy call:enact_proposal */
+case 6678: /* module 26 call 22 pallet:democracy call:enact_proposal */
         return STR_ME_ENACT_PROPOSAL;
-case 9764: /* module 26 call 24 pallet:democracy call:cancel_proposal */
+case 6680: /* module 26 call 24 pallet:democracy call:cancel_proposal */
         return STR_ME_CANCEL_PROPOSAL;
-case 9216: /* module 24 call 00 pallet:council call:set_members */
+case 6144: /* module 24 call 00 pallet:council call:set_members */
         return STR_ME_SET_MEMBERS;
-case 9217: /* module 24 call 01 pallet:council call:execute */
+case 6145: /* module 24 call 01 pallet:council call:execute */
         return STR_ME_EXECUTE;
-case 9218: /* module 24 call 02 pallet:council call:propose */
+case 6146: /* module 24 call 02 pallet:council call:propose */
         return STR_ME_PROPOSE;
-case 9219: /* module 24 call 03 pallet:council call:vote */
+case 6147: /* module 24 call 03 pallet:council call:vote */
         return STR_ME_VOTE;
-    case 3588: /* module x14 call 6  */
+case 6150: /* module 24 call 06 pallet:council call:close */
         return STR_ME_CLOSE;
-case 9221: /* module 24 call 05 pallet:council call:disapprove_proposal */
+case 6149: /* module 24 call 05 pallet:council call:disapprove_proposal */
         return STR_ME_DISAPPROVE_PROPOSAL;
-case 5888: /* module 17 call 00 pallet:technicalcommittee call:set_members */
+case 4352: /* module 17 call 00 pallet:technicalcommittee call:set_members */
         return STR_ME_SET_MEMBERS;
-case 5889: /* module 17 call 01 pallet:technicalcommittee call:execute */
+case 4353: /* module 17 call 01 pallet:technicalcommittee call:execute */
         return STR_ME_EXECUTE;
-case 5890: /* module 17 call 02 pallet:technicalcommittee call:propose */
+case 4354: /* module 17 call 02 pallet:technicalcommittee call:propose */
         return STR_ME_PROPOSE;
-case 5891: /* module 17 call 03 pallet:technicalcommittee call:vote */
+case 4355: /* module 17 call 03 pallet:technicalcommittee call:vote */
         return STR_ME_VOTE;
-case 5894: /* module 17 call 06 pallet:technicalcommittee call:close */
+case 4358: /* module 17 call 06 pallet:technicalcommittee call:close */
         return STR_ME_CLOSE;
-case 5893: /* module 17 call 05 pallet:technicalcommittee call:disapprove_proposal */
+case 4357: /* module 17 call 05 pallet:technicalcommittee call:disapprove_proposal */
         return STR_ME_DISAPPROVE_PROPOSAL;
-case 6144: /* module 18 call 00 pallet:technicalmembership call:add_member */
+case 4608: /* module 18 call 00 pallet:technicalmembership call:add_member */
         return STR_ME_ADD_MEMBER;
-case 6145: /* module 18 call 01 pallet:technicalmembership call:remove_member */
+case 4609: /* module 18 call 01 pallet:technicalmembership call:remove_member */
         return STR_ME_REMOVE_MEMBER;
-case 6146: /* module 18 call 02 pallet:technicalmembership call:swap_member */
+case 4610: /* module 18 call 02 pallet:technicalmembership call:swap_member */
         return STR_ME_SWAP_MEMBER;
-case 6147: /* module 18 call 03 pallet:technicalmembership call:reset_members */
+case 4611: /* module 18 call 03 pallet:technicalmembership call:reset_members */
         return STR_ME_RESET_MEMBERS;
-case 6148: /* module 18 call 04 pallet:technicalmembership call:change_key */
+case 4612: /* module 18 call 04 pallet:technicalmembership call:change_key */
         return STR_ME_CHANGE_KEY;
-case 6149: /* module 18 call 05 pallet:technicalmembership call:set_prime */
+case 4613: /* module 18 call 05 pallet:technicalmembership call:set_prime */
         return STR_ME_SET_PRIME;
-case 6150: /* module 18 call 06 pallet:technicalmembership call:clear_prime */
+case 4614: /* module 18 call 06 pallet:technicalmembership call:clear_prime */
         return STR_ME_CLEAR_PRIME;
-case 10240: /* module 28 call 00 pallet:identity call:add_registrar */
+case 7168: /* module 28 call 00 pallet:identity call:add_registrar */
         return STR_ME_ADD_REGISTRAR;
-case 10243: /* module 28 call 03 pallet:identity call:clear_identity */
+case 7171: /* module 28 call 03 pallet:identity call:clear_identity */
         return STR_ME_CLEAR_IDENTITY;
-case 10244: /* module 28 call 04 pallet:identity call:request_judgement */
+case 7172: /* module 28 call 04 pallet:identity call:request_judgement */
         return STR_ME_REQUEST_JUDGEMENT;
-case 10245: /* module 28 call 05 pallet:identity call:cancel_request */
+case 7173: /* module 28 call 05 pallet:identity call:cancel_request */
         return STR_ME_CANCEL_REQUEST;
-case 10246: /* module 28 call 06 pallet:identity call:set_fee */
+case 7174: /* module 28 call 06 pallet:identity call:set_fee */
         return STR_ME_SET_FEE;
-case 10247: /* module 28 call 07 pallet:identity call:set_account_id */
+case 7175: /* module 28 call 07 pallet:identity call:set_account_id */
         return STR_ME_SET_ACCOUNT_ID;
-case 10256: /* module 28 call 10 pallet:identity call:kill_identity */
+case 7178: /* module 28 call 10 pallet:identity call:kill_identity */
         return STR_ME_KILL_IDENTITY;
-case 10259: /* module 28 call 13 pallet:identity call:remove_sub */
+case 7181: /* module 28 call 13 pallet:identity call:remove_sub */
         return STR_ME_REMOVE_SUB;
-case 10260: /* module 28 call 14 pallet:identity call:quit_sub */
+case 7182: /* module 28 call 14 pallet:identity call:quit_sub */
         return STR_ME_QUIT_SUB;
-case 9984: /* module 27 call 00 pallet:multisig call:as_multi_threshold_1 */
+case 6912: /* module 27 call 00 pallet:multisig call:as_multi_threshold_1 */
         return STR_ME_AS_MULTI_THRESHOLD_1;
-case 9985: /* module 27 call 01 pallet:multisig call:as_multi */
+case 6913: /* module 27 call 01 pallet:multisig call:as_multi */
         return STR_ME_AS_MULTI;
-case 9986: /* module 27 call 02 pallet:multisig call:approve_as_multi */
+case 6914: /* module 27 call 02 pallet:multisig call:approve_as_multi */
         return STR_ME_APPROVE_AS_MULTI;
-case 9987: /* module 27 call 03 pallet:multisig call:cancel_as_multi */
+case 6915: /* module 27 call 03 pallet:multisig call:cancel_as_multi */
         return STR_ME_CANCEL_AS_MULTI;
-case 8704: /* module 22 call 00 pallet:preimage call:note_preimage */
+case 5632: /* module 22 call 00 pallet:preimage call:note_preimage */
         return STR_ME_NOTE_PREIMAGE;
-case 8705: /* module 22 call 01 pallet:preimage call:unnote_preimage */
+case 5633: /* module 22 call 01 pallet:preimage call:unnote_preimage */
         return STR_ME_UNNOTE_PREIMAGE;
-case 8706: /* module 22 call 02 pallet:preimage call:request_preimage */
+case 5634: /* module 22 call 02 pallet:preimage call:request_preimage */
         return STR_ME_REQUEST_PREIMAGE;
-case 8707: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
+case 5635: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
         return STR_ME_UNREQUEST_PREIMAGE;
     case 10240: /* module x40 call 0 */
         return STR_ME_ADD_CHILD_BOUNTY;
@@ -1461,7 +1461,7 @@ case 8707: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
         return STR_ME_CLAIM_CHILD_BOUNTY;
     case 10246: /* module x40 call 6 */
         return STR_ME_CLOSE_CHILD_BOUNTY;
-case 5380: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
+case 3844: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
         return STR_ME_GOVERNANCE_FALLBACK;
 #endif
     default:
@@ -1476,45 +1476,45 @@ uint8_t _getMethod_NumItems_V1(uint8_t moduleIdx, uint8_t callIdx)
     uint16_t callPrivIdx = ((uint16_t)moduleIdx << 8u) + callIdx;
 
     switch (callPrivIdx) {
-    case 1024: /* module x4 call 0 */
+case 1024: /* module 04 call 00 pallet:balances call:transfer */
         return 2;
-    case 1026: /* module x4 call 2 */
+case 1026: /* module 04 call 02 pallet:balances call:force_transfer */
         return 3;
-    case 1027: /* module x4 call 3 */
+case 1027: /* module 04 call 03 pallet:balances call:transfer_keep_alive */
         return 2;
-    case 1028: /* module x4 call 4 */
+case 1028: /* module 04 call 04 pallet:balances call:transfer_all */
         return 2;
-case 4864: /* module 13 call 00 pallet:staking call:bond */
+case 3328: /* module 13 call 00 pallet:staking call:bond */
         return 3;
-case 4865: /* module 13 call 01 pallet:staking call:bond_extra */
+case 3329: /* module 13 call 01 pallet:staking call:bond_extra */
         return 1;
-case 4866: /* module 13 call 02 pallet:staking call:unbond */
+case 3330: /* module 13 call 02 pallet:staking call:unbond */
         return 1;
-case 4867: /* module 13 call 03 pallet:staking call:withdraw_unbonded */
+case 3331: /* module 13 call 03 pallet:staking call:withdraw_unbonded */
         return 1;
-case 4868: /* module 13 call 04 pallet:staking call:validate */
+case 3332: /* module 13 call 04 pallet:staking call:validate */
         return 1;
-case 4869: /* module 13 call 05 pallet:staking call:nominate */
+case 3333: /* module 13 call 05 pallet:staking call:nominate */
         return 1;
-case 4870: /* module 13 call 06 pallet:staking call:chill */
+case 3334: /* module 13 call 06 pallet:staking call:chill */
         return 0;
-case 4871: /* module 13 call 07 pallet:staking call:set_payee */
+case 3335: /* module 13 call 07 pallet:staking call:set_payee */
         return 1;
-case 4872: /* module 13 call 08 pallet:staking call:set_controller */
+case 3336: /* module 13 call 08 pallet:staking call:set_controller */
         return 1;
-case 4888: /* module 13 call 18 pallet:staking call:payout_stakers */
+case 3346: /* module 13 call 18 pallet:staking call:payout_stakers */
         return 2;
-case 4889: /* module 13 call 19 pallet:staking call:rebond */
+case 3347: /* module 13 call 19 pallet:staking call:rebond */
         return 1;
 case 2304: /* module 09 call 00 pallet:session call:set_keys */
         return 2;
 case 2305: /* module 09 call 01 pallet:session call:purge_keys */
         return 0;
-case 8448: /* module 21 call 00 pallet:utility call:batch */
+case 5376: /* module 21 call 00 pallet:utility call:batch */
         return 1;
-case 8450: /* module 21 call 02 pallet:utility call:batch_all */
+case 5378: /* module 21 call 02 pallet:utility call:batch_all */
         return 1;
-case 8452: /* module 21 call 04 pallet:utility call:force_batch */
+case 5380: /* module 21 call 04 pallet:utility call:force_batch */
         return 1;
     case 18688: /* module x73 call 0 */
         return 6;
@@ -1549,155 +1549,155 @@ case 8: /* module 00 call 08 pallet:system call:remark_with_event */
         return 1;
 case 768: /* module 03 call 00 pallet:timestamp call:set */
         return 1;
-    case 1025: /* module x4 call 1 */
+case 1025: /* module 04 call 01 pallet:balances call:set_balance */
         return 3;
-    case 1029: /* module x4 call 5 */
+case 1029: /* module 04 call 05 pallet:balances call:force_unreserve */
         return 2;
-case 4873: /* module 13 call 09 pallet:staking call:set_validator_count */
+case 3337: /* module 13 call 09 pallet:staking call:set_validator_count */
         return 1;
-case 4880: /* module 13 call 10 pallet:staking call:increase_validator_count */
+case 3338: /* module 13 call 10 pallet:staking call:increase_validator_count */
         return 1;
-case 4882: /* module 13 call 12 pallet:staking call:force_no_eras */
+case 3340: /* module 13 call 12 pallet:staking call:force_no_eras */
         return 0;
-case 4883: /* module 13 call 13 pallet:staking call:force_new_era */
+case 3341: /* module 13 call 13 pallet:staking call:force_new_era */
         return 0;
-case 4884: /* module 13 call 14 pallet:staking call:set_invulnerables */
+case 3342: /* module 13 call 14 pallet:staking call:set_invulnerables */
         return 1;
-case 4885: /* module 13 call 15 pallet:staking call:force_unstake */
+case 3343: /* module 13 call 15 pallet:staking call:force_unstake */
         return 2;
-case 4886: /* module 13 call 16 pallet:staking call:force_new_era_always */
+case 3344: /* module 13 call 16 pallet:staking call:force_new_era_always */
         return 0;
-case 4887: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
+case 3345: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
         return 2;
-case 4896: /* module 13 call 20 pallet:staking call:reap_stash */
+case 3348: /* module 13 call 20 pallet:staking call:reap_stash */
         return 2;
-case 4897: /* module 13 call 21 pallet:staking call:kick */
+case 3349: /* module 13 call 21 pallet:staking call:kick */
         return 1;
-case 4899: /* module 13 call 23 pallet:staking call:chill_other */
+case 3351: /* module 13 call 23 pallet:staking call:chill_other */
         return 1;
-case 4900: /* module 13 call 24 pallet:staking call:force_apply_min_commission */
+case 3352: /* module 13 call 24 pallet:staking call:force_apply_min_commission */
         return 1;
-case 4098: /* module 10 call 02 pallet:grandpa call:note_stalled */
+case 2562: /* module 10 call 02 pallet:grandpa call:note_stalled */
         return 2;
-case 9728: /* module 26 call 00 pallet:democracy call:propose */
+case 6656: /* module 26 call 00 pallet:democracy call:propose */
         return 2;
-case 9729: /* module 26 call 01 pallet:democracy call:second */
+case 6657: /* module 26 call 01 pallet:democracy call:second */
         return 2;
-case 9730: /* module 26 call 02 pallet:democracy call:vote */
+case 6658: /* module 26 call 02 pallet:democracy call:vote */
         return 2;
-case 9731: /* module 26 call 03 pallet:democracy call:emergency_cancel */
+case 6659: /* module 26 call 03 pallet:democracy call:emergency_cancel */
         return 1;
-case 9732: /* module 26 call 04 pallet:democracy call:external_propose */
+case 6660: /* module 26 call 04 pallet:democracy call:external_propose */
         return 1;
-case 9733: /* module 26 call 05 pallet:democracy call:external_propose_majority */
+case 6661: /* module 26 call 05 pallet:democracy call:external_propose_majority */
         return 1;
-case 9734: /* module 26 call 06 pallet:democracy call:external_propose_default */
+case 6662: /* module 26 call 06 pallet:democracy call:external_propose_default */
         return 1;
-case 9735: /* module 26 call 07 pallet:democracy call:fast_track */
+case 6663: /* module 26 call 07 pallet:democracy call:fast_track */
         return 3;
-case 9736: /* module 26 call 08 pallet:democracy call:veto_external */
+case 6664: /* module 26 call 08 pallet:democracy call:veto_external */
         return 1;
-case 9737: /* module 26 call 09 pallet:democracy call:cancel_referendum */
+case 6665: /* module 26 call 09 pallet:democracy call:cancel_referendum */
         return 1;
-case 9744: /* module 26 call 10 pallet:democracy call:cancel_queued */
+case 6666: /* module 26 call 10 pallet:democracy call:cancel_queued */
         return 1;
-case 9745: /* module 26 call 11 pallet:democracy call:delegate */
+case 6667: /* module 26 call 11 pallet:democracy call:delegate */
         return 3;
-case 9746: /* module 26 call 12 pallet:democracy call:undelegate */
+case 6668: /* module 26 call 12 pallet:democracy call:undelegate */
         return 0;
-case 9747: /* module 26 call 13 pallet:democracy call:clear_public_proposals */
+case 6669: /* module 26 call 13 pallet:democracy call:clear_public_proposals */
         return 0;
-case 9748: /* module 26 call 14 pallet:democracy call:note_preimage */
+case 6670: /* module 26 call 14 pallet:democracy call:note_preimage */
         return 1;
-case 9749: /* module 26 call 15 pallet:democracy call:note_preimage_operational */
+case 6671: /* module 26 call 15 pallet:democracy call:note_preimage_operational */
         return 1;
-case 9750: /* module 26 call 16 pallet:democracy call:note_imminent_preimage */
+case 6672: /* module 26 call 16 pallet:democracy call:note_imminent_preimage */
         return 1;
-case 9751: /* module 26 call 17 pallet:democracy call:note_imminent_preimage_operational */
+case 6673: /* module 26 call 17 pallet:democracy call:note_imminent_preimage_operational */
         return 1;
-case 9752: /* module 26 call 18 pallet:democracy call:reap_preimage */
+case 6674: /* module 26 call 18 pallet:democracy call:reap_preimage */
         return 2;
-case 9753: /* module 26 call 19 pallet:democracy call:unlock */
+case 6675: /* module 26 call 19 pallet:democracy call:unlock */
         return 1;
-case 9760: /* module 26 call 20 pallet:democracy call:remove_vote */
+case 6676: /* module 26 call 20 pallet:democracy call:remove_vote */
         return 1;
-case 9761: /* module 26 call 21 pallet:democracy call:remove_other_vote */
+case 6677: /* module 26 call 21 pallet:democracy call:remove_other_vote */
         return 2;
-case 9762: /* module 26 call 22 pallet:democracy call:enact_proposal */
+case 6678: /* module 26 call 22 pallet:democracy call:enact_proposal */
         return 2;
-case 9764: /* module 26 call 24 pallet:democracy call:cancel_proposal */
+case 6680: /* module 26 call 24 pallet:democracy call:cancel_proposal */
         return 1;
-case 9216: /* module 24 call 00 pallet:council call:set_members */
+case 6144: /* module 24 call 00 pallet:council call:set_members */
         return 3;
-case 9217: /* module 24 call 01 pallet:council call:execute */
+case 6145: /* module 24 call 01 pallet:council call:execute */
         return 2;
-case 9218: /* module 24 call 02 pallet:council call:propose */
+case 6146: /* module 24 call 02 pallet:council call:propose */
         return 3;
-case 9219: /* module 24 call 03 pallet:council call:vote */
+case 6147: /* module 24 call 03 pallet:council call:vote */
         return 3;
-    case 3588: /* module x14 call 6  */
+case 6150: /* module 24 call 06 pallet:council call:close */
         return 4;
-case 9221: /* module 24 call 05 pallet:council call:disapprove_proposal */
+case 6149: /* module 24 call 05 pallet:council call:disapprove_proposal */
         return 1;
-case 5888: /* module 17 call 00 pallet:technicalcommittee call:set_members */
+case 4352: /* module 17 call 00 pallet:technicalcommittee call:set_members */
         return 3;
-case 5889: /* module 17 call 01 pallet:technicalcommittee call:execute */
+case 4353: /* module 17 call 01 pallet:technicalcommittee call:execute */
         return 2;
-case 5890: /* module 17 call 02 pallet:technicalcommittee call:propose */
+case 4354: /* module 17 call 02 pallet:technicalcommittee call:propose */
         return 3;
-case 5891: /* module 17 call 03 pallet:technicalcommittee call:vote */
+case 4355: /* module 17 call 03 pallet:technicalcommittee call:vote */
         return 3;
-case 5894: /* module 17 call 06 pallet:technicalcommittee call:close */
+case 4358: /* module 17 call 06 pallet:technicalcommittee call:close */
         return 4;
-case 5893: /* module 17 call 05 pallet:technicalcommittee call:disapprove_proposal */
+case 4357: /* module 17 call 05 pallet:technicalcommittee call:disapprove_proposal */
         return 1;
-case 6144: /* module 18 call 00 pallet:technicalmembership call:add_member */
+case 4608: /* module 18 call 00 pallet:technicalmembership call:add_member */
         return 1;
-case 6145: /* module 18 call 01 pallet:technicalmembership call:remove_member */
+case 4609: /* module 18 call 01 pallet:technicalmembership call:remove_member */
         return 1;
-case 6146: /* module 18 call 02 pallet:technicalmembership call:swap_member */
+case 4610: /* module 18 call 02 pallet:technicalmembership call:swap_member */
         return 2;
-case 6147: /* module 18 call 03 pallet:technicalmembership call:reset_members */
+case 4611: /* module 18 call 03 pallet:technicalmembership call:reset_members */
         return 1;
-case 6148: /* module 18 call 04 pallet:technicalmembership call:change_key */
+case 4612: /* module 18 call 04 pallet:technicalmembership call:change_key */
         return 1;
-case 6149: /* module 18 call 05 pallet:technicalmembership call:set_prime */
+case 4613: /* module 18 call 05 pallet:technicalmembership call:set_prime */
         return 1;
-case 6150: /* module 18 call 06 pallet:technicalmembership call:clear_prime */
+case 4614: /* module 18 call 06 pallet:technicalmembership call:clear_prime */
         return 0;
-case 10240: /* module 28 call 00 pallet:identity call:add_registrar */
+case 7168: /* module 28 call 00 pallet:identity call:add_registrar */
         return 1;
-case 10243: /* module 28 call 03 pallet:identity call:clear_identity */
+case 7171: /* module 28 call 03 pallet:identity call:clear_identity */
         return 0;
-case 10244: /* module 28 call 04 pallet:identity call:request_judgement */
+case 7172: /* module 28 call 04 pallet:identity call:request_judgement */
         return 2;
-case 10245: /* module 28 call 05 pallet:identity call:cancel_request */
+case 7173: /* module 28 call 05 pallet:identity call:cancel_request */
         return 1;
-case 10246: /* module 28 call 06 pallet:identity call:set_fee */
+case 7174: /* module 28 call 06 pallet:identity call:set_fee */
         return 2;
-case 10247: /* module 28 call 07 pallet:identity call:set_account_id */
+case 7175: /* module 28 call 07 pallet:identity call:set_account_id */
         return 2;
-case 10256: /* module 28 call 10 pallet:identity call:kill_identity */
+case 7178: /* module 28 call 10 pallet:identity call:kill_identity */
         return 1;
-case 10259: /* module 28 call 13 pallet:identity call:remove_sub */
+case 7181: /* module 28 call 13 pallet:identity call:remove_sub */
         return 1;
-case 10260: /* module 28 call 14 pallet:identity call:quit_sub */
+case 7182: /* module 28 call 14 pallet:identity call:quit_sub */
         return 0;
-case 9984: /* module 27 call 00 pallet:multisig call:as_multi_threshold_1 */
+case 6912: /* module 27 call 00 pallet:multisig call:as_multi_threshold_1 */
         return 2;
-case 9985: /* module 27 call 01 pallet:multisig call:as_multi */
+case 6913: /* module 27 call 01 pallet:multisig call:as_multi */
         return 6;
-case 9986: /* module 27 call 02 pallet:multisig call:approve_as_multi */
+case 6914: /* module 27 call 02 pallet:multisig call:approve_as_multi */
         return 5;
-case 9987: /* module 27 call 03 pallet:multisig call:cancel_as_multi */
+case 6915: /* module 27 call 03 pallet:multisig call:cancel_as_multi */
         return 4;
-case 8704: /* module 22 call 00 pallet:preimage call:note_preimage */
+case 5632: /* module 22 call 00 pallet:preimage call:note_preimage */
         return 1;
-case 8705: /* module 22 call 01 pallet:preimage call:unnote_preimage */
+case 5633: /* module 22 call 01 pallet:preimage call:unnote_preimage */
         return 1;
-case 8706: /* module 22 call 02 pallet:preimage call:request_preimage */
+case 5634: /* module 22 call 02 pallet:preimage call:request_preimage */
         return 1;
-case 8707: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
+case 5635: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
         return 1;
     case 10240: /* module x40 call 0 */
         return 3;
@@ -1713,7 +1713,7 @@ case 8707: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
         return 2;
     case 10246: /* module x40 call 6 */
         return 2;
-case 5380: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
+case 3844: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
         return 2;
 #endif
     default:
@@ -1728,7 +1728,7 @@ const char* _getMethod_ItemName_V1(uint8_t moduleIdx, uint8_t callIdx, uint8_t i
     uint16_t callPrivIdx = ((uint16_t)moduleIdx << 8u) + callIdx;
 
     switch (callPrivIdx) {
-    case 1024: /* module x4 call 0 */
+case 1024: /* module 04 call 00 pallet:balances call:transfer */
         switch (itemIdx) {
         case 0:
             return STR_IT_dest;
@@ -1737,7 +1737,7 @@ const char* _getMethod_ItemName_V1(uint8_t moduleIdx, uint8_t callIdx, uint8_t i
         default:
             return NULL;
         }
-    case 1026: /* module x4 call 2 */
+case 1026: /* module 04 call 02 pallet:balances call:force_transfer */
         switch (itemIdx) {
         case 0:
             return STR_IT_source;
@@ -1748,7 +1748,7 @@ const char* _getMethod_ItemName_V1(uint8_t moduleIdx, uint8_t callIdx, uint8_t i
         default:
             return NULL;
         }
-    case 1027: /* module x4 call 3 */
+case 1027: /* module 04 call 03 pallet:balances call:transfer_keep_alive */
         switch (itemIdx) {
         case 0:
             return STR_IT_dest;
@@ -1757,7 +1757,7 @@ const char* _getMethod_ItemName_V1(uint8_t moduleIdx, uint8_t callIdx, uint8_t i
         default:
             return NULL;
         }
-    case 1028: /* module x4 call 4 */
+case 1028: /* module 04 call 04 pallet:balances call:transfer_all */
         switch (itemIdx) {
         case 0:
             return STR_IT_dest;
@@ -1766,7 +1766,7 @@ const char* _getMethod_ItemName_V1(uint8_t moduleIdx, uint8_t callIdx, uint8_t i
         default:
             return NULL;
         }
-case 4864: /* module 13 call 00 pallet:staking call:bond */
+case 3328: /* module 13 call 00 pallet:staking call:bond */
         switch (itemIdx) {
         case 0:
             return STR_IT_controller;
@@ -1777,61 +1777,61 @@ case 4864: /* module 13 call 00 pallet:staking call:bond */
         default:
             return NULL;
         }
-case 4865: /* module 13 call 01 pallet:staking call:bond_extra */
+case 3329: /* module 13 call 01 pallet:staking call:bond_extra */
         switch (itemIdx) {
         case 0:
             return STR_IT_amount;
         default:
             return NULL;
         }
-case 4866: /* module 13 call 02 pallet:staking call:unbond */
+case 3330: /* module 13 call 02 pallet:staking call:unbond */
         switch (itemIdx) {
         case 0:
             return STR_IT_amount;
         default:
             return NULL;
         }
-case 4867: /* module 13 call 03 pallet:staking call:withdraw_unbonded */
+case 3331: /* module 13 call 03 pallet:staking call:withdraw_unbonded */
         switch (itemIdx) {
         case 0:
             return STR_IT_num_slashing_spans;
         default:
             return NULL;
         }
-case 4868: /* module 13 call 04 pallet:staking call:validate */
+case 3332: /* module 13 call 04 pallet:staking call:validate */
         switch (itemIdx) {
         case 0:
             return STR_IT_prefs;
         default:
             return NULL;
         }
-case 4869: /* module 13 call 05 pallet:staking call:nominate */
+case 3333: /* module 13 call 05 pallet:staking call:nominate */
         switch (itemIdx) {
         case 0:
             return STR_IT_targets;
         default:
             return NULL;
         }
-case 4870: /* module 13 call 06 pallet:staking call:chill */
+case 3334: /* module 13 call 06 pallet:staking call:chill */
         switch (itemIdx) {
         default:
             return NULL;
         }
-case 4871: /* module 13 call 07 pallet:staking call:set_payee */
+case 3335: /* module 13 call 07 pallet:staking call:set_payee */
         switch (itemIdx) {
         case 0:
             return STR_IT_payee;
         default:
             return NULL;
         }
-case 4872: /* module 13 call 08 pallet:staking call:set_controller */
+case 3336: /* module 13 call 08 pallet:staking call:set_controller */
         switch (itemIdx) {
         case 0:
             return STR_IT_controller;
         default:
             return NULL;
         }
-case 4888: /* module 13 call 18 pallet:staking call:payout_stakers */
+case 3346: /* module 13 call 18 pallet:staking call:payout_stakers */
         switch (itemIdx) {
         case 0:
             return STR_IT_validator_stash;
@@ -1840,7 +1840,7 @@ case 4888: /* module 13 call 18 pallet:staking call:payout_stakers */
         default:
             return NULL;
         }
-case 4889: /* module 13 call 19 pallet:staking call:rebond */
+case 3347: /* module 13 call 19 pallet:staking call:rebond */
         switch (itemIdx) {
         case 0:
             return STR_IT_amount;
@@ -1861,21 +1861,21 @@ case 2305: /* module 09 call 01 pallet:session call:purge_keys */
         default:
             return NULL;
         }
-case 8448: /* module 21 call 00 pallet:utility call:batch */
+case 5376: /* module 21 call 00 pallet:utility call:batch */
         switch (itemIdx) {
         case 0:
             return STR_IT_calls;
         default:
             return NULL;
         }
-case 8450: /* module 21 call 02 pallet:utility call:batch_all */
+case 5378: /* module 21 call 02 pallet:utility call:batch_all */
         switch (itemIdx) {
         case 0:
             return STR_IT_calls;
         default:
             return NULL;
         }
-case 8452: /* module 21 call 04 pallet:utility call:force_batch */
+case 5380: /* module 21 call 04 pallet:utility call:force_batch */
         switch (itemIdx) {
         case 0:
             return STR_IT_calls;
@@ -2025,7 +2025,7 @@ case 768: /* module 03 call 00 pallet:timestamp call:set */
         default:
             return NULL;
         }
-    case 1025: /* module x4 call 1 */
+case 1025: /* module 04 call 01 pallet:balances call:set_balance */
         switch (itemIdx) {
         case 0:
             return STR_IT_who;
@@ -2036,7 +2036,7 @@ case 768: /* module 03 call 00 pallet:timestamp call:set */
         default:
             return NULL;
         }
-    case 1029: /* module x4 call 5 */
+case 1029: /* module 04 call 05 pallet:balances call:force_unreserve */
         switch (itemIdx) {
         case 0:
             return STR_IT_who;
@@ -2045,38 +2045,38 @@ case 768: /* module 03 call 00 pallet:timestamp call:set */
         default:
             return NULL;
         }
-case 4873: /* module 13 call 09 pallet:staking call:set_validator_count */
+case 3337: /* module 13 call 09 pallet:staking call:set_validator_count */
         switch (itemIdx) {
         case 0:
             return STR_IT_new_;
         default:
             return NULL;
         }
-case 4880: /* module 13 call 10 pallet:staking call:increase_validator_count */
+case 3338: /* module 13 call 10 pallet:staking call:increase_validator_count */
         switch (itemIdx) {
         case 0:
             return STR_IT_additional;
         default:
             return NULL;
         }
-case 4882: /* module 13 call 12 pallet:staking call:force_no_eras */
+case 3340: /* module 13 call 12 pallet:staking call:force_no_eras */
         switch (itemIdx) {
         default:
             return NULL;
         }
-case 4883: /* module 13 call 13 pallet:staking call:force_new_era */
+case 3341: /* module 13 call 13 pallet:staking call:force_new_era */
         switch (itemIdx) {
         default:
             return NULL;
         }
-case 4884: /* module 13 call 14 pallet:staking call:set_invulnerables */
+case 3342: /* module 13 call 14 pallet:staking call:set_invulnerables */
         switch (itemIdx) {
         case 0:
             return STR_IT_invulnerables;
         default:
             return NULL;
         }
-case 4885: /* module 13 call 15 pallet:staking call:force_unstake */
+case 3343: /* module 13 call 15 pallet:staking call:force_unstake */
         switch (itemIdx) {
         case 0:
             return STR_IT_stash;
@@ -2085,12 +2085,12 @@ case 4885: /* module 13 call 15 pallet:staking call:force_unstake */
         default:
             return NULL;
         }
-case 4886: /* module 13 call 16 pallet:staking call:force_new_era_always */
+case 3344: /* module 13 call 16 pallet:staking call:force_new_era_always */
         switch (itemIdx) {
         default:
             return NULL;
         }
-case 4887: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
+case 3345: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
         switch (itemIdx) {
         case 0:
             return STR_IT_era;
@@ -2099,7 +2099,7 @@ case 4887: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
         default:
             return NULL;
         }
-case 4896: /* module 13 call 20 pallet:staking call:reap_stash */
+case 3348: /* module 13 call 20 pallet:staking call:reap_stash */
         switch (itemIdx) {
         case 0:
             return STR_IT_stash;
@@ -2108,28 +2108,28 @@ case 4896: /* module 13 call 20 pallet:staking call:reap_stash */
         default:
             return NULL;
         }
-case 4897: /* module 13 call 21 pallet:staking call:kick */
+case 3349: /* module 13 call 21 pallet:staking call:kick */
         switch (itemIdx) {
         case 0:
             return STR_IT_who;
         default:
             return NULL;
         }
-case 4899: /* module 13 call 23 pallet:staking call:chill_other */
+case 3351: /* module 13 call 23 pallet:staking call:chill_other */
         switch (itemIdx) {
         case 0:
             return STR_IT_controller;
         default:
             return NULL;
         }
-case 4900: /* module 13 call 24 pallet:staking call:force_apply_min_commission */
+case 3352: /* module 13 call 24 pallet:staking call:force_apply_min_commission */
         switch (itemIdx) {
         case 0:
             return STR_IT_validator_stash;
         default:
             return NULL;
         }
-case 4098: /* module 10 call 02 pallet:grandpa call:note_stalled */
+case 2562: /* module 10 call 02 pallet:grandpa call:note_stalled */
         switch (itemIdx) {
         case 0:
             return STR_IT_delay;
@@ -2138,7 +2138,7 @@ case 4098: /* module 10 call 02 pallet:grandpa call:note_stalled */
         default:
             return NULL;
         }
-case 9728: /* module 26 call 00 pallet:democracy call:propose */
+case 6656: /* module 26 call 00 pallet:democracy call:propose */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal_hash;
@@ -2147,7 +2147,7 @@ case 9728: /* module 26 call 00 pallet:democracy call:propose */
         default:
             return NULL;
         }
-case 9729: /* module 26 call 01 pallet:democracy call:second */
+case 6657: /* module 26 call 01 pallet:democracy call:second */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal;
@@ -2156,7 +2156,7 @@ case 9729: /* module 26 call 01 pallet:democracy call:second */
         default:
             return NULL;
         }
-case 9730: /* module 26 call 02 pallet:democracy call:vote */
+case 6658: /* module 26 call 02 pallet:democracy call:vote */
         switch (itemIdx) {
         case 0:
             return STR_IT_ref_index;
@@ -2165,35 +2165,35 @@ case 9730: /* module 26 call 02 pallet:democracy call:vote */
         default:
             return NULL;
         }
-case 9731: /* module 26 call 03 pallet:democracy call:emergency_cancel */
+case 6659: /* module 26 call 03 pallet:democracy call:emergency_cancel */
         switch (itemIdx) {
         case 0:
             return STR_IT_ref_index;
         default:
             return NULL;
         }
-case 9732: /* module 26 call 04 pallet:democracy call:external_propose */
+case 6660: /* module 26 call 04 pallet:democracy call:external_propose */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal_hash;
         default:
             return NULL;
         }
-case 9733: /* module 26 call 05 pallet:democracy call:external_propose_majority */
+case 6661: /* module 26 call 05 pallet:democracy call:external_propose_majority */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal_hash;
         default:
             return NULL;
         }
-case 9734: /* module 26 call 06 pallet:democracy call:external_propose_default */
+case 6662: /* module 26 call 06 pallet:democracy call:external_propose_default */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal_hash;
         default:
             return NULL;
         }
-case 9735: /* module 26 call 07 pallet:democracy call:fast_track */
+case 6663: /* module 26 call 07 pallet:democracy call:fast_track */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal_hash;
@@ -2204,28 +2204,28 @@ case 9735: /* module 26 call 07 pallet:democracy call:fast_track */
         default:
             return NULL;
         }
-case 9736: /* module 26 call 08 pallet:democracy call:veto_external */
+case 6664: /* module 26 call 08 pallet:democracy call:veto_external */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal_hash;
         default:
             return NULL;
         }
-case 9737: /* module 26 call 09 pallet:democracy call:cancel_referendum */
+case 6665: /* module 26 call 09 pallet:democracy call:cancel_referendum */
         switch (itemIdx) {
         case 0:
             return STR_IT_ref_index;
         default:
             return NULL;
         }
-case 9744: /* module 26 call 10 pallet:democracy call:cancel_queued */
+case 6666: /* module 26 call 10 pallet:democracy call:cancel_queued */
         switch (itemIdx) {
         case 0:
             return STR_IT_which;
         default:
             return NULL;
         }
-case 9745: /* module 26 call 11 pallet:democracy call:delegate */
+case 6667: /* module 26 call 11 pallet:democracy call:delegate */
         switch (itemIdx) {
         case 0:
             return STR_IT_to;
@@ -2236,45 +2236,45 @@ case 9745: /* module 26 call 11 pallet:democracy call:delegate */
         default:
             return NULL;
         }
-case 9746: /* module 26 call 12 pallet:democracy call:undelegate */
+case 6668: /* module 26 call 12 pallet:democracy call:undelegate */
         switch (itemIdx) {
         default:
             return NULL;
         }
-case 9747: /* module 26 call 13 pallet:democracy call:clear_public_proposals */
+case 6669: /* module 26 call 13 pallet:democracy call:clear_public_proposals */
         switch (itemIdx) {
         default:
             return NULL;
         }
-case 9748: /* module 26 call 14 pallet:democracy call:note_preimage */
-        switch (itemIdx) {
-        case 0:
-            return STR_IT_encoded_proposal;
-        default:
-            return NULL;
-        }
-case 9749: /* module 26 call 15 pallet:democracy call:note_preimage_operational */
+case 6670: /* module 26 call 14 pallet:democracy call:note_preimage */
         switch (itemIdx) {
         case 0:
             return STR_IT_encoded_proposal;
         default:
             return NULL;
         }
-case 9750: /* module 26 call 16 pallet:democracy call:note_imminent_preimage */
+case 6671: /* module 26 call 15 pallet:democracy call:note_preimage_operational */
         switch (itemIdx) {
         case 0:
             return STR_IT_encoded_proposal;
         default:
             return NULL;
         }
-case 9751: /* module 26 call 17 pallet:democracy call:note_imminent_preimage_operational */
+case 6672: /* module 26 call 16 pallet:democracy call:note_imminent_preimage */
         switch (itemIdx) {
         case 0:
             return STR_IT_encoded_proposal;
         default:
             return NULL;
         }
-case 9752: /* module 26 call 18 pallet:democracy call:reap_preimage */
+case 6673: /* module 26 call 17 pallet:democracy call:note_imminent_preimage_operational */
+        switch (itemIdx) {
+        case 0:
+            return STR_IT_encoded_proposal;
+        default:
+            return NULL;
+        }
+case 6674: /* module 26 call 18 pallet:democracy call:reap_preimage */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal_hash;
@@ -2283,21 +2283,21 @@ case 9752: /* module 26 call 18 pallet:democracy call:reap_preimage */
         default:
             return NULL;
         }
-case 9753: /* module 26 call 19 pallet:democracy call:unlock */
+case 6675: /* module 26 call 19 pallet:democracy call:unlock */
         switch (itemIdx) {
         case 0:
             return STR_IT_target;
         default:
             return NULL;
         }
-case 9760: /* module 26 call 20 pallet:democracy call:remove_vote */
+case 6676: /* module 26 call 20 pallet:democracy call:remove_vote */
         switch (itemIdx) {
         case 0:
             return STR_IT_index;
         default:
             return NULL;
         }
-case 9761: /* module 26 call 21 pallet:democracy call:remove_other_vote */
+case 6677: /* module 26 call 21 pallet:democracy call:remove_other_vote */
         switch (itemIdx) {
         case 0:
             return STR_IT_target;
@@ -2306,7 +2306,7 @@ case 9761: /* module 26 call 21 pallet:democracy call:remove_other_vote */
         default:
             return NULL;
         }
-case 9762: /* module 26 call 22 pallet:democracy call:enact_proposal */
+case 6678: /* module 26 call 22 pallet:democracy call:enact_proposal */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal_hash;
@@ -2315,14 +2315,14 @@ case 9762: /* module 26 call 22 pallet:democracy call:enact_proposal */
         default:
             return NULL;
         }
-case 9764: /* module 26 call 24 pallet:democracy call:cancel_proposal */
+case 6680: /* module 26 call 24 pallet:democracy call:cancel_proposal */
         switch (itemIdx) {
         case 0:
             return STR_IT_prop_index;
         default:
             return NULL;
         }
-case 9216: /* module 24 call 00 pallet:council call:set_members */
+case 6144: /* module 24 call 00 pallet:council call:set_members */
         switch (itemIdx) {
         case 0:
             return STR_IT_new_members;
@@ -2333,7 +2333,7 @@ case 9216: /* module 24 call 00 pallet:council call:set_members */
         default:
             return NULL;
         }
-case 9217: /* module 24 call 01 pallet:council call:execute */
+case 6145: /* module 24 call 01 pallet:council call:execute */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal;
@@ -2342,7 +2342,7 @@ case 9217: /* module 24 call 01 pallet:council call:execute */
         default:
             return NULL;
         }
-case 9218: /* module 24 call 02 pallet:council call:propose */
+case 6146: /* module 24 call 02 pallet:council call:propose */
         switch (itemIdx) {
         case 0:
             return STR_IT_threshold;
@@ -2353,7 +2353,7 @@ case 9218: /* module 24 call 02 pallet:council call:propose */
         default:
             return NULL;
         }
-case 9219: /* module 24 call 03 pallet:council call:vote */
+case 6147: /* module 24 call 03 pallet:council call:vote */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal;
@@ -2364,7 +2364,7 @@ case 9219: /* module 24 call 03 pallet:council call:vote */
         default:
             return NULL;
         }
-    case 3588: /* module x14 call 6  */
+case 6150: /* module 24 call 06 pallet:council call:close */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal_hash;
@@ -2377,14 +2377,14 @@ case 9219: /* module 24 call 03 pallet:council call:vote */
         default:
             return NULL;
         }
-case 9221: /* module 24 call 05 pallet:council call:disapprove_proposal */
+case 6149: /* module 24 call 05 pallet:council call:disapprove_proposal */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal_hash;
         default:
             return NULL;
         }
-case 5888: /* module 17 call 00 pallet:technicalcommittee call:set_members */
+case 4352: /* module 17 call 00 pallet:technicalcommittee call:set_members */
         switch (itemIdx) {
         case 0:
             return STR_IT_new_members;
@@ -2395,7 +2395,7 @@ case 5888: /* module 17 call 00 pallet:technicalcommittee call:set_members */
         default:
             return NULL;
         }
-case 5889: /* module 17 call 01 pallet:technicalcommittee call:execute */
+case 4353: /* module 17 call 01 pallet:technicalcommittee call:execute */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal;
@@ -2404,7 +2404,7 @@ case 5889: /* module 17 call 01 pallet:technicalcommittee call:execute */
         default:
             return NULL;
         }
-case 5890: /* module 17 call 02 pallet:technicalcommittee call:propose */
+case 4354: /* module 17 call 02 pallet:technicalcommittee call:propose */
         switch (itemIdx) {
         case 0:
             return STR_IT_threshold;
@@ -2415,7 +2415,7 @@ case 5890: /* module 17 call 02 pallet:technicalcommittee call:propose */
         default:
             return NULL;
         }
-case 5891: /* module 17 call 03 pallet:technicalcommittee call:vote */
+case 4355: /* module 17 call 03 pallet:technicalcommittee call:vote */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal;
@@ -2426,7 +2426,7 @@ case 5891: /* module 17 call 03 pallet:technicalcommittee call:vote */
         default:
             return NULL;
         }
-case 5894: /* module 17 call 06 pallet:technicalcommittee call:close */
+case 4358: /* module 17 call 06 pallet:technicalcommittee call:close */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal_hash;
@@ -2439,28 +2439,28 @@ case 5894: /* module 17 call 06 pallet:technicalcommittee call:close */
         default:
             return NULL;
         }
-case 5893: /* module 17 call 05 pallet:technicalcommittee call:disapprove_proposal */
+case 4357: /* module 17 call 05 pallet:technicalcommittee call:disapprove_proposal */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal_hash;
         default:
             return NULL;
         }
-case 6144: /* module 18 call 00 pallet:technicalmembership call:add_member */
+case 4608: /* module 18 call 00 pallet:technicalmembership call:add_member */
         switch (itemIdx) {
         case 0:
             return STR_IT_who;
         default:
             return NULL;
         }
-case 6145: /* module 18 call 01 pallet:technicalmembership call:remove_member */
+case 4609: /* module 18 call 01 pallet:technicalmembership call:remove_member */
         switch (itemIdx) {
         case 0:
             return STR_IT_who;
         default:
             return NULL;
         }
-case 6146: /* module 18 call 02 pallet:technicalmembership call:swap_member */
+case 4610: /* module 18 call 02 pallet:technicalmembership call:swap_member */
         switch (itemIdx) {
         case 0:
             return STR_IT_remove;
@@ -2469,45 +2469,45 @@ case 6146: /* module 18 call 02 pallet:technicalmembership call:swap_member */
         default:
             return NULL;
         }
-case 6147: /* module 18 call 03 pallet:technicalmembership call:reset_members */
+case 4611: /* module 18 call 03 pallet:technicalmembership call:reset_members */
         switch (itemIdx) {
         case 0:
             return STR_IT_members;
         default:
             return NULL;
         }
-case 6148: /* module 18 call 04 pallet:technicalmembership call:change_key */
+case 4612: /* module 18 call 04 pallet:technicalmembership call:change_key */
         switch (itemIdx) {
         case 0:
             return STR_IT_new_;
         default:
             return NULL;
         }
-case 6149: /* module 18 call 05 pallet:technicalmembership call:set_prime */
+case 4613: /* module 18 call 05 pallet:technicalmembership call:set_prime */
         switch (itemIdx) {
         case 0:
             return STR_IT_who;
         default:
             return NULL;
         }
-case 6150: /* module 18 call 06 pallet:technicalmembership call:clear_prime */
+case 4614: /* module 18 call 06 pallet:technicalmembership call:clear_prime */
         switch (itemIdx) {
         default:
             return NULL;
         }
-case 10240: /* module 28 call 00 pallet:identity call:add_registrar */
+case 7168: /* module 28 call 00 pallet:identity call:add_registrar */
         switch (itemIdx) {
         case 0:
             return STR_IT_account;
         default:
             return NULL;
         }
-case 10243: /* module 28 call 03 pallet:identity call:clear_identity */
+case 7171: /* module 28 call 03 pallet:identity call:clear_identity */
         switch (itemIdx) {
         default:
             return NULL;
         }
-case 10244: /* module 28 call 04 pallet:identity call:request_judgement */
+case 7172: /* module 28 call 04 pallet:identity call:request_judgement */
         switch (itemIdx) {
         case 0:
             return STR_IT_reg_index;
@@ -2516,14 +2516,14 @@ case 10244: /* module 28 call 04 pallet:identity call:request_judgement */
         default:
             return NULL;
         }
-case 10245: /* module 28 call 05 pallet:identity call:cancel_request */
+case 7173: /* module 28 call 05 pallet:identity call:cancel_request */
         switch (itemIdx) {
         case 0:
             return STR_IT_reg_index;
         default:
             return NULL;
         }
-case 10246: /* module 28 call 06 pallet:identity call:set_fee */
+case 7174: /* module 28 call 06 pallet:identity call:set_fee */
         switch (itemIdx) {
         case 0:
             return STR_IT_index;
@@ -2532,7 +2532,7 @@ case 10246: /* module 28 call 06 pallet:identity call:set_fee */
         default:
             return NULL;
         }
-case 10247: /* module 28 call 07 pallet:identity call:set_account_id */
+case 7175: /* module 28 call 07 pallet:identity call:set_account_id */
         switch (itemIdx) {
         case 0:
             return STR_IT_index;
@@ -2541,26 +2541,26 @@ case 10247: /* module 28 call 07 pallet:identity call:set_account_id */
         default:
             return NULL;
         }
-case 10256: /* module 28 call 10 pallet:identity call:kill_identity */
+case 7178: /* module 28 call 10 pallet:identity call:kill_identity */
         switch (itemIdx) {
         case 0:
             return STR_IT_target;
         default:
             return NULL;
         }
-case 10259: /* module 28 call 13 pallet:identity call:remove_sub */
+case 7181: /* module 28 call 13 pallet:identity call:remove_sub */
         switch (itemIdx) {
         case 0:
             return STR_IT_sub;
         default:
             return NULL;
         }
-case 10260: /* module 28 call 14 pallet:identity call:quit_sub */
+case 7182: /* module 28 call 14 pallet:identity call:quit_sub */
         switch (itemIdx) {
         default:
             return NULL;
         }
-case 9984: /* module 27 call 00 pallet:multisig call:as_multi_threshold_1 */
+case 6912: /* module 27 call 00 pallet:multisig call:as_multi_threshold_1 */
         switch (itemIdx) {
         case 0:
             return STR_IT_other_signatories;
@@ -2569,7 +2569,7 @@ case 9984: /* module 27 call 00 pallet:multisig call:as_multi_threshold_1 */
         default:
             return NULL;
         }
-case 9985: /* module 27 call 01 pallet:multisig call:as_multi */
+case 6913: /* module 27 call 01 pallet:multisig call:as_multi */
         switch (itemIdx) {
         case 0:
             return STR_IT_threshold;
@@ -2586,7 +2586,7 @@ case 9985: /* module 27 call 01 pallet:multisig call:as_multi */
         default:
             return NULL;
         }
-case 9986: /* module 27 call 02 pallet:multisig call:approve_as_multi */
+case 6914: /* module 27 call 02 pallet:multisig call:approve_as_multi */
         switch (itemIdx) {
         case 0:
             return STR_IT_threshold;
@@ -2601,7 +2601,7 @@ case 9986: /* module 27 call 02 pallet:multisig call:approve_as_multi */
         default:
             return NULL;
         }
-case 9987: /* module 27 call 03 pallet:multisig call:cancel_as_multi */
+case 6915: /* module 27 call 03 pallet:multisig call:cancel_as_multi */
         switch (itemIdx) {
         case 0:
             return STR_IT_threshold;
@@ -2614,28 +2614,28 @@ case 9987: /* module 27 call 03 pallet:multisig call:cancel_as_multi */
         default:
             return NULL;
         }
-case 8704: /* module 22 call 00 pallet:preimage call:note_preimage */
+case 5632: /* module 22 call 00 pallet:preimage call:note_preimage */
         switch (itemIdx) {
         case 0:
             return STR_IT_bytes;
         default:
             return NULL;
         }
-case 8705: /* module 22 call 01 pallet:preimage call:unnote_preimage */
+case 5633: /* module 22 call 01 pallet:preimage call:unnote_preimage */
         switch (itemIdx) {
         case 0:
             return STR_IT_hash;
         default:
             return NULL;
         }
-case 8706: /* module 22 call 02 pallet:preimage call:request_preimage */
+case 5634: /* module 22 call 02 pallet:preimage call:request_preimage */
         switch (itemIdx) {
         case 0:
             return STR_IT_hash;
         default:
             return NULL;
         }
-case 8707: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
+case 5635: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
         switch (itemIdx) {
         case 0:
             return STR_IT_hash;
@@ -2713,7 +2713,7 @@ case 8707: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
         default:
             return NULL;
         }
-case 5380: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
+case 3844: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
         switch (itemIdx) {
         case 0:
             return STR_IT_maybe_max_voters;
@@ -2742,7 +2742,7 @@ parser_error_t _getMethod_ItemValue_V1(
 case 1024: /* module 04 call 00 pallet:balances call:transfer */
         switch (itemIdx) {
         case 0: /* balances_transfer_V1 - dest */;
-            return _toStringAccountId_V1(
+            return _toStringAccountIdLookupOfT_V1(
                 &m->nested.balances_transfer_V1.dest,
                 outValue, outValueLen,
                 pageIdx, pageCount);
@@ -2757,12 +2757,12 @@ case 1024: /* module 04 call 00 pallet:balances call:transfer */
 case 1026: /* module 04 call 02 pallet:balances call:force_transfer */
         switch (itemIdx) {
         case 0: /* balances_force_transfer_V1 - source */;
-            return _toStringAccountId_V1(
+            return _toStringAccountIdLookupOfT_V1(
                 &m->nested.balances_force_transfer_V1.source,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         case 1: /* balances_force_transfer_V1 - dest */;
-            return _toStringAccountId_V1(
+            return _toStringAccountIdLookupOfT_V1(
                 &m->nested.balances_force_transfer_V1.dest,
                 outValue, outValueLen,
                 pageIdx, pageCount);
@@ -2777,7 +2777,7 @@ case 1026: /* module 04 call 02 pallet:balances call:force_transfer */
 case 1027: /* module 04 call 03 pallet:balances call:transfer_keep_alive */
         switch (itemIdx) {
         case 0: /* balances_transfer_keep_alive_V1 - dest */;
-            return _toStringAccountId_V1(
+            return _toStringAccountIdLookupOfT_V1(
                 &m->nested.balances_transfer_keep_alive_V1.dest,
                 outValue, outValueLen,
                 pageIdx, pageCount);
@@ -2792,7 +2792,7 @@ case 1027: /* module 04 call 03 pallet:balances call:transfer_keep_alive */
 case 1028: /* module 04 call 04 pallet:balances call:transfer_all */
         switch (itemIdx) {
         case 0: /* balances_transfer_all_V1 - dest */;
-            return _toStringAccountId_V1(
+            return _toStringAccountIdLookupOfT_V1(
                 &m->basic.balances_transfer_all_V1.dest,
                 outValue, outValueLen,
                 pageIdx, pageCount);
@@ -2804,7 +2804,7 @@ case 1028: /* module 04 call 04 pallet:balances call:transfer_all */
         default:
             return parser_no_data;
         }
-case 4864: /* module 13 call 00 pallet:staking call:bond */
+case 3328: /* module 13 call 00 pallet:staking call:bond */
         switch (itemIdx) {
         case 0: /* staking_bond_V1 - controller */;
             return _toStringLookupasStaticLookupSource_V1(
@@ -2824,7 +2824,7 @@ case 4864: /* module 13 call 00 pallet:staking call:bond */
         default:
             return parser_no_data;
         }
-case 4865: /* module 13 call 01 pallet:staking call:bond_extra */
+case 3329: /* module 13 call 01 pallet:staking call:bond_extra */
         switch (itemIdx) {
         case 0: /* staking_bond_extra_V1 - amount */;
             return _toStringCompactBalance(
@@ -2834,7 +2834,7 @@ case 4865: /* module 13 call 01 pallet:staking call:bond_extra */
         default:
             return parser_no_data;
         }
-case 4866: /* module 13 call 02 pallet:staking call:unbond */
+case 3330: /* module 13 call 02 pallet:staking call:unbond */
         switch (itemIdx) {
         case 0: /* staking_unbond_V1 - amount */;
             return _toStringCompactBalance(
@@ -2844,7 +2844,7 @@ case 4866: /* module 13 call 02 pallet:staking call:unbond */
         default:
             return parser_no_data;
         }
-case 4867: /* module 13 call 03 pallet:staking call:withdraw_unbonded */
+case 3331: /* module 13 call 03 pallet:staking call:withdraw_unbonded */
         switch (itemIdx) {
         case 0: /* staking_withdraw_unbonded_V1 - num_slashing_spans */;
             return _toStringu32(
@@ -2854,7 +2854,7 @@ case 4867: /* module 13 call 03 pallet:staking call:withdraw_unbonded */
         default:
             return parser_no_data;
         }
-case 4868: /* module 13 call 04 pallet:staking call:validate */
+case 3332: /* module 13 call 04 pallet:staking call:validate */
         switch (itemIdx) {
         case 0: /* staking_validate_V1 - prefs */;
             return _toStringValidatorPrefs_V1(
@@ -2864,7 +2864,7 @@ case 4868: /* module 13 call 04 pallet:staking call:validate */
         default:
             return parser_no_data;
         }
-case 4869: /* module 13 call 05 pallet:staking call:nominate */
+case 3333: /* module 13 call 05 pallet:staking call:nominate */
         switch (itemIdx) {
         case 0: /* staking_nominate_V1 - targets */;
             return _toStringVecLookupasStaticLookupSource_V1(
@@ -2874,12 +2874,12 @@ case 4869: /* module 13 call 05 pallet:staking call:nominate */
         default:
             return parser_no_data;
         }
-case 4870: /* module 13 call 06 pallet:staking call:chill */
+case 3334: /* module 13 call 06 pallet:staking call:chill */
         switch (itemIdx) {
         default:
             return parser_no_data;
         }
-case 4871: /* module 13 call 07 pallet:staking call:set_payee */
+case 3335: /* module 13 call 07 pallet:staking call:set_payee */
         switch (itemIdx) {
         case 0: /* staking_set_payee_V1 - payee */;
             return _toStringRewardDestination_V1(
@@ -2889,7 +2889,7 @@ case 4871: /* module 13 call 07 pallet:staking call:set_payee */
         default:
             return parser_no_data;
         }
-case 4872: /* module 13 call 08 pallet:staking call:set_controller */
+case 3336: /* module 13 call 08 pallet:staking call:set_controller */
         switch (itemIdx) {
         case 0: /* staking_set_controller_V1 - controller */;
             return _toStringLookupasStaticLookupSource_V1(
@@ -2899,7 +2899,7 @@ case 4872: /* module 13 call 08 pallet:staking call:set_controller */
         default:
             return parser_no_data;
         }
-case 4888: /* module 13 call 18 pallet:staking call:payout_stakers */
+case 3346: /* module 13 call 18 pallet:staking call:payout_stakers */
         switch (itemIdx) {
         case 0: /* staking_payout_stakers_V1 - validator_stash */;
             return _toStringAccountId_V1(
@@ -2914,7 +2914,7 @@ case 4888: /* module 13 call 18 pallet:staking call:payout_stakers */
         default:
             return parser_no_data;
         }
-case 4889: /* module 13 call 19 pallet:staking call:rebond */
+case 3347: /* module 13 call 19 pallet:staking call:rebond */
         switch (itemIdx) {
         case 0: /* staking_rebond_V1 - amount */;
             return _toStringCompactBalance(
@@ -2944,7 +2944,7 @@ case 2305: /* module 09 call 01 pallet:session call:purge_keys */
         default:
             return parser_no_data;
         }
-case 8448: /* module 21 call 00 pallet:utility call:batch */
+case 5376: /* module 21 call 00 pallet:utility call:batch */
         switch (itemIdx) {
         case 0: /* utility_batch_V1 - calls */;
             return _toStringVecCall(
@@ -2954,7 +2954,7 @@ case 8448: /* module 21 call 00 pallet:utility call:batch */
         default:
             return parser_no_data;
         }
-case 8450: /* module 21 call 02 pallet:utility call:batch_all */
+case 5378: /* module 21 call 02 pallet:utility call:batch_all */
         switch (itemIdx) {
         case 0: /* utility_batch_all_V1 - calls */;
             return _toStringVecCall(
@@ -2964,7 +2964,7 @@ case 8450: /* module 21 call 02 pallet:utility call:batch_all */
         default:
             return parser_no_data;
         }
-case 8452: /* module 21 call 04 pallet:utility call:force_batch */
+case 5380: /* module 21 call 04 pallet:utility call:force_batch */
         switch (itemIdx) {
         case 0: /* utility_force_batch_V1 - calls */;
             return _toStringVecCall(
@@ -3046,7 +3046,7 @@ case 768: /* module 03 call 00 pallet:timestamp call:set */
         default:
             return parser_no_data;
         }
-    case 1025: /* module x4 call 1 */
+case 1025: /* module 04 call 01 pallet:balances call:set_balance */
         switch (itemIdx) {
         case 0: /* balances_set_balance_V1 - who */;
             return _toStringLookupasStaticLookupSource_V1(
@@ -3066,7 +3066,7 @@ case 768: /* module 03 call 00 pallet:timestamp call:set */
         default:
             return parser_no_data;
         }
-    case 1029: /* module x4 call 5 */
+case 1029: /* module 04 call 05 pallet:balances call:force_unreserve */
         switch (itemIdx) {
         case 0: /* balances_force_unreserve_V1 - who */;
             return _toStringLookupasStaticLookupSource_V1(
@@ -3081,7 +3081,7 @@ case 768: /* module 03 call 00 pallet:timestamp call:set */
         default:
             return parser_no_data;
         }
-case 4873: /* module 13 call 09 pallet:staking call:set_validator_count */
+case 3337: /* module 13 call 09 pallet:staking call:set_validator_count */
         switch (itemIdx) {
         case 0: /* staking_set_validator_count_V1 - new_ */;
             return _toStringCompactu32(
@@ -3091,7 +3091,7 @@ case 4873: /* module 13 call 09 pallet:staking call:set_validator_count */
         default:
             return parser_no_data;
         }
-case 4880: /* module 13 call 10 pallet:staking call:increase_validator_count */
+case 3338: /* module 13 call 10 pallet:staking call:increase_validator_count */
         switch (itemIdx) {
         case 0: /* staking_increase_validator_count_V1 - additional */;
             return _toStringCompactu32(
@@ -3101,17 +3101,17 @@ case 4880: /* module 13 call 10 pallet:staking call:increase_validator_count */
         default:
             return parser_no_data;
         }
-case 4882: /* module 13 call 12 pallet:staking call:force_no_eras */
+case 3340: /* module 13 call 12 pallet:staking call:force_no_eras */
         switch (itemIdx) {
         default:
             return parser_no_data;
         }
-case 4883: /* module 13 call 13 pallet:staking call:force_new_era */
+case 3341: /* module 13 call 13 pallet:staking call:force_new_era */
         switch (itemIdx) {
         default:
             return parser_no_data;
         }
-case 4884: /* module 13 call 14 pallet:staking call:set_invulnerables */
+case 3342: /* module 13 call 14 pallet:staking call:set_invulnerables */
         switch (itemIdx) {
         case 0: /* staking_set_invulnerables_V1 - invulnerables */;
             return _toStringVecAccountId_V1(
@@ -3121,7 +3121,7 @@ case 4884: /* module 13 call 14 pallet:staking call:set_invulnerables */
         default:
             return parser_no_data;
         }
-case 4885: /* module 13 call 15 pallet:staking call:force_unstake */
+case 3343: /* module 13 call 15 pallet:staking call:force_unstake */
         switch (itemIdx) {
         case 0: /* staking_force_unstake_V1 - stash */;
             return _toStringAccountId_V1(
@@ -3136,12 +3136,12 @@ case 4885: /* module 13 call 15 pallet:staking call:force_unstake */
         default:
             return parser_no_data;
         }
-case 4886: /* module 13 call 16 pallet:staking call:force_new_era_always */
+case 3344: /* module 13 call 16 pallet:staking call:force_new_era_always */
         switch (itemIdx) {
         default:
             return parser_no_data;
         }
-case 4887: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
+case 3345: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
         switch (itemIdx) {
         case 0: /* staking_cancel_deferred_slash_V1 - era */;
             return _toStringEraIndex_V1(
@@ -3156,7 +3156,7 @@ case 4887: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
         default:
             return parser_no_data;
         }
-case 4896: /* module 13 call 20 pallet:staking call:reap_stash */
+case 3348: /* module 13 call 20 pallet:staking call:reap_stash */
         switch (itemIdx) {
         case 0: /* staking_reap_stash_V1 - stash */;
             return _toStringAccountId_V1(
@@ -3171,7 +3171,7 @@ case 4896: /* module 13 call 20 pallet:staking call:reap_stash */
         default:
             return parser_no_data;
         }
-case 4897: /* module 13 call 21 pallet:staking call:kick */
+case 3349: /* module 13 call 21 pallet:staking call:kick */
         switch (itemIdx) {
         case 0: /* staking_kick_V1 - who */;
             return _toStringVecLookupasStaticLookupSource_V1(
@@ -3181,7 +3181,7 @@ case 4897: /* module 13 call 21 pallet:staking call:kick */
         default:
             return parser_no_data;
         }
-case 4899: /* module 13 call 23 pallet:staking call:chill_other */
+case 3351: /* module 13 call 23 pallet:staking call:chill_other */
         switch (itemIdx) {
         case 0: /* staking_chill_other_V1 - controller */;
             return _toStringAccountId_V1(
@@ -3191,7 +3191,7 @@ case 4899: /* module 13 call 23 pallet:staking call:chill_other */
         default:
             return parser_no_data;
         }
-case 4900: /* module 13 call 24 pallet:staking call:force_apply_min_commission */
+case 3352: /* module 13 call 24 pallet:staking call:force_apply_min_commission */
         switch (itemIdx) {
         case 0: /* staking_force_apply_min_commission_V1 - validator_stash */;
             return _toStringAccountId_V1(
@@ -3201,7 +3201,7 @@ case 4900: /* module 13 call 24 pallet:staking call:force_apply_min_commission *
         default:
             return parser_no_data;
         }
-case 4098: /* module 10 call 02 pallet:grandpa call:note_stalled */
+case 2562: /* module 10 call 02 pallet:grandpa call:note_stalled */
         switch (itemIdx) {
         case 0: /* grandpa_note_stalled_V1 - delay */;
             return _toStringBlockNumber(
@@ -3216,7 +3216,7 @@ case 4098: /* module 10 call 02 pallet:grandpa call:note_stalled */
         default:
             return parser_no_data;
         }
-case 9728: /* module 26 call 00 pallet:democracy call:propose */
+case 6656: /* module 26 call 00 pallet:democracy call:propose */
         switch (itemIdx) {
         case 0: /* democracy_propose_V1 - proposal_hash */;
             return _toStringHash(
@@ -3231,7 +3231,7 @@ case 9728: /* module 26 call 00 pallet:democracy call:propose */
         default:
             return parser_no_data;
         }
-case 9729: /* module 26 call 01 pallet:democracy call:second */
+case 6657: /* module 26 call 01 pallet:democracy call:second */
         switch (itemIdx) {
         case 0: /* democracy_second_V1 - proposal */;
             return _toStringCompactu32(
@@ -3246,7 +3246,7 @@ case 9729: /* module 26 call 01 pallet:democracy call:second */
         default:
             return parser_no_data;
         }
-case 9730: /* module 26 call 02 pallet:democracy call:vote */
+case 6658: /* module 26 call 02 pallet:democracy call:vote */
         switch (itemIdx) {
         case 0: /* democracy_vote_V1 - ref_index */;
             return _toStringCompactu32(
@@ -3261,7 +3261,7 @@ case 9730: /* module 26 call 02 pallet:democracy call:vote */
         default:
             return parser_no_data;
         }
-case 9731: /* module 26 call 03 pallet:democracy call:emergency_cancel */
+case 6659: /* module 26 call 03 pallet:democracy call:emergency_cancel */
         switch (itemIdx) {
         case 0: /* democracy_emergency_cancel_V1 - ref_index */;
             return _toStringReferendumIndex_V1(
@@ -3271,7 +3271,7 @@ case 9731: /* module 26 call 03 pallet:democracy call:emergency_cancel */
         default:
             return parser_no_data;
         }
-case 9732: /* module 26 call 04 pallet:democracy call:external_propose */
+case 6660: /* module 26 call 04 pallet:democracy call:external_propose */
         switch (itemIdx) {
         case 0: /* democracy_external_propose_V1 - proposal_hash */;
             return _toStringHash(
@@ -3281,7 +3281,7 @@ case 9732: /* module 26 call 04 pallet:democracy call:external_propose */
         default:
             return parser_no_data;
         }
-case 9733: /* module 26 call 05 pallet:democracy call:external_propose_majority */
+case 6661: /* module 26 call 05 pallet:democracy call:external_propose_majority */
         switch (itemIdx) {
         case 0: /* democracy_external_propose_majority_V1 - proposal_hash */;
             return _toStringHash(
@@ -3291,7 +3291,7 @@ case 9733: /* module 26 call 05 pallet:democracy call:external_propose_majority 
         default:
             return parser_no_data;
         }
-case 9734: /* module 26 call 06 pallet:democracy call:external_propose_default */
+case 6662: /* module 26 call 06 pallet:democracy call:external_propose_default */
         switch (itemIdx) {
         case 0: /* democracy_external_propose_default_V1 - proposal_hash */;
             return _toStringHash(
@@ -3301,7 +3301,7 @@ case 9734: /* module 26 call 06 pallet:democracy call:external_propose_default *
         default:
             return parser_no_data;
         }
-case 9735: /* module 26 call 07 pallet:democracy call:fast_track */
+case 6663: /* module 26 call 07 pallet:democracy call:fast_track */
         switch (itemIdx) {
         case 0: /* democracy_fast_track_V1 - proposal_hash */;
             return _toStringHash(
@@ -3321,7 +3321,7 @@ case 9735: /* module 26 call 07 pallet:democracy call:fast_track */
         default:
             return parser_no_data;
         }
-case 9736: /* module 26 call 08 pallet:democracy call:veto_external */
+case 6664: /* module 26 call 08 pallet:democracy call:veto_external */
         switch (itemIdx) {
         case 0: /* democracy_veto_external_V1 - proposal_hash */;
             return _toStringHash(
@@ -3331,7 +3331,7 @@ case 9736: /* module 26 call 08 pallet:democracy call:veto_external */
         default:
             return parser_no_data;
         }
-case 9737: /* module 26 call 09 pallet:democracy call:cancel_referendum */
+case 6665: /* module 26 call 09 pallet:democracy call:cancel_referendum */
         switch (itemIdx) {
         case 0: /* democracy_cancel_referendum_V1 - ref_index */;
             return _toStringCompactu32(
@@ -3341,7 +3341,7 @@ case 9737: /* module 26 call 09 pallet:democracy call:cancel_referendum */
         default:
             return parser_no_data;
         }
-case 9744: /* module 26 call 10 pallet:democracy call:cancel_queued */
+case 6666: /* module 26 call 10 pallet:democracy call:cancel_queued */
         switch (itemIdx) {
         case 0: /* democracy_cancel_queued_V1 - which */;
             return _toStringReferendumIndex_V1(
@@ -3351,7 +3351,7 @@ case 9744: /* module 26 call 10 pallet:democracy call:cancel_queued */
         default:
             return parser_no_data;
         }
-case 9745: /* module 26 call 11 pallet:democracy call:delegate */
+case 6667: /* module 26 call 11 pallet:democracy call:delegate */
         switch (itemIdx) {
         case 0: /* democracy_delegate_V1 - to */;
             return _toStringAccountId_V1(
@@ -3371,17 +3371,17 @@ case 9745: /* module 26 call 11 pallet:democracy call:delegate */
         default:
             return parser_no_data;
         }
-case 9746: /* module 26 call 12 pallet:democracy call:undelegate */
+case 6668: /* module 26 call 12 pallet:democracy call:undelegate */
         switch (itemIdx) {
         default:
             return parser_no_data;
         }
-case 9747: /* module 26 call 13 pallet:democracy call:clear_public_proposals */
+case 6669: /* module 26 call 13 pallet:democracy call:clear_public_proposals */
         switch (itemIdx) {
         default:
             return parser_no_data;
         }
-case 9748: /* module 26 call 14 pallet:democracy call:note_preimage */
+case 6670: /* module 26 call 14 pallet:democracy call:note_preimage */
         switch (itemIdx) {
         case 0: /* democracy_note_preimage_V1 - encoded_proposal */;
             return _toStringBytes(
@@ -3391,7 +3391,7 @@ case 9748: /* module 26 call 14 pallet:democracy call:note_preimage */
         default:
             return parser_no_data;
         }
-case 9749: /* module 26 call 15 pallet:democracy call:note_preimage_operational */
+case 6671: /* module 26 call 15 pallet:democracy call:note_preimage_operational */
         switch (itemIdx) {
         case 0: /* democracy_note_preimage_operational_V1 - encoded_proposal */;
             return _toStringBytes(
@@ -3401,7 +3401,7 @@ case 9749: /* module 26 call 15 pallet:democracy call:note_preimage_operational 
         default:
             return parser_no_data;
         }
-case 9750: /* module 26 call 16 pallet:democracy call:note_imminent_preimage */
+case 6672: /* module 26 call 16 pallet:democracy call:note_imminent_preimage */
         switch (itemIdx) {
         case 0: /* democracy_note_imminent_preimage_V1 - encoded_proposal */;
             return _toStringBytes(
@@ -3411,7 +3411,7 @@ case 9750: /* module 26 call 16 pallet:democracy call:note_imminent_preimage */
         default:
             return parser_no_data;
         }
-case 9751: /* module 26 call 17 pallet:democracy call:note_imminent_preimage_operational */
+case 6673: /* module 26 call 17 pallet:democracy call:note_imminent_preimage_operational */
         switch (itemIdx) {
         case 0: /* democracy_note_imminent_preimage_operational_V1 - encoded_proposal */;
             return _toStringBytes(
@@ -3421,7 +3421,7 @@ case 9751: /* module 26 call 17 pallet:democracy call:note_imminent_preimage_ope
         default:
             return parser_no_data;
         }
-case 9752: /* module 26 call 18 pallet:democracy call:reap_preimage */
+case 6674: /* module 26 call 18 pallet:democracy call:reap_preimage */
         switch (itemIdx) {
         case 0: /* democracy_reap_preimage_V1 - proposal_hash */;
             return _toStringHash(
@@ -3436,7 +3436,7 @@ case 9752: /* module 26 call 18 pallet:democracy call:reap_preimage */
         default:
             return parser_no_data;
         }
-case 9753: /* module 26 call 19 pallet:democracy call:unlock */
+case 6675: /* module 26 call 19 pallet:democracy call:unlock */
         switch (itemIdx) {
         case 0: /* democracy_unlock_V1 - target */;
             return _toStringAccountId_V1(
@@ -3446,7 +3446,7 @@ case 9753: /* module 26 call 19 pallet:democracy call:unlock */
         default:
             return parser_no_data;
         }
-case 9760: /* module 26 call 20 pallet:democracy call:remove_vote */
+case 6676: /* module 26 call 20 pallet:democracy call:remove_vote */
         switch (itemIdx) {
         case 0: /* democracy_remove_vote_V1 - index */;
             return _toStringReferendumIndex_V1(
@@ -3456,7 +3456,7 @@ case 9760: /* module 26 call 20 pallet:democracy call:remove_vote */
         default:
             return parser_no_data;
         }
-case 9761: /* module 26 call 21 pallet:democracy call:remove_other_vote */
+case 6677: /* module 26 call 21 pallet:democracy call:remove_other_vote */
         switch (itemIdx) {
         case 0: /* democracy_remove_other_vote_V1 - target */;
             return _toStringAccountId_V1(
@@ -3471,7 +3471,7 @@ case 9761: /* module 26 call 21 pallet:democracy call:remove_other_vote */
         default:
             return parser_no_data;
         }
-case 9762: /* module 26 call 22 pallet:democracy call:enact_proposal */
+case 6678: /* module 26 call 22 pallet:democracy call:enact_proposal */
         switch (itemIdx) {
         case 0: /* democracy_enact_proposal_V1 - proposal_hash */;
             return _toStringHash(
@@ -3486,7 +3486,7 @@ case 9762: /* module 26 call 22 pallet:democracy call:enact_proposal */
         default:
             return parser_no_data;
         }
-case 9764: /* module 26 call 24 pallet:democracy call:cancel_proposal */
+case 6680: /* module 26 call 24 pallet:democracy call:cancel_proposal */
         switch (itemIdx) {
         case 0: /* democracy_cancel_proposal_V1 - prop_index */;
             return _toStringCompactu32(
@@ -3496,7 +3496,7 @@ case 9764: /* module 26 call 24 pallet:democracy call:cancel_proposal */
         default:
             return parser_no_data;
         }
-case 9216: /* module 24 call 00 pallet:council call:set_members */
+case 6144: /* module 24 call 00 pallet:council call:set_members */
         switch (itemIdx) {
         case 0: /* council_set_members_V1 - new_members */;
             return _toStringVecAccountId_V1(
@@ -3516,7 +3516,7 @@ case 9216: /* module 24 call 00 pallet:council call:set_members */
         default:
             return parser_no_data;
         }
-case 9217: /* module 24 call 01 pallet:council call:execute */
+case 6145: /* module 24 call 01 pallet:council call:execute */
         switch (itemIdx) {
         case 0: /* council_execute_V1 - proposal */;
             return _toStringProposal(
@@ -3531,7 +3531,7 @@ case 9217: /* module 24 call 01 pallet:council call:execute */
         default:
             return parser_no_data;
         }
-case 9218: /* module 24 call 02 pallet:council call:propose */
+case 6146: /* module 24 call 02 pallet:council call:propose */
         switch (itemIdx) {
         case 0: /* council_propose_V1 - threshold */;
             return _toStringCompactu32(
@@ -3551,7 +3551,7 @@ case 9218: /* module 24 call 02 pallet:council call:propose */
         default:
             return parser_no_data;
         }
-case 9219: /* module 24 call 03 pallet:council call:vote */
+case 6147: /* module 24 call 03 pallet:council call:vote */
         switch (itemIdx) {
         case 0: /* council_vote_V1 - proposal */;
             return _toStringHash(
@@ -3571,7 +3571,7 @@ case 9219: /* module 24 call 03 pallet:council call:vote */
         default:
             return parser_no_data;
         }
-    case 3588: /* module x14 call 6  */
+case 6150: /* module 24 call 06 pallet:council call:close */
         switch (itemIdx) {
         case 0: /* council_close_V1 - proposal_hash */;
             return _toStringHash(
@@ -3596,7 +3596,7 @@ case 9219: /* module 24 call 03 pallet:council call:vote */
         default:
             return parser_no_data;
         }
-case 9221: /* module 24 call 05 pallet:council call:disapprove_proposal */
+case 6149: /* module 24 call 05 pallet:council call:disapprove_proposal */
         switch (itemIdx) {
         case 0: /* council_disapprove_proposal_V1 - proposal_hash */;
             return _toStringHash(
@@ -3606,7 +3606,7 @@ case 9221: /* module 24 call 05 pallet:council call:disapprove_proposal */
         default:
             return parser_no_data;
         }
-case 5888: /* module 17 call 00 pallet:technicalcommittee call:set_members */
+case 4352: /* module 17 call 00 pallet:technicalcommittee call:set_members */
         switch (itemIdx) {
         case 0: /* technicalcommittee_set_members_V1 - new_members */;
             return _toStringVecAccountId_V1(
@@ -3626,7 +3626,7 @@ case 5888: /* module 17 call 00 pallet:technicalcommittee call:set_members */
         default:
             return parser_no_data;
         }
-case 5889: /* module 17 call 01 pallet:technicalcommittee call:execute */
+case 4353: /* module 17 call 01 pallet:technicalcommittee call:execute */
         switch (itemIdx) {
         case 0: /* technicalcommittee_execute_V1 - proposal */;
             return _toStringProposal(
@@ -3641,7 +3641,7 @@ case 5889: /* module 17 call 01 pallet:technicalcommittee call:execute */
         default:
             return parser_no_data;
         }
-case 5890: /* module 17 call 02 pallet:technicalcommittee call:propose */
+case 4354: /* module 17 call 02 pallet:technicalcommittee call:propose */
         switch (itemIdx) {
         case 0: /* technicalcommittee_propose_V1 - threshold */;
             return _toStringCompactu32(
@@ -3661,7 +3661,7 @@ case 5890: /* module 17 call 02 pallet:technicalcommittee call:propose */
         default:
             return parser_no_data;
         }
-case 5891: /* module 17 call 03 pallet:technicalcommittee call:vote */
+case 4355: /* module 17 call 03 pallet:technicalcommittee call:vote */
         switch (itemIdx) {
         case 0: /* technicalcommittee_vote_V1 - proposal */;
             return _toStringHash(
@@ -3681,7 +3681,7 @@ case 5891: /* module 17 call 03 pallet:technicalcommittee call:vote */
         default:
             return parser_no_data;
         }
-case 5894: /* module 17 call 06 pallet:technicalcommittee call:close */
+case 4358: /* module 17 call 06 pallet:technicalcommittee call:close */
         switch (itemIdx) {
         case 0: /* technicalcommittee_close_V1 - proposal_hash */;
             return _toStringHash(
@@ -3706,7 +3706,7 @@ case 5894: /* module 17 call 06 pallet:technicalcommittee call:close */
         default:
             return parser_no_data;
         }
-case 5893: /* module 17 call 05 pallet:technicalcommittee call:disapprove_proposal */
+case 4357: /* module 17 call 05 pallet:technicalcommittee call:disapprove_proposal */
         switch (itemIdx) {
         case 0: /* technicalcommittee_disapprove_proposal_V1 - proposal_hash */;
             return _toStringHash(
@@ -3716,7 +3716,7 @@ case 5893: /* module 17 call 05 pallet:technicalcommittee call:disapprove_propos
         default:
             return parser_no_data;
         }
-case 6144: /* module 18 call 00 pallet:technicalmembership call:add_member */
+case 4608: /* module 18 call 00 pallet:technicalmembership call:add_member */
         switch (itemIdx) {
         case 0: /* technicalmembership_add_member_V1 - who */;
             return _toStringAccountId_V1(
@@ -3726,7 +3726,7 @@ case 6144: /* module 18 call 00 pallet:technicalmembership call:add_member */
         default:
             return parser_no_data;
         }
-case 6145: /* module 18 call 01 pallet:technicalmembership call:remove_member */
+case 4609: /* module 18 call 01 pallet:technicalmembership call:remove_member */
         switch (itemIdx) {
         case 0: /* technicalmembership_remove_member_V1 - who */;
             return _toStringAccountId_V1(
@@ -3736,7 +3736,7 @@ case 6145: /* module 18 call 01 pallet:technicalmembership call:remove_member */
         default:
             return parser_no_data;
         }
-case 6146: /* module 18 call 02 pallet:technicalmembership call:swap_member */
+case 4610: /* module 18 call 02 pallet:technicalmembership call:swap_member */
         switch (itemIdx) {
         case 0: /* technicalmembership_swap_member_V1 - remove */;
             return _toStringAccountId_V1(
@@ -3751,7 +3751,7 @@ case 6146: /* module 18 call 02 pallet:technicalmembership call:swap_member */
         default:
             return parser_no_data;
         }
-case 6147: /* module 18 call 03 pallet:technicalmembership call:reset_members */
+case 4611: /* module 18 call 03 pallet:technicalmembership call:reset_members */
         switch (itemIdx) {
         case 0: /* technicalmembership_reset_members_V1 - members */;
             return _toStringVecAccountId_V1(
@@ -3761,7 +3761,7 @@ case 6147: /* module 18 call 03 pallet:technicalmembership call:reset_members */
         default:
             return parser_no_data;
         }
-case 6148: /* module 18 call 04 pallet:technicalmembership call:change_key */
+case 4612: /* module 18 call 04 pallet:technicalmembership call:change_key */
         switch (itemIdx) {
         case 0: /* technicalmembership_change_key_V1 - new_ */;
             return _toStringAccountId_V1(
@@ -3771,7 +3771,7 @@ case 6148: /* module 18 call 04 pallet:technicalmembership call:change_key */
         default:
             return parser_no_data;
         }
-case 6149: /* module 18 call 05 pallet:technicalmembership call:set_prime */
+case 4613: /* module 18 call 05 pallet:technicalmembership call:set_prime */
         switch (itemIdx) {
         case 0: /* technicalmembership_set_prime_V1 - who */;
             return _toStringAccountId_V1(
@@ -3781,12 +3781,12 @@ case 6149: /* module 18 call 05 pallet:technicalmembership call:set_prime */
         default:
             return parser_no_data;
         }
-case 6150: /* module 18 call 06 pallet:technicalmembership call:clear_prime */
+case 4614: /* module 18 call 06 pallet:technicalmembership call:clear_prime */
         switch (itemIdx) {
         default:
             return parser_no_data;
         }
-case 10240: /* module 28 call 00 pallet:identity call:add_registrar */
+case 7168: /* module 28 call 00 pallet:identity call:add_registrar */
         switch (itemIdx) {
         case 0: /* identity_add_registrar_V1 - account */;
             return _toStringAccountId_V1(
@@ -3796,12 +3796,12 @@ case 10240: /* module 28 call 00 pallet:identity call:add_registrar */
         default:
             return parser_no_data;
         }
-case 10243: /* module 28 call 03 pallet:identity call:clear_identity */
+case 7171: /* module 28 call 03 pallet:identity call:clear_identity */
         switch (itemIdx) {
         default:
             return parser_no_data;
         }
-case 10244: /* module 28 call 04 pallet:identity call:request_judgement */
+case 7172: /* module 28 call 04 pallet:identity call:request_judgement */
         switch (itemIdx) {
         case 0: /* identity_request_judgement_V1 - reg_index */;
             return _toStringCompactu32(
@@ -3816,7 +3816,7 @@ case 10244: /* module 28 call 04 pallet:identity call:request_judgement */
         default:
             return parser_no_data;
         }
-case 10245: /* module 28 call 05 pallet:identity call:cancel_request */
+case 7173: /* module 28 call 05 pallet:identity call:cancel_request */
         switch (itemIdx) {
         case 0: /* identity_cancel_request_V1 - reg_index */;
             return _toStringRegistrarIndex_V1(
@@ -3826,7 +3826,7 @@ case 10245: /* module 28 call 05 pallet:identity call:cancel_request */
         default:
             return parser_no_data;
         }
-case 10246: /* module 28 call 06 pallet:identity call:set_fee */
+case 7174: /* module 28 call 06 pallet:identity call:set_fee */
         switch (itemIdx) {
         case 0: /* identity_set_fee_V1 - index */;
             return _toStringCompactu32(
@@ -3841,7 +3841,7 @@ case 10246: /* module 28 call 06 pallet:identity call:set_fee */
         default:
             return parser_no_data;
         }
-case 10247: /* module 28 call 07 pallet:identity call:set_account_id */
+case 7175: /* module 28 call 07 pallet:identity call:set_account_id */
         switch (itemIdx) {
         case 0: /* identity_set_account_id_V1 - index */;
             return _toStringCompactu32(
@@ -3856,7 +3856,7 @@ case 10247: /* module 28 call 07 pallet:identity call:set_account_id */
         default:
             return parser_no_data;
         }
-case 10256: /* module 28 call 10 pallet:identity call:kill_identity */
+case 7178: /* module 28 call 10 pallet:identity call:kill_identity */
         switch (itemIdx) {
         case 0: /* identity_kill_identity_V1 - target */;
             return _toStringLookupasStaticLookupSource_V1(
@@ -3866,7 +3866,7 @@ case 10256: /* module 28 call 10 pallet:identity call:kill_identity */
         default:
             return parser_no_data;
         }
-case 10259: /* module 28 call 13 pallet:identity call:remove_sub */
+case 7181: /* module 28 call 13 pallet:identity call:remove_sub */
         switch (itemIdx) {
         case 0: /* identity_remove_sub_V1 - sub */;
             return _toStringLookupasStaticLookupSource_V1(
@@ -3876,12 +3876,12 @@ case 10259: /* module 28 call 13 pallet:identity call:remove_sub */
         default:
             return parser_no_data;
         }
-case 10260: /* module 28 call 14 pallet:identity call:quit_sub */
+case 7182: /* module 28 call 14 pallet:identity call:quit_sub */
         switch (itemIdx) {
         default:
             return parser_no_data;
         }
-case 9984: /* module 27 call 00 pallet:multisig call:as_multi_threshold_1 */
+case 6912: /* module 27 call 00 pallet:multisig call:as_multi_threshold_1 */
         switch (itemIdx) {
         case 0: /* multisig_as_multi_threshold_1_V1 - other_signatories */;
             return _toStringVecAccountId_V1(
@@ -3896,7 +3896,7 @@ case 9984: /* module 27 call 00 pallet:multisig call:as_multi_threshold_1 */
         default:
             return parser_no_data;
         }
-case 9985: /* module 27 call 01 pallet:multisig call:as_multi */
+case 6913: /* module 27 call 01 pallet:multisig call:as_multi */
         switch (itemIdx) {
         case 0: /* multisig_as_multi_V1 - threshold */;
             return _toStringu16(
@@ -3931,7 +3931,7 @@ case 9985: /* module 27 call 01 pallet:multisig call:as_multi */
         default:
             return parser_no_data;
         }
-case 9986: /* module 27 call 02 pallet:multisig call:approve_as_multi */
+case 6914: /* module 27 call 02 pallet:multisig call:approve_as_multi */
         switch (itemIdx) {
         case 0: /* multisig_approve_as_multi_V1 - threshold */;
             return _toStringu16(
@@ -3961,7 +3961,7 @@ case 9986: /* module 27 call 02 pallet:multisig call:approve_as_multi */
         default:
             return parser_no_data;
         }
-case 9987: /* module 27 call 03 pallet:multisig call:cancel_as_multi */
+case 6915: /* module 27 call 03 pallet:multisig call:cancel_as_multi */
         switch (itemIdx) {
         case 0: /* multisig_cancel_as_multi_V1 - threshold */;
             return _toStringu16(
@@ -3986,7 +3986,7 @@ case 9987: /* module 27 call 03 pallet:multisig call:cancel_as_multi */
         default:
             return parser_no_data;
         }
-case 8704: /* module 22 call 00 pallet:preimage call:note_preimage */
+case 5632: /* module 22 call 00 pallet:preimage call:note_preimage */
         switch (itemIdx) {
         case 0: /* preimage_note_preimage_V1 - bytes */;
             return _toStringVecu8(
@@ -3996,7 +3996,7 @@ case 8704: /* module 22 call 00 pallet:preimage call:note_preimage */
         default:
             return parser_no_data;
         }
-case 8705: /* module 22 call 01 pallet:preimage call:unnote_preimage */
+case 5633: /* module 22 call 01 pallet:preimage call:unnote_preimage */
         switch (itemIdx) {
         case 0: /* preimage_unnote_preimage_V1 - hash */;
             return _toStringHash(
@@ -4006,7 +4006,7 @@ case 8705: /* module 22 call 01 pallet:preimage call:unnote_preimage */
         default:
             return parser_no_data;
         }
-case 8706: /* module 22 call 02 pallet:preimage call:request_preimage */
+case 5634: /* module 22 call 02 pallet:preimage call:request_preimage */
         switch (itemIdx) {
         case 0: /* preimage_request_preimage_V1 - hash */;
             return _toStringHash(
@@ -4016,7 +4016,7 @@ case 8706: /* module 22 call 02 pallet:preimage call:request_preimage */
         default:
             return parser_no_data;
         }
-case 8707: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
+case 5635: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
         switch (itemIdx) {
         case 0: /* preimage_unrequest_preimage_V1 - hash */;
             return _toStringHash(
@@ -4026,7 +4026,7 @@ case 8707: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
         default:
             return parser_no_data;
         }
-case 5380: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
+case 3844: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
         switch (itemIdx) {
         case 0: /* electionprovidermultiphase_governance_fallback_V1 - maybe_max_voters */;
             return _toStringOptionu32(
@@ -4054,21 +4054,21 @@ bool _getMethod_ItemIsExpert_V1(uint8_t moduleIdx, uint8_t callIdx, uint8_t item
     uint16_t callPrivIdx = ((uint16_t)moduleIdx << 8u) + callIdx;
 
     switch (callPrivIdx) {
-case 4867: /* module 13 call 03 pallet:staking call:withdraw_unbonded */
+case 3331: /* module 13 call 03 pallet:staking call:withdraw_unbonded */
         switch (itemIdx) {
         case 0: // Num slashing spans
             return true;
         default:
             return false;
         }
-case 4885: /* module 13 call 15 pallet:staking call:force_unstake */
+case 3343: /* module 13 call 15 pallet:staking call:force_unstake */
         switch (itemIdx) {
         case 1: // Num slashing spans
             return true;
         default:
             return false;
         }
-case 4896: /* module 13 call 20 pallet:staking call:reap_stash */
+case 3348: /* module 13 call 20 pallet:staking call:reap_stash */
         switch (itemIdx) {
         case 1: // Num slashing spans
             return true;
@@ -4089,77 +4089,72 @@ bool _getMethod_IsNestingSupported_V1(uint8_t moduleIdx, uint8_t callIdx)
 case 768: /* module 03 call 00 pallet:timestamp call:set */
 case 1028: /* module 04 call 04 pallet:balances call:transfer_all */
     case 1285: // Balances:Force unreserve
-case 4864: /* module 13 call 00 pallet:staking call:bond */
-case 4865: /* module 13 call 01 pallet:staking call:bond_extra */
-case 4866: /* module 13 call 02 pallet:staking call:unbond */
-case 4867: /* module 13 call 03 pallet:staking call:withdraw_unbonded */
-case 4868: /* module 13 call 04 pallet:staking call:validate */
-case 4869: /* module 13 call 05 pallet:staking call:nominate */
-case 4870: /* module 13 call 06 pallet:staking call:chill */
-case 4871: /* module 13 call 07 pallet:staking call:set_payee */
-case 4872: /* module 13 call 08 pallet:staking call:set_controller */
-case 4873: /* module 13 call 09 pallet:staking call:set_validator_count */
-case 4880: /* module 13 call 10 pallet:staking call:increase_validator_count */
-case 4882: /* module 13 call 12 pallet:staking call:force_no_eras */
-case 4883: /* module 13 call 13 pallet:staking call:force_new_era */
-case 4884: /* module 13 call 14 pallet:staking call:set_invulnerables */
-case 4885: /* module 13 call 15 pallet:staking call:force_unstake */
-case 4886: /* module 13 call 16 pallet:staking call:force_new_era_always */
-case 4887: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
-case 4888: /* module 13 call 18 pallet:staking call:payout_stakers */
-case 4889: /* module 13 call 19 pallet:staking call:rebond */
-case 4896: /* module 13 call 20 pallet:staking call:reap_stash */
-case 4897: /* module 13 call 21 pallet:staking call:kick */
-case 4899: /* module 13 call 23 pallet:staking call:chill_other */
-case 4900: /* module 13 call 24 pallet:staking call:force_apply_min_commission */
+case 3328: /* module 13 call 00 pallet:staking call:bond */
+case 3329: /* module 13 call 01 pallet:staking call:bond_extra */
+case 3330: /* module 13 call 02 pallet:staking call:unbond */
+case 3331: /* module 13 call 03 pallet:staking call:withdraw_unbonded */
+case 3332: /* module 13 call 04 pallet:staking call:validate */
+case 3333: /* module 13 call 05 pallet:staking call:nominate */
+case 3334: /* module 13 call 06 pallet:staking call:chill */
+case 3335: /* module 13 call 07 pallet:staking call:set_payee */
+case 3336: /* module 13 call 08 pallet:staking call:set_controller */
+case 3337: /* module 13 call 09 pallet:staking call:set_validator_count */
+case 3338: /* module 13 call 10 pallet:staking call:increase_validator_count */
+case 3340: /* module 13 call 12 pallet:staking call:force_no_eras */
+case 3341: /* module 13 call 13 pallet:staking call:force_new_era */
+case 3342: /* module 13 call 14 pallet:staking call:set_invulnerables */
+case 3343: /* module 13 call 15 pallet:staking call:force_unstake */
+case 3344: /* module 13 call 16 pallet:staking call:force_new_era_always */
+case 3345: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
+case 3346: /* module 13 call 18 pallet:staking call:payout_stakers */
+case 3347: /* module 13 call 19 pallet:staking call:rebond */
+case 3348: /* module 13 call 20 pallet:staking call:reap_stash */
+case 3349: /* module 13 call 21 pallet:staking call:kick */
+case 3351: /* module 13 call 23 pallet:staking call:chill_other */
+case 3352: /* module 13 call 24 pallet:staking call:force_apply_min_commission */
 case 2304: /* module 09 call 00 pallet:session call:set_keys */
 case 2305: /* module 09 call 01 pallet:session call:purge_keys */
-case 4098: /* module 10 call 02 pallet:grandpa call:note_stalled */
-case 9748: /* module 26 call 14 pallet:democracy call:note_preimage */
-case 9749: /* module 26 call 15 pallet:democracy call:note_preimage_operational */
-case 9750: /* module 26 call 16 pallet:democracy call:note_imminent_preimage */
-case 9751: /* module 26 call 17 pallet:democracy call:note_imminent_preimage_operational */
-case 9216: /* module 24 call 00 pallet:council call:set_members */
-case 9217: /* module 24 call 01 pallet:council call:execute */
-case 9218: /* module 24 call 02 pallet:council call:propose */
-case 9219: /* module 24 call 03 pallet:council call:vote */
-case 3588: /* module x14 call 6  */
-case 9221: /* module 24 call 05 pallet:council call:disapprove_proposal */
-case 5888: /* module 17 call 00 pallet:technicalcommittee call:set_members */
-case 5889: /* module 17 call 01 pallet:technicalcommittee call:execute */
-case 5890: /* module 17 call 02 pallet:technicalcommittee call:propose */
-case 5891: /* module 17 call 03 pallet:technicalcommittee call:vote */
-case 5894: /* module 17 call 06 pallet:technicalcommittee call:close */
-case 5893: /* module 17 call 05 pallet:technicalcommittee call:disapprove_proposal */
-case 6144: /* module 18 call 00 pallet:technicalmembership call:add_member */
-case 6145: /* module 18 call 01 pallet:technicalmembership call:remove_member */
-case 6146: /* module 18 call 02 pallet:technicalmembership call:swap_member */
-case 6147: /* module 18 call 03 pallet:technicalmembership call:reset_members */
-case 6148: /* module 18 call 04 pallet:technicalmembership call:change_key */
-case 6149: /* module 18 call 05 pallet:technicalmembership call:set_prime */
-case 6150: /* module 18 call 06 pallet:technicalmembership call:clear_prime */
-    case 4608: // Treasury:Propose spend
-    case 4609: // Treasury:Reject proposal
-    case 4610: // Treasury:Approve proposal
-    case 4611: // Treasury:Spend
-    case 4612: // Treasury:Remove approval
-case 8448: /* module 21 call 00 pallet:utility call:batch */
-case 8450: /* module 21 call 02 pallet:utility call:batch_all */
-case 8452: /* module 21 call 04 pallet:utility call:force_batch */
-case 10240: /* module 28 call 00 pallet:identity call:add_registrar */
-case 10243: /* module 28 call 03 pallet:identity call:clear_identity */
-case 10244: /* module 28 call 04 pallet:identity call:request_judgement */
-case 10245: /* module 28 call 05 pallet:identity call:cancel_request */
-case 10246: /* module 28 call 06 pallet:identity call:set_fee */
-case 10247: /* module 28 call 07 pallet:identity call:set_account_id */
-case 10256: /* module 28 call 10 pallet:identity call:kill_identity */
-case 10259: /* module 28 call 13 pallet:identity call:remove_sub */
-case 10260: /* module 28 call 14 pallet:identity call:quit_sub */
-case 8704: /* module 22 call 00 pallet:preimage call:note_preimage */
-case 8705: /* module 22 call 01 pallet:preimage call:unnote_preimage */
-case 8706: /* module 22 call 02 pallet:preimage call:request_preimage */
-case 8707: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
-case 5380: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
+case 2562: /* module 10 call 02 pallet:grandpa call:note_stalled */
+case 6670: /* module 26 call 14 pallet:democracy call:note_preimage */
+case 6671: /* module 26 call 15 pallet:democracy call:note_preimage_operational */
+case 6672: /* module 26 call 16 pallet:democracy call:note_imminent_preimage */
+case 6673: /* module 26 call 17 pallet:democracy call:note_imminent_preimage_operational */
+case 6144: /* module 24 call 00 pallet:council call:set_members */
+case 6145: /* module 24 call 01 pallet:council call:execute */
+case 6146: /* module 24 call 02 pallet:council call:propose */
+case 6147: /* module 24 call 03 pallet:council call:vote */
+case 6150: /* module 24 call 06 pallet:council call:close */
+case 6149: /* module 24 call 05 pallet:council call:disapprove_proposal */
+case 4352: /* module 17 call 00 pallet:technicalcommittee call:set_members */
+case 4353: /* module 17 call 01 pallet:technicalcommittee call:execute */
+case 4354: /* module 17 call 02 pallet:technicalcommittee call:propose */
+case 4355: /* module 17 call 03 pallet:technicalcommittee call:vote */
+case 4358: /* module 17 call 06 pallet:technicalcommittee call:close */
+case 4357: /* module 17 call 05 pallet:technicalcommittee call:disapprove_proposal */
+case 4608: /* module 18 call 00 pallet:technicalmembership call:add_member */
+case 4609: /* module 18 call 01 pallet:technicalmembership call:remove_member */
+case 4610: /* module 18 call 02 pallet:technicalmembership call:swap_member */
+case 4611: /* module 18 call 03 pallet:technicalmembership call:reset_members */
+case 4612: /* module 18 call 04 pallet:technicalmembership call:change_key */
+case 4613: /* module 18 call 05 pallet:technicalmembership call:set_prime */
+case 4614: /* module 18 call 06 pallet:technicalmembership call:clear_prime */
+case 5376: /* module 21 call 00 pallet:utility call:batch */
+case 5378: /* module 21 call 02 pallet:utility call:batch_all */
+case 5380: /* module 21 call 04 pallet:utility call:force_batch */
+case 7168: /* module 28 call 00 pallet:identity call:add_registrar */
+case 7171: /* module 28 call 03 pallet:identity call:clear_identity */
+case 7172: /* module 28 call 04 pallet:identity call:request_judgement */
+case 7173: /* module 28 call 05 pallet:identity call:cancel_request */
+case 7174: /* module 28 call 06 pallet:identity call:set_fee */
+case 7175: /* module 28 call 07 pallet:identity call:set_account_id */
+case 7178: /* module 28 call 10 pallet:identity call:kill_identity */
+case 7181: /* module 28 call 13 pallet:identity call:remove_sub */
+case 7182: /* module 28 call 14 pallet:identity call:quit_sub */
+case 5632: /* module 22 call 00 pallet:preimage call:note_preimage */
+case 5633: /* module 22 call 01 pallet:preimage call:unnote_preimage */
+case 5634: /* module 22 call 02 pallet:preimage call:request_preimage */
+case 5635: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
+case 3844: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
         return false;
     default:
         return true;
