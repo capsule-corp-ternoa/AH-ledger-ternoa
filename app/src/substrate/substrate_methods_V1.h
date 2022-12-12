@@ -526,7 +526,6 @@ typedef union {
     pd_staking_force_unstake_V1_t staking_force_unstake_V1;
     pd_staking_force_new_era_always_V1_t staking_force_new_era_always_V1;
     pd_staking_cancel_deferred_slash_V1_t staking_cancel_deferred_slash_V1;
-    pd_staking_set_history_depth_V1_t staking_set_history_depth_V1;
     pd_staking_reap_stash_V1_t staking_reap_stash_V1;
     pd_staking_kick_V1_t staking_kick_V1;
     pd_staking_chill_other_V1_t staking_chill_other_V1;
