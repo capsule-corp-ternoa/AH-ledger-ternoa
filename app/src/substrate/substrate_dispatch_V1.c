@@ -288,14 +288,6 @@ __Z_INLINE parser_error_t _readMethod_staking_cancel_deferred_slash_V1(
     return parser_ok;
 }
 
-__Z_INLINE parser_error_t _readMethod_staking_set_history_depth_V1(
-    parser_context_t* c, pd_staking_set_history_depth_V1_t* m)
-{
-    CHECK_ERROR(_readCompactu32(c, &m->new_history_depth))
-    CHECK_ERROR(_readCompactu32(c, &m->era_items_deleted))
-    return parser_ok;
-}
-
 __Z_INLINE parser_error_t _readMethod_staking_reap_stash_V1(
     parser_context_t* c, pd_staking_reap_stash_V1_t* m)
 {
@@ -934,18 +926,6 @@ case 8: /* module 00 call 08 pallet:system call:remark_with_event */
         break;
 case 768: /* module 03 call 00 pallet:timestamp call:set */
         CHECK_ERROR(_readMethod_timestamp_set_V1(c, &method->basic.timestamp_set_V1))
-        break;
-case 1024: /* module 04 call 00 pallet:balances call:transfer */
-        CHECK_ERROR(_readMethod_balances_transfer_V1(c, &method->nested.balances_transfer_V1))
-        break;
-case 1026: /* module 04 call 02 pallet:balances call:force_transfer */
-        CHECK_ERROR(_readMethod_balances_force_transfer_V1(c, &method->nested.balances_force_transfer_V1))
-        break;
-case 1027: /* module 04 call 03 pallet:balances call:transfer_keep_alive */
-        CHECK_ERROR(_readMethod_balances_transfer_keep_alive_V1(c, &method->nested.balances_transfer_keep_alive_V1))
-        break;
-case 1028: /* module 04 call 04 pallet:balances call:transfer_all */
-        CHECK_ERROR(_readMethod_balances_transfer_all_V1(c, &method->basic.balances_transfer_all_V1))
         break;
 case 3337: /* module 13 call 09 pallet:staking call:set_validator_count */
         CHECK_ERROR(_readMethod_staking_set_validator_count_V1(c, &method->basic.staking_set_validator_count_V1))
