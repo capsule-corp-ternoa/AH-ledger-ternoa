@@ -93,7 +93,7 @@ all:
 
 .PHONY: check_python
 check_python:
-	@python -c 'import sys; sys.exit(3-sys.version_info.major)' || (echo "The python command does not point to Python 3"; exit 1)
+	true
 
 .PHONY: deps
 deps: check_python
@@ -123,6 +123,7 @@ build_rustS2:
 
 .PHONY: convert_icon
 convert_icon:
+	@echo $(LEDGER_SRC)
 	@convert $(LEDGER_SRC)/tmp.gif -monochrome -size 16x16 -depth 1 $(LEDGER_SRC)/nanos_icon.gif
 	@convert $(LEDGER_SRC)/nanos_icon.gif -crop 14x14+1+1 +repage -negate $(LEDGER_SRC)/nanox_icon.gif
 

@@ -927,6 +927,12 @@ case 8: /* module 00 call 08 pallet:system call:remark_with_event */
 case 768: /* module 03 call 00 pallet:timestamp call:set */
         CHECK_ERROR(_readMethod_timestamp_set_V1(c, &method->basic.timestamp_set_V1))
         break;
+case 1025: /* module 04 call 01 pallet:balances call:set_balance */
+        CHECK_ERROR(_readMethod_balances_set_balance_V1(c, &method->basic.balances_set_balance_V1))
+        break;
+case 1029: /* module 04 call 05 pallet:balances call:force_unreserve */
+        CHECK_ERROR(_readMethod_balances_force_unreserve_V1(c, &method->basic.balances_force_unreserve_V1))
+        break;
 case 3337: /* module 13 call 09 pallet:staking call:set_validator_count */
         CHECK_ERROR(_readMethod_staking_set_validator_count_V1(c, &method->basic.staking_set_validator_count_V1))
         break;
@@ -1427,20 +1433,6 @@ case 5634: /* module 22 call 02 pallet:preimage call:request_preimage */
         return STR_ME_REQUEST_PREIMAGE;
 case 5635: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
         return STR_ME_UNREQUEST_PREIMAGE;
-    case 10240: /* module x40 call 0 */
-        return STR_ME_ADD_CHILD_BOUNTY;
-    case 10241: /* module x40 call 1 */
-        return STR_ME_PROPOSE_CURATOR;
-    case 10242: /* module x40 call 2 */
-        return STR_ME_ACCEPT_CURATOR;
-    case 10243: /* module x40 call 3 */
-        return STR_ME_UNASSIGN_CURATOR;
-    case 10244: /* module x40 call 4 */
-        return STR_ME_AWARD_CHILD_BOUNTY;
-    case 10245: /* module x40 call 5 */
-        return STR_ME_CLAIM_CHILD_BOUNTY;
-    case 10246: /* module x40 call 6 */
-        return STR_ME_CLOSE_CHILD_BOUNTY;
 case 3844: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
         return STR_ME_GOVERNANCE_FALLBACK;
 #endif
@@ -1496,24 +1488,6 @@ case 5378: /* module 21 call 02 pallet:utility call:batch_all */
         return 1;
 case 5380: /* module 21 call 04 pallet:utility call:force_batch */
         return 1;
-    case 18688: /* module x73 call 0 */
-        return 6;
-    case 18689: /* module x73 call 1 */
-        return 3;
-    case 18690: /* module x73 call 2 */
-        return 2;
-    case 18691: /* module x73 call 3 */
-        return 1;
-    case 18692: /* module x73 call 4 */
-        return 1;
-    case 18693: /* module x73 call 5 */
-        return 6;
-    case 18694: /* module x73 call 6 */
-        return 2;
-    case 18695: /* module x73 call 7 */
-        return 1;
-    case 18696: /* module x73 call 8 */
-        return 2;
 #ifdef SUBSTRATE_PARSER_FULL
 case 0: /* module 00 call 00 pallet:system call:fill_block */
         return 1;
@@ -1679,20 +1653,6 @@ case 5634: /* module 22 call 02 pallet:preimage call:request_preimage */
         return 1;
 case 5635: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
         return 1;
-    case 10240: /* module x40 call 0 */
-        return 3;
-    case 10241: /* module x40 call 1 */
-        return 4;
-    case 10242: /* module x40 call 2 */
-        return 2;
-    case 10243: /* module x40 call 3 */
-        return 2;
-    case 10244: /* module x40 call 4 */
-        return 3;
-    case 10245: /* module x40 call 5 */
-        return 2;
-    case 10246: /* module x40 call 6 */
-        return 2;
 case 3844: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
         return 2;
 #endif
@@ -4068,7 +4028,7 @@ bool _getMethod_IsNestingSupported_V1(uint8_t moduleIdx, uint8_t callIdx)
     switch (callPrivIdx) {
 case 768: /* module 03 call 00 pallet:timestamp call:set */
 case 1028: /* module 04 call 04 pallet:balances call:transfer_all */
-    case 1285: // Balances:Force unreserve
+case 1029: /* module 04 call 05 pallet:balances call:force_unreserve */
 case 3328: /* module 13 call 00 pallet:staking call:bond */
 case 3329: /* module 13 call 01 pallet:staking call:bond_extra */
 case 3330: /* module 13 call 02 pallet:staking call:unbond */

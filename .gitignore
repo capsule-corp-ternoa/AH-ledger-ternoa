@@ -71,6 +71,7 @@ build/*
 cmake-build-debug
 
 tests_zemu/snapshots-tmp
+tests_zemu/snapshots
 tests_zemu/yarn.lock
 tests_tools/target
 fuzz-*.log
