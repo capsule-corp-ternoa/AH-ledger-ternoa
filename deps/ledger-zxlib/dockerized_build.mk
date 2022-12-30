@@ -124,6 +124,7 @@ build_rustS2:
 .PHONY: convert_icon
 convert_icon:
 	@echo $(LEDGER_SRC)
+	@ls $(LEDGER_SRC)
 	@convert $(LEDGER_SRC)/tmp.gif -monochrome -size 16x16 -depth 1 $(LEDGER_SRC)/nanos_icon.gif
 	@convert $(LEDGER_SRC)/nanos_icon.gif -crop 14x14+1+1 +repage -negate $(LEDGER_SRC)/nanox_icon.gif
 

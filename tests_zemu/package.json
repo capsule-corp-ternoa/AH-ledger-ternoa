@@ -14,7 +14,19 @@
     "Ledger"
   ],
   "scripts": {
-    "test": "jest tests/standard.test.ts",
+    "test": "jest tests/standard.test.ts tests/staking.test.ts tests/council.test.ts tests/identity.test.ts tests/democracy.test.ts tests/system.test.ts tests/technicalCommittee.test.ts tests/technicalMembership.test.ts tests/treasury.test.ts tests/utility.test.ts tests/balances.test.ts",
+    "testStandard": "jest tests/standard.test.ts",
+    "teststaking": "jest tests/staking.test.ts",
+    "testcouncil": "jest tests/council.test.ts",
+    "testidentity": "jest tests/identity.test.ts",
+    "testdemocracy": "jest tests/democracy.test.ts",
+    "testsystem": "jest tests/system.test.ts",
+    "testtechnicalCommittee": "jest tests/technicalCommittee.test.ts",
+    "testtechnicalMembership": "jest tests/technicalMembership.test.ts",
+    "testtreasury": "jest tests/treasury.test.ts",
+    "testutility": "jest tests/utility.test.ts",
+    "testbalances": "jest tests/balances.test.ts",
+    "testAll": "jest --verbose --rootDir=tests",
     "testSR25519": "jest tests/sr25519.test.ts"
   },
   "dependencies": {

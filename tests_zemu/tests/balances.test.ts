@@ -29,9 +29,8 @@ describe('Balances', function () {
   //     await sim.close()
   //   }
   // })
-
   test.each(models)('tx_balances_transfer_normal', async function (m) {
-    const blob_balances_transfer = '0400005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf0317000050efe2d6e41a1b00041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_balances_transfer = '0400005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03170000b89d0d6955a00100041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
@@ -42,7 +41,7 @@ describe('Balances', function () {
     }
   })
   test.each(models)('tx_balances_transfer_expert', async function (m) {
-    const blob_balances_transfer = '0400005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf0317000050efe2d6e41a1b00041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_balances_transfer = '0400005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03170000b89d0d6955a00100041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
@@ -55,8 +54,58 @@ describe('Balances', function () {
       await sim.close()
     }
   })
-  test.each(models)('tx_balances_transferKeepAlive_normal', async function (m) {
-    const blob_balances_transferKeepAlive = '0403005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf0317000050efe2d6e41a1b00041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+test.each(models)('tx_balances_setBalance_normal', async function (m) {
+    const blob_balances_setBalance = '0401005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03170000b89d0d6955a001170000b89d0d6955a00100041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newTernoaApp(sim.getTransport())
+      await txOperation(sim, app, blob_balances_setBalance, m, 'tx_balances_setBalance_normal');
+    } finally {
+      await sim.close()
+    }
+  })
+  test.each(models)('tx_balances_setBalance_expert', async function (m) {
+    const blob_balances_setBalance = '0401005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03170000b89d0d6955a001170000b89d0d6955a00100041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newTernoaApp(sim.getTransport())
+      await sim.clickRight()
+      await sim.clickBoth()
+      await sim.clickLeft()
+      await txOperation(sim, app, blob_balances_setBalance, m, 'tx_balances_setBalance_expert');
+    } finally {
+      await sim.close()
+    }
+  })
+test.each(models)('tx_balances_forceTransfer_normal', async function (m) {
+    const blob_balances_forceTransfer = '0402005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03170000b89d0d6955a00100041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newTernoaApp(sim.getTransport())
+      await txOperation(sim, app, blob_balances_forceTransfer, m, 'tx_balances_forceTransfer_normal');
+    } finally {
+      await sim.close()
+    }
+  })
+  test.each(models)('tx_balances_forceTransfer_expert', async function (m) {
+    const blob_balances_forceTransfer = '0402005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03170000b89d0d6955a00100041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newTernoaApp(sim.getTransport())
+      await sim.clickRight()
+      await sim.clickBoth()
+      await sim.clickLeft()
+      await txOperation(sim, app, blob_balances_forceTransfer, m, 'tx_balances_forceTransfer_expert');
+    } finally {
+      await sim.close()
+    }
+  })
+test.each(models)('tx_balances_transferKeepAlive_normal', async function (m) {
+    const blob_balances_transferKeepAlive = '0403005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03170000b89d0d6955a00100041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
@@ -67,7 +116,7 @@ describe('Balances', function () {
     }
   })
   test.each(models)('tx_balances_transferKeepAlive_expert', async function (m) {
-    const blob_balances_transferKeepAlive = '0403005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf0317000050efe2d6e41a1b00041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_balances_transferKeepAlive = '0403005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03170000b89d0d6955a00100041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
@@ -80,7 +129,7 @@ describe('Balances', function () {
       await sim.close()
     }
   })
-  test.each(models)('tx_balances_transferAll_normal', async function (m) {
+test.each(models)('tx_balances_transferAll_normal', async function (m) {
     const blob_balances_transferAll = '0404005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf030100041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
@@ -105,4 +154,30 @@ describe('Balances', function () {
       await sim.close()
     }
   })
+test.each(models)('tx_balances_forceUnreserve_normal', async function (m) {
+    const blob_balances_forceUnreserve = '0405005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf030000b89d0d6955a0010000000000000000041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newTernoaApp(sim.getTransport())
+      await txOperation(sim, app, blob_balances_forceUnreserve, m, 'tx_balances_forceUnreserve_normal');
+    } finally {
+      await sim.close()
+    }
+  })
+  test.each(models)('tx_balances_forceUnreserve_expert', async function (m) {
+    const blob_balances_forceUnreserve = '0405005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf030000b89d0d6955a0010000000000000000041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newTernoaApp(sim.getTransport())
+      await sim.clickRight()
+      await sim.clickBoth()
+      await sim.clickLeft()
+      await txOperation(sim, app, blob_balances_forceUnreserve, m, 'tx_balances_forceUnreserve_expert');
+    } finally {
+      await sim.close()
+    }
+  })
+
 })

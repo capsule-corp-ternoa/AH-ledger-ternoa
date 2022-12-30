@@ -147,22 +147,18 @@ if(NOT GCOV_PATH)
     message(FATAL_ERROR "gcov not found! Aborting...")
 endif() # NOT GCOV_PATH
 
+# Check supported compiler (Clang, GNU and Flang)
 get_property(LANGUAGES GLOBAL PROPERTY ENABLED_LANGUAGES)
-list(GET LANGUAGES 0 LANG)
-
-if("${CMAKE_${LANG}_COMPILER_ID}" MATCHES "(Apple)?[Cc]lang")
+foreach(LANG ${LANGUAGES})
+  if("${CMAKE_${LANG}_COMPILER_ID}" MATCHES "(Apple)?[Cc]lang")
     if("${CMAKE_${LANG}_COMPILER_VERSION}" VERSION_LESS 3)
-        message(FATAL_ERROR "Clang version must be 3.0.0 or greater! Aborting...")
+      message(FATAL_ERROR "Clang version must be 3.0.0 or greater! Aborting...")
     endif()
-elseif(NOT CMAKE_COMPILER_IS_GNUCXX)
-    if("${CMAKE_Fortran_COMPILER_ID}" MATCHES "[Ff]lang")
-        # Do nothing; exit conditional without error if true
-    elseif("${CMAKE_Fortran_COMPILER_ID}" MATCHES "GNU")
-        # Do nothing; exit conditional without error if true
-    else()
-        message(FATAL_ERROR "Compiler is not GNU gcc! Aborting...")
-    endif()
-endif()
+  elseif(NOT "${CMAKE_${LANG}_COMPILER_ID}" MATCHES "GNU"
+         AND NOT "${CMAKE_${LANG}_COMPILER_ID}" MATCHES "(LLVM)?[Ff]lang")
+    message(FATAL_ERROR "Compiler is not GNU or Flang! Aborting...")
+  endif()
+endforeach()
 
 set(COVERAGE_COMPILER_FLAGS "-g -fprofile-arcs -ftest-coverage"
     CACHE INTERNAL "")
@@ -228,7 +224,7 @@ endif()
 # )
 function(setup_target_for_coverage_lcov)
 
-    set(options NO_DEMANGLE)
+    set(options NO_DEMANGLE SONARQUBE)
     set(oneValueArgs BASE_DIRECTORY NAME)
     set(multiValueArgs EXCLUDE EXECUTABLE EXECUTABLE_ARGS DEPENDENCIES LCOV_ARGS GENHTML_ARGS)
     cmake_parse_arguments(Coverage "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
@@ -298,6 +294,18 @@ function(setup_target_for_coverage_lcov)
         ${GENHTML_PATH} ${GENHTML_EXTRA_ARGS} ${Coverage_GENHTML_ARGS} -o 
         ${Coverage_NAME} ${Coverage_NAME}.info
     )
+    if(${Coverage_SONARQUBE})
+        # Generate SonarQube output
+        set(GCOVR_XML_CMD
+            ${GCOVR_PATH} --sonarqube ${Coverage_NAME}_sonarqube.xml -r ${BASEDIR} ${GCOVR_ADDITIONAL_ARGS}
+            ${GCOVR_EXCLUDE_ARGS} --object-directory=${PROJECT_BINARY_DIR}
+        )
+        set(GCOVR_XML_CMD_COMMAND
+            COMMAND ${GCOVR_XML_CMD}
+        )
+        set(GCOVR_XML_CMD_BYPRODUCTS ${Coverage_NAME}_sonarqube.xml)
+        set(GCOVR_XML_CMD_COMMENT COMMENT "SonarQube code coverage info report saved in ${Coverage_NAME}_sonarqube.xml.")
+    endif()
     
 
     if(CODE_COVERAGE_VERBOSE)
@@ -329,6 +337,12 @@ function(setup_target_for_coverage_lcov)
         message(STATUS "Command to generate lcov HTML output: ")
         string(REPLACE ";" " " LCOV_GEN_HTML_CMD_SPACED "${LCOV_GEN_HTML_CMD}")
         message(STATUS "${LCOV_GEN_HTML_CMD_SPACED}")
+
+        if(${Coverage_SONARQUBE})
+            message(STATUS "Command to generate SonarQube XML output: ")
+            string(REPLACE ";" " " GCOVR_XML_CMD_SPACED "${GCOVR_XML_CMD}")
+            message(STATUS "${GCOVR_XML_CMD_SPACED}")
+        endif()
     endif()
 
     # Setup target
@@ -340,6 +354,7 @@ function(setup_target_for_coverage_lcov)
         COMMAND ${LCOV_BASELINE_COUNT_CMD}
         COMMAND ${LCOV_FILTER_CMD} 
         COMMAND ${LCOV_GEN_HTML_CMD}
+        ${GCOVR_XML_CMD_COMMAND}
 
         # Set output files as GENERATED (will be removed on 'make clean')
         BYPRODUCTS
@@ -347,6 +362,7 @@ function(setup_target_for_coverage_lcov)
             ${Coverage_NAME}.capture
             ${Coverage_NAME}.total
             ${Coverage_NAME}.info
+            ${GCOVR_XML_CMD_BYPRODUCTS}
             ${Coverage_NAME}/index.html
         WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
         DEPENDS ${Coverage_DEPENDENCIES}
@@ -358,6 +374,7 @@ function(setup_target_for_coverage_lcov)
     add_custom_command(TARGET ${Coverage_NAME} POST_BUILD
         COMMAND ;
         COMMENT "Lcov code coverage info report saved in ${Coverage_NAME}.info."
+        ${GCOVR_XML_CMD_COMMENT}
     )
 
     # Show info where to find the report

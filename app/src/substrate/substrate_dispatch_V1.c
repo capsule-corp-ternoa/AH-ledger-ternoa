@@ -928,7 +928,7 @@ case 768: /* module 03 call 00 pallet:timestamp call:set */
         CHECK_ERROR(_readMethod_timestamp_set_V1(c, &method->basic.timestamp_set_V1))
         break;
 case 1025: /* module 04 call 01 pallet:balances call:set_balance */
-        CHECK_ERROR(_readMethod_balances_set_balance_V1(c, &method->basic.balances_set_balance_V1))
+        CHECK_ERROR(_readMethod_balances_set_balance_V1(c, &method->nested.balances_set_balance_V1))
         break;
 case 1029: /* module 04 call 05 pallet:balances call:force_unreserve */
         CHECK_ERROR(_readMethod_balances_force_unreserve_V1(c, &method->basic.balances_force_unreserve_V1))
@@ -1154,6 +1154,21 @@ case 5635: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
         break;
 case 3844: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
         CHECK_ERROR(_readMethod_electionprovidermultiphase_governance_fallback_V1(c, &method->basic.electionprovidermultiphase_governance_fallback_V1))
+        break;
+case 5120: /* module 20 call 00 pallet:treasury call:propose_spend */
+        CHECK_ERROR(_readMethod_treasury_propose_spend_V1(c, &method->basic.treasury_propose_spend_V1))
+        break;
+case 5121: /* module 20 call 01 pallet:treasury call:reject_proposal */
+        CHECK_ERROR(_readMethod_treasury_reject_proposal_V1(c, &method->basic.treasury_reject_proposal_V1))
+        break;
+case 5122: /* module 20 call 02 pallet:treasury call:approve_proposal */
+        CHECK_ERROR(_readMethod_treasury_approve_proposal_V1(c, &method->basic.treasury_approve_proposal_V1))
+        break;
+case 5123: /* module 20 call 03 pallet:treasury call:spend */
+        CHECK_ERROR(_readMethod_treasury_spend_V1(c, &method->basic.treasury_spend_V1))
+        break;
+case 5124: /* module 20 call 04 pallet:treasury call:remove_approval */
+        CHECK_ERROR(_readMethod_treasury_remove_approval_V1(c, &method->basic.treasury_remove_approval_V1))
         break;
 #endif
     default:
@@ -1435,6 +1450,16 @@ case 5635: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
         return STR_ME_UNREQUEST_PREIMAGE;
 case 3844: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
         return STR_ME_GOVERNANCE_FALLBACK;
+case 5120: /* module 20 call 00 pallet:treasury call:propose_spend */
+        return STR_ME_PROPOSE_SPEND;
+case 5121: /* module 20 call 01 pallet:treasury call:reject_proposal */
+        return STR_ME_REJECT_PROPOSAL;
+case 5122: /* module 20 call 02 pallet:treasury call:approve_proposal */
+        return STR_ME_APPROVE_PROPOSAL;
+case 5123: /* module 20 call 03 pallet:treasury call:spend */
+        return STR_ME_SPEND;
+case 5124: /* module 20 call 04 pallet:treasury call:remove_approval */
+        return STR_ME_REMOVE_APPROVAL;
 #endif
     default:
         return NULL;
@@ -1655,6 +1680,16 @@ case 5635: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
         return 1;
 case 3844: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
         return 2;
+case 5120: /* module 20 call 00 pallet:treasury call:propose_spend */
+        return 2;
+case 5121: /* module 20 call 01 pallet:treasury call:reject_proposal */
+        return 1;
+case 5122: /* module 20 call 02 pallet:treasury call:approve_proposal */
+        return 1;
+case 5123: /* module 20 call 03 pallet:treasury call:spend */
+        return 2;
+case 5124: /* module 20 call 04 pallet:treasury call:remove_approval */
+        return 1;
 #endif
     default:
         return 0;
@@ -1819,99 +1854,6 @@ case 5380: /* module 21 call 04 pallet:utility call:force_batch */
         switch (itemIdx) {
         case 0:
             return STR_IT_calls;
-        default:
-            return NULL;
-        }
-    case 18688: /* module x73 call 0 */
-        switch (itemIdx) {
-        case 0:
-            return STR_IT_index;
-        case 1:
-            return STR_IT_cap;
-        case 2:
-            return STR_IT_first_period;
-        case 3:
-            return STR_IT_last_period;
-        case 4:
-            return STR_IT_end;
-        case 5:
-            return STR_IT_verifier;
-        default:
-            return NULL;
-        }
-    case 18689: /* module x73 call 1 */
-        switch (itemIdx) {
-        case 0:
-            return STR_IT_index;
-        case 1:
-            return STR_IT_amount;
-        case 2:
-            return STR_IT_signature;
-        default:
-            return NULL;
-        }
-    case 18690: /* module x73 call 2 */
-        switch (itemIdx) {
-        case 0:
-            return STR_IT_who;
-        case 1:
-            return STR_IT_index;
-        default:
-            return NULL;
-        }
-    case 18691: /* module x73 call 3 */
-        switch (itemIdx) {
-        case 0:
-            return STR_IT_index;
-        default:
-            return NULL;
-        }
-    case 18692: /* module x73 call 4 */
-        switch (itemIdx) {
-        case 0:
-            return STR_IT_index;
-        default:
-            return NULL;
-        }
-    case 18693: /* module x73 call 5 */
-        switch (itemIdx) {
-        case 0:
-            return STR_IT_index;
-        case 1:
-            return STR_IT_cap;
-        case 2:
-            return STR_IT_first_period;
-        case 3:
-            return STR_IT_last_period;
-        case 4:
-            return STR_IT_end;
-        case 5:
-            return STR_IT_verifier;
-        default:
-            return NULL;
-        }
-    case 18694: /* module x73 call 6 */
-        switch (itemIdx) {
-        case 0:
-            return STR_IT_index;
-        case 1:
-            return STR_IT_memo;
-        default:
-            return NULL;
-        }
-    case 18695: /* module x73 call 7 */
-        switch (itemIdx) {
-        case 0:
-            return STR_IT_index;
-        default:
-            return NULL;
-        }
-    case 18696: /* module x73 call 8 */
-        switch (itemIdx) {
-        case 0:
-            return STR_IT_index;
-        case 1:
-            return STR_IT_signature;
         default:
             return NULL;
         }
@@ -2582,83 +2524,51 @@ case 5635: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
         default:
             return NULL;
         }
-    case 10240: /* module x40 call 0 */
-        switch (itemIdx) {
-        case 0:
-            return STR_IT_parent_bounty_id;
-        case 1:
-            return STR_IT_amount;
-        case 2:
-            return STR_IT_description;
-        default:
-            return NULL;
-        }
-    case 10241: /* module x40 call 1 */
-        switch (itemIdx) {
-        case 0:
-            return STR_IT_parent_bounty_id;
-        case 1:
-            return STR_IT_child_bounty_id;
-        case 2:
-            return STR_IT_curator;
-        case 3:
-            return STR_IT_fee;
-        default:
-            return NULL;
-        }
-    case 10242: /* module x40 call 2 */
-        switch (itemIdx) {
-        case 0:
-            return STR_IT_parent_bounty_id;
-        case 1:
-            return STR_IT_child_bounty_id;
-        default:
-            return NULL;
-        }
-    case 10243: /* module x40 call 3 */
-        switch (itemIdx) {
-        case 0:
-            return STR_IT_parent_bounty_id;
-        case 1:
-            return STR_IT_child_bounty_id;
-        default:
-            return NULL;
-        }
-    case 10244: /* module x40 call 4 */
-        switch (itemIdx) {
-        case 0:
-            return STR_IT_parent_bounty_id;
-        case 1:
-            return STR_IT_child_bounty_id;
-        case 2:
-            return STR_IT_beneficiary;
-        default:
-            return NULL;
-        }
-    case 10245: /* module x40 call 5 */
-        switch (itemIdx) {
-        case 0:
-            return STR_IT_parent_bounty_id;
-        case 1:
-            return STR_IT_child_bounty_id;
-        default:
-            return NULL;
-        }
-    case 10246: /* module x40 call 6 */
-        switch (itemIdx) {
-        case 0:
-            return STR_IT_parent_bounty_id;
-        case 1:
-            return STR_IT_child_bounty_id;
-        default:
-            return NULL;
-        }
 case 3844: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
         switch (itemIdx) {
         case 0:
             return STR_IT_maybe_max_voters;
         case 1:
             return STR_IT_maybe_max_targets;
+        default:
+            return NULL;
+        }
+case 5120: /* module 20 call 00 pallet:treasury call:propose_spend */
+        switch (itemIdx) {
+        case 0:
+            return STR_IT_amount;
+        case 1:
+            return STR_IT_beneficiary;
+        default:
+            return NULL;
+        }
+case 5121: /* module 20 call 01 pallet:treasury call:reject_proposal */
+        switch (itemIdx) {
+        case 0:
+            return STR_IT_proposal_id;
+        default:
+            return NULL;
+        }
+case 5122: /* module 20 call 02 pallet:treasury call:approve_proposal */
+        switch (itemIdx) {
+        case 0:
+            return STR_IT_proposal_id;
+        default:
+            return NULL;
+        }
+case 5123: /* module 20 call 03 pallet:treasury call:spend */
+        switch (itemIdx) {
+        case 0:
+            return STR_IT_amount;
+        case 1:
+            return STR_IT_beneficiary;
+        default:
+            return NULL;
+        }
+case 5124: /* module 20 call 04 pallet:treasury call:remove_approval */
+        switch (itemIdx) {
+        case 0:
+            return STR_IT_proposal_id;
         default:
             return NULL;
         }
@@ -3981,6 +3891,66 @@ case 3844: /* module 15 call 04 pallet:electionprovidermultiphase call:governanc
         default:
             return parser_no_data;
         }
+case 5120: /* module 20 call 00 pallet:treasury call:propose_spend */
+        switch (itemIdx) {
+        case 0: /* treasury_propose_spend_V1 - amount */;
+            return _toStringCompactBalance(
+                &m->basic.treasury_propose_spend_V1.amount,
+                outValue, outValueLen,
+                pageIdx, pageCount);
+        case 1: /* treasury_propose_spend_V1 - beneficiary */;
+            return _toStringLookupasStaticLookupSource_V1(
+                &m->basic.treasury_propose_spend_V1.beneficiary,
+                outValue, outValueLen,
+                pageIdx, pageCount);
+        default:
+            return parser_no_data;
+        }
+case 5121: /* module 20 call 01 pallet:treasury call:reject_proposal */
+        switch (itemIdx) {
+        case 0: /* treasury_reject_proposal_V1 - proposal_id */;
+            return _toStringCompactu32(
+                &m->basic.treasury_reject_proposal_V1.proposal_id,
+                outValue, outValueLen,
+                pageIdx, pageCount);
+        default:
+            return parser_no_data;
+        }
+case 5122: /* module 20 call 02 pallet:treasury call:approve_proposal */
+        switch (itemIdx) {
+        case 0: /* treasury_approve_proposal_V1 - proposal_id */;
+            return _toStringCompactu32(
+                &m->basic.treasury_approve_proposal_V1.proposal_id,
+                outValue, outValueLen,
+                pageIdx, pageCount);
+        default:
+            return parser_no_data;
+        }
+case 5123: /* module 20 call 03 pallet:treasury call:spend */
+        switch (itemIdx) {
+        case 0: /* treasury_spend_V1 - amount */;
+            return _toStringCompactBalance(
+                &m->basic.treasury_spend_V1.amount,
+                outValue, outValueLen,
+                pageIdx, pageCount);
+        case 1: /* treasury_spend_V1 - beneficiary */;
+            return _toStringLookupasStaticLookupSource_V1(
+                &m->basic.treasury_spend_V1.beneficiary,
+                outValue, outValueLen,
+                pageIdx, pageCount);
+        default:
+            return parser_no_data;
+        }
+case 5124: /* module 20 call 04 pallet:treasury call:remove_approval */
+        switch (itemIdx) {
+        case 0: /* treasury_remove_approval_V1 - proposal_id */;
+            return _toStringCompactu32(
+                &m->basic.treasury_remove_approval_V1.proposal_id,
+                outValue, outValueLen,
+                pageIdx, pageCount);
+        default:
+            return parser_no_data;
+        }
 #endif
     default:
         return parser_ok;
@@ -4095,6 +4065,11 @@ case 5633: /* module 22 call 01 pallet:preimage call:unnote_preimage */
 case 5634: /* module 22 call 02 pallet:preimage call:request_preimage */
 case 5635: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
 case 3844: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
+case 5120: /* module 20 call 00 pallet:treasury call:propose_spend */
+case 5121: /* module 20 call 01 pallet:treasury call:reject_proposal */
+case 5122: /* module 20 call 02 pallet:treasury call:approve_proposal */
+case 5123: /* module 20 call 03 pallet:treasury call:spend */
+case 5124: /* module 20 call 04 pallet:treasury call:remove_approval */
         return false;
     default:
         return true;
