@@ -505,15 +505,10 @@ typedef struct {
 
 typedef union {
     pd_balances_transfer_all_V1_t balances_transfer_all_V1;
-    pd_staking_bond_V1_t staking_bond_V1;
     pd_staking_bond_extra_V1_t staking_bond_extra_V1;
-    pd_staking_unbond_V1_t staking_unbond_V1;
     pd_staking_withdraw_unbonded_V1_t staking_withdraw_unbonded_V1;
     pd_staking_validate_V1_t staking_validate_V1;
-    pd_staking_nominate_V1_t staking_nominate_V1;
-    pd_staking_chill_V1_t staking_chill_V1;
     pd_staking_set_payee_V1_t staking_set_payee_V1;
-    pd_staking_set_controller_V1_t staking_set_controller_V1;
     pd_staking_payout_stakers_V1_t staking_payout_stakers_V1;
     pd_staking_rebond_V1_t staking_rebond_V1;
     pd_session_set_keys_V1_t session_set_keys_V1;
@@ -787,6 +782,11 @@ typedef union {
     pd_balances_transfer_V1_t balances_transfer_V1;
     pd_balances_force_transfer_V1_t balances_force_transfer_V1;
     pd_balances_transfer_keep_alive_V1_t balances_transfer_keep_alive_V1;
+    pd_staking_bond_V1_t staking_bond_V1;
+    pd_staking_unbond_V1_t staking_unbond_V1;
+    pd_staking_nominate_V1_t staking_nominate_V1;
+    pd_staking_chill_V1_t staking_chill_V1;
+    pd_staking_set_controller_V1_t staking_set_controller_V1;
 #ifdef SUBSTRATE_PARSER_FULL
 #ifndef TARGET_NANOS
 #endif
