@@ -24,6 +24,7 @@
     "testsystem": "jest tests/system.test.ts",
     "testtechnicalCommittee": "jest tests/technicalCommittee.test.ts",
     "testtechnicalMembership": "jest tests/technicalMembership.test.ts",
+    "testmultisig": "jest tests/multisig.test.ts",
     "testtreasury": "jest tests/treasury.test.ts",
     "testutility": "jest tests/utility.test.ts",
     "testbalances": "jest tests/balances.test.ts",
