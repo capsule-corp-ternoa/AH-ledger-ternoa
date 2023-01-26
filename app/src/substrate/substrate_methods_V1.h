@@ -431,7 +431,7 @@ typedef struct {
 
 #define PD_CALL_IDENTITY_ADD_REGISTRAR_V1 0
 typedef struct {
-    pd_AccountId_V1_t account;
+    pd_LookupasStaticLookupSource_V1_t account;
 } pd_identity_add_registrar_V1_t;
 
 #define PD_CALL_IDENTITY_CLEAR_IDENTITY_V1 3

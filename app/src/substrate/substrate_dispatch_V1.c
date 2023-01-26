@@ -701,7 +701,7 @@ __Z_INLINE parser_error_t _readMethod_treasury_remove_approval_V1(
 __Z_INLINE parser_error_t _readMethod_identity_add_registrar_V1(
     parser_context_t* c, pd_identity_add_registrar_V1_t* m)
 {
-    CHECK_ERROR(_readAccountId_V1(c, &m->account))
+    CHECK_ERROR(_readLookupasStaticLookupSource_V1(c, &m->account))
     return parser_ok;
 }
 
@@ -3670,7 +3670,7 @@ case 4614: /* module 18 call 06 pallet:technicalmembership call:clear_prime */
 case 7168: /* module 28 call 00 pallet:identity call:add_registrar */
         switch (itemIdx) {
         case 0: /* identity_add_registrar_V1 - account */;
-            return _toStringAccountId_V1(
+            return _toStringLookupasStaticLookupSource_V1(
                 &m->basic.identity_add_registrar_V1.account,
                 outValue, outValueLen,
                 pageIdx, pageCount);
