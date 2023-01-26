@@ -15,7 +15,7 @@
  ******************************************************************************* */
 
 import Zemu, { DEFAULT_START_OPTIONS } from '@zondax/zemu'
-import { newTernoaApp } from '@zondax/ledger-substrate'
+import { newSubstrateApp } from '@zondax/ledger-substrate'
 import { APP_SEED, models, txOperation, defaultOptions } from './common'
 
 jest.setTimeout(180000)
@@ -32,124 +32,48 @@ describe('Staking', function () {
   //     await sim.close()
   //   }
   // })
-
-test.each(models)('tx_staking_bond_staked_normal', async function (m) {
-  const blob_staking_bond_staked = '0d00005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03170000b89d0d6955a0010000041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
-  const sim = new Zemu(m.path)
-  try {
-    await sim.start({ ...defaultOptions, model: m.name })
-    const app = newTernoaApp(sim.getTransport())
-    await txOperation(sim, app, blob_staking_bond_staked, m, 'tx_staking_bond_staked_normal');
-  } finally {
-    await sim.close()
-  }
-})
-test.each(models)('tx_staking_bond_staked_expert', async function (m) {
-  const blob_staking_bond_staked = '0d00005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03170000b89d0d6955a0010000041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
-  const sim = new Zemu(m.path)
-  try {
-    await sim.start({ ...defaultOptions, model: m.name })
-    const app = newTernoaApp(sim.getTransport())
-    await sim.clickRight()
-    await sim.clickBoth()
-    await sim.clickLeft()
-    await txOperation(sim, app, blob_staking_bond_staked, m, 'tx_staking_bond_staked_expert');
-  } finally {
-    await sim.close()
-  }
-})
-test.each(models)('tx_staking_bond_stash_normal', async function (m) {
-  const blob_staking_bond_stash = '0d00005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03170000b89d0d6955a0010100041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
-  const sim = new Zemu(m.path)
-  try {
-    await sim.start({ ...defaultOptions, model: m.name })
-    const app = newTernoaApp(sim.getTransport())
-    await txOperation(sim, app, blob_staking_bond_stash, m, 'tx_staking_bond_stash_normal');
-  } finally {
-    await sim.close()
-  }
-})
-test.each(models)('tx_staking_bond_stash_expert', async function (m) {
-  const blob_staking_bond_stash = '0d00005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03170000b89d0d6955a0010100041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
-  const sim = new Zemu(m.path)
-  try {
-    await sim.start({ ...defaultOptions, model: m.name })
-    const app = newTernoaApp(sim.getTransport())
-    await sim.clickRight()
-    await sim.clickBoth()
-    await sim.clickLeft()
-    await txOperation(sim, app, blob_staking_bond_stash, m, 'tx_staking_bond_stash_expert');
-  } finally {
-    await sim.close()
-  }
-})
-test.each(models)('tx_staking_bond_controller_normal', async function (m) {
-  const blob_staking_bond_controller = '0d00005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03170000b89d0d6955a0010200041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
-  const sim = new Zemu(m.path)
-  try {
-    await sim.start({ ...defaultOptions, model: m.name })
-    const app = newTernoaApp(sim.getTransport())
-    await txOperation(sim, app, blob_staking_bond_controller, m, 'tx_staking_bond_controller_normal');
-  } finally {
-    await sim.close()
-  }
-})
-test.each(models)('tx_staking_bond_controller_expert', async function (m) {
-  const blob_staking_bond_controller = '0d00005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03170000b89d0d6955a0010200041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
-  const sim = new Zemu(m.path)
-  try {
-    await sim.start({ ...defaultOptions, model: m.name })
-    const app = newTernoaApp(sim.getTransport())
-    await sim.clickRight()
-    await sim.clickBoth()
-    await sim.clickLeft()
-    await txOperation(sim, app, blob_staking_bond_controller, m, 'tx_staking_bond_controller_expert');
-  } finally {
-    await sim.close()
-  }
-})
-test.each(models)('tx_staking_bond_none_normal', async function (m) {
-  const blob_staking_bond_none = '0d00005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03170000b89d0d6955a0010400041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
-  const sim = new Zemu(m.path)
-  try {
-    await sim.start({ ...defaultOptions, model: m.name })
-    const app = newTernoaApp(sim.getTransport())
-    await txOperation(sim, app, blob_staking_bond_none, m, 'tx_staking_bond_none_normal');
-  } finally {
-    await sim.close()
-  }
-})
-test.each(models)('tx_staking_bond_none_expert', async function (m) {
-  const blob_staking_bond_none = '0d00005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03170000b89d0d6955a0010400041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
-  const sim = new Zemu(m.path)
-  try {
-    await sim.start({ ...defaultOptions, model: m.name })
-    const app = newTernoaApp(sim.getTransport())
-    await sim.clickRight()
-    await sim.clickBoth()
-    await sim.clickLeft()
-    await txOperation(sim, app, blob_staking_bond_none, m, 'tx_staking_bond_none_expert');
-  } finally {
-    await sim.close()
-  }
-})
-test.each(models)('tx_staking_bondExtra_normal', async function (m) {
-    const blob_staking_bondExtra = '0d01170000b89d0d6955a00100041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+  test.each(models)('tx_staking_bond_normal', async function (m) {
+    const blob_staking_bond = '0d00005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03170000b89d0d6955a001006501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
+      await txOperation(sim, app, blob_staking_bond, m, 'tx_staking_bond_normal');
+    } finally {
+      await sim.close()
+    }
+  })
+  test.each(models)('tx_staking_bond_expert', async function (m) {
+    const blob_staking_bond = '0d00005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03170000b89d0d6955a001006501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
+      await sim.clickRight()
+      await sim.clickBoth()
+      await sim.clickLeft()
+      await txOperation(sim, app, blob_staking_bond, m, 'tx_staking_bond_expert');
+    } finally {
+      await sim.close()
+    }
+  })
+test.each(models)('tx_staking_bondExtra_normal', async function (m) {
+    const blob_staking_bondExtra = '0d01170000b89d0d6955a0016501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_staking_bondExtra, m, 'tx_staking_bondExtra_normal');
     } finally {
       await sim.close()
     }
   })
   test.each(models)('tx_staking_bondExtra_expert', async function (m) {
-    const blob_staking_bondExtra = '0d01170000b89d0d6955a00100041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_bondExtra = '0d01170000b89d0d6955a0016501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -159,22 +83,22 @@ test.each(models)('tx_staking_bondExtra_normal', async function (m) {
     }
   })
 test.each(models)('tx_staking_unbond_normal', async function (m) {
-    const blob_staking_unbond = '0d02170000b89d0d6955a00100041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_unbond = '0d02170000b89d0d6955a0016501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_staking_unbond, m, 'tx_staking_unbond_normal');
     } finally {
       await sim.close()
     }
   })
   test.each(models)('tx_staking_unbond_expert', async function (m) {
-    const blob_staking_unbond = '0d02170000b89d0d6955a00100041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_unbond = '0d02170000b89d0d6955a0016501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -183,23 +107,48 @@ test.each(models)('tx_staking_unbond_normal', async function (m) {
       await sim.close()
     }
   })
-test.each(models)('tx_staking_nominate_normal', async function (m) {
-    const blob_staking_nominate = '0d0508005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03002a0f95b2b19f46a67d10ff7c1cbc80ec27970aaa073ce796585bd201aab7ed7e00041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+test.each(models)('tx_staking_withdrawUnbonded_normal', async function (m) {
+    const blob_staking_withdrawUnbonded = '0d03000000006501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
+      await txOperation(sim, app, blob_staking_withdrawUnbonded, m, 'tx_staking_withdrawUnbonded_normal');
+    } finally {
+      await sim.close()
+    }
+  })
+  test.each(models)('tx_staking_withdrawUnbonded_expert', async function (m) {
+    const blob_staking_withdrawUnbonded = '0d03000000006501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
+      await sim.clickRight()
+      await sim.clickBoth()
+      await sim.clickLeft()
+      await txOperation(sim, app, blob_staking_withdrawUnbonded, m, 'tx_staking_withdrawUnbonded_expert');
+    } finally {
+      await sim.close()
+    }
+  })
+test.each(models)('tx_staking_nominate_normal', async function (m) {
+    const blob_staking_nominate = '0d0508005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03002a0f95b2b19f46a67d10ff7c1cbc80ec27970aaa073ce796585bd201aab7ed7e6501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_staking_nominate, m, 'tx_staking_nominate_normal');
     } finally {
       await sim.close()
     }
   })
   test.each(models)('tx_staking_nominate_expert', async function (m) {
-    const blob_staking_nominate = '0d0508005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03002a0f95b2b19f46a67d10ff7c1cbc80ec27970aaa073ce796585bd201aab7ed7e00041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_nominate = '0d0508005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03002a0f95b2b19f46a67d10ff7c1cbc80ec27970aaa073ce796585bd201aab7ed7e6501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -209,22 +158,22 @@ test.each(models)('tx_staking_nominate_normal', async function (m) {
     }
   })
 test.each(models)('tx_staking_chill_normal', async function (m) {
-    const blob_staking_chill = '0d0600041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_chill = '0d066501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_staking_chill, m, 'tx_staking_chill_normal');
     } finally {
       await sim.close()
     }
   })
   test.each(models)('tx_staking_chill_expert', async function (m) {
-    const blob_staking_chill = '0d0600041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_chill = '0d066501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -234,22 +183,22 @@ test.each(models)('tx_staking_chill_normal', async function (m) {
     }
   })
 test.each(models)('tx_staking_setPayee_normal', async function (m) {
-    const blob_staking_setPayee = '0d070000041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_setPayee = '0d07006501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_staking_setPayee, m, 'tx_staking_setPayee_normal');
     } finally {
       await sim.close()
     }
   })
   test.each(models)('tx_staking_setPayee_expert', async function (m) {
-    const blob_staking_setPayee = '0d070000041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_setPayee = '0d07006501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -259,22 +208,22 @@ test.each(models)('tx_staking_setPayee_normal', async function (m) {
     }
   })
 test.each(models)('tx_staking_setController_normal', async function (m) {
-    const blob_staking_setController = '0d08005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf0300041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_setController = '0d08005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf036501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_staking_setController, m, 'tx_staking_setController_normal');
     } finally {
       await sim.close()
     }
   })
   test.each(models)('tx_staking_setController_expert', async function (m) {
-    const blob_staking_setController = '0d08005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf0300041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_setController = '0d08005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf036501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -283,23 +232,98 @@ test.each(models)('tx_staking_setController_normal', async function (m) {
       await sim.close()
     }
   })
-test.each(models)('tx_staking_forceNoEras_normal', async function (m) {
-    const blob_staking_forceNoEras = '0d0c00041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+test.each(models)('tx_staking_setValidatorCount_normal', async function (m) {
+    const blob_staking_setValidatorCount = '0d09286501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
+      await txOperation(sim, app, blob_staking_setValidatorCount, m, 'tx_staking_setValidatorCount_normal');
+    } finally {
+      await sim.close()
+    }
+  })
+  test.each(models)('tx_staking_setValidatorCount_expert', async function (m) {
+    const blob_staking_setValidatorCount = '0d09286501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
+      await sim.clickRight()
+      await sim.clickBoth()
+      await sim.clickLeft()
+      await txOperation(sim, app, blob_staking_setValidatorCount, m, 'tx_staking_setValidatorCount_expert');
+    } finally {
+      await sim.close()
+    }
+  })
+test.each(models)('tx_staking_increaseValidatorCount_normal', async function (m) {
+    const blob_staking_increaseValidatorCount = '0d0a146501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
+      await txOperation(sim, app, blob_staking_increaseValidatorCount, m, 'tx_staking_increaseValidatorCount_normal');
+    } finally {
+      await sim.close()
+    }
+  })
+  test.each(models)('tx_staking_increaseValidatorCount_expert', async function (m) {
+    const blob_staking_increaseValidatorCount = '0d0a146501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
+      await sim.clickRight()
+      await sim.clickBoth()
+      await sim.clickLeft()
+      await txOperation(sim, app, blob_staking_increaseValidatorCount, m, 'tx_staking_increaseValidatorCount_expert');
+    } finally {
+      await sim.close()
+    }
+  })
+test.each(models)('tx_staking_scaleValidatorCount_normal', async function (m) {
+    const blob_staking_scaleValidatorCount = '0d0b146501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
+      await txOperation(sim, app, blob_staking_scaleValidatorCount, m, 'tx_staking_scaleValidatorCount_normal');
+    } finally {
+      await sim.close()
+    }
+  })
+  test.each(models)('tx_staking_scaleValidatorCount_expert', async function (m) {
+    const blob_staking_scaleValidatorCount = '0d0b146501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
+      await sim.clickRight()
+      await sim.clickBoth()
+      await sim.clickLeft()
+      await txOperation(sim, app, blob_staking_scaleValidatorCount, m, 'tx_staking_scaleValidatorCount_expert');
+    } finally {
+      await sim.close()
+    }
+  })
+test.each(models)('tx_staking_forceNoEras_normal', async function (m) {
+    const blob_staking_forceNoEras = '0d0c6501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_staking_forceNoEras, m, 'tx_staking_forceNoEras_normal');
     } finally {
       await sim.close()
     }
   })
   test.each(models)('tx_staking_forceNoEras_expert', async function (m) {
-    const blob_staking_forceNoEras = '0d0c00041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_forceNoEras = '0d0c6501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -309,22 +333,22 @@ test.each(models)('tx_staking_forceNoEras_normal', async function (m) {
     }
   })
 test.each(models)('tx_staking_forceNewEra_normal', async function (m) {
-    const blob_staking_forceNewEra = '0d0d00041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_forceNewEra = '0d0d6501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_staking_forceNewEra, m, 'tx_staking_forceNewEra_normal');
     } finally {
       await sim.close()
     }
   })
   test.each(models)('tx_staking_forceNewEra_expert', async function (m) {
-    const blob_staking_forceNewEra = '0d0d00041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_forceNewEra = '0d0d6501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -334,22 +358,22 @@ test.each(models)('tx_staking_forceNewEra_normal', async function (m) {
     }
   })
 test.each(models)('tx_staking_setInvulnerables_normal', async function (m) {
-    const blob_staking_setInvulnerables = '0d0e085ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf032a0f95b2b19f46a67d10ff7c1cbc80ec27970aaa073ce796585bd201aab7ed7e00041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_setInvulnerables = '0d0e085ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf032a0f95b2b19f46a67d10ff7c1cbc80ec27970aaa073ce796585bd201aab7ed7e6501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_staking_setInvulnerables, m, 'tx_staking_setInvulnerables_normal');
     } finally {
       await sim.close()
     }
   })
   test.each(models)('tx_staking_setInvulnerables_expert', async function (m) {
-    const blob_staking_setInvulnerables = '0d0e085ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf032a0f95b2b19f46a67d10ff7c1cbc80ec27970aaa073ce796585bd201aab7ed7e00041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_setInvulnerables = '0d0e085ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf032a0f95b2b19f46a67d10ff7c1cbc80ec27970aaa073ce796585bd201aab7ed7e6501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -358,23 +382,48 @@ test.each(models)('tx_staking_setInvulnerables_normal', async function (m) {
       await sim.close()
     }
   })
-test.each(models)('tx_staking_forceNewEraAlways_normal', async function (m) {
-    const blob_staking_forceNewEraAlways = '0d1000041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+test.each(models)('tx_staking_forceUnstake_normal', async function (m) {
+    const blob_staking_forceUnstake = '0d0f5ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03000000006501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
+      await txOperation(sim, app, blob_staking_forceUnstake, m, 'tx_staking_forceUnstake_normal');
+    } finally {
+      await sim.close()
+    }
+  })
+  test.each(models)('tx_staking_forceUnstake_expert', async function (m) {
+    const blob_staking_forceUnstake = '0d0f5ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03000000006501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
+      await sim.clickRight()
+      await sim.clickBoth()
+      await sim.clickLeft()
+      await txOperation(sim, app, blob_staking_forceUnstake, m, 'tx_staking_forceUnstake_expert');
+    } finally {
+      await sim.close()
+    }
+  })
+test.each(models)('tx_staking_forceNewEraAlways_normal', async function (m) {
+    const blob_staking_forceNewEraAlways = '0d106501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_staking_forceNewEraAlways, m, 'tx_staking_forceNewEraAlways_normal');
     } finally {
       await sim.close()
     }
   })
   test.each(models)('tx_staking_forceNewEraAlways_expert', async function (m) {
-    const blob_staking_forceNewEraAlways = '0d1000041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_forceNewEraAlways = '0d106501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -383,23 +432,73 @@ test.each(models)('tx_staking_forceNewEraAlways_normal', async function (m) {
       await sim.close()
     }
   })
-test.each(models)('tx_staking_rebond_normal', async function (m) {
-    const blob_staking_rebond = '0d13170000b89d0d6955a00100041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+test.each(models)('tx_staking_cancelDeferredSlash_normal', async function (m) {
+    const blob_staking_cancelDeferredSlash = '0d110a0000000801000000020000006501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
+      await txOperation(sim, app, blob_staking_cancelDeferredSlash, m, 'tx_staking_cancelDeferredSlash_normal');
+    } finally {
+      await sim.close()
+    }
+  })
+  test.each(models)('tx_staking_cancelDeferredSlash_expert', async function (m) {
+    const blob_staking_cancelDeferredSlash = '0d110a0000000801000000020000006501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
+      await sim.clickRight()
+      await sim.clickBoth()
+      await sim.clickLeft()
+      await txOperation(sim, app, blob_staking_cancelDeferredSlash, m, 'tx_staking_cancelDeferredSlash_expert');
+    } finally {
+      await sim.close()
+    }
+  })
+test.each(models)('tx_staking_payoutStakers_normal', async function (m) {
+    const blob_staking_payoutStakers = '0d125ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03140000006501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
+      await txOperation(sim, app, blob_staking_payoutStakers, m, 'tx_staking_payoutStakers_normal');
+    } finally {
+      await sim.close()
+    }
+  })
+  test.each(models)('tx_staking_payoutStakers_expert', async function (m) {
+    const blob_staking_payoutStakers = '0d125ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03140000006501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
+      await sim.clickRight()
+      await sim.clickBoth()
+      await sim.clickLeft()
+      await txOperation(sim, app, blob_staking_payoutStakers, m, 'tx_staking_payoutStakers_expert');
+    } finally {
+      await sim.close()
+    }
+  })
+test.each(models)('tx_staking_rebond_normal', async function (m) {
+    const blob_staking_rebond = '0d13170000b89d0d6955a0016501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_staking_rebond, m, 'tx_staking_rebond_normal');
     } finally {
       await sim.close()
     }
   })
   test.each(models)('tx_staking_rebond_expert', async function (m) {
-    const blob_staking_rebond = '0d13170000b89d0d6955a00100041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_rebond = '0d13170000b89d0d6955a0016501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -408,23 +507,48 @@ test.each(models)('tx_staking_rebond_normal', async function (m) {
       await sim.close()
     }
   })
-test.each(models)('tx_staking_kick_normal', async function (m) {
-    const blob_staking_kick = '0d1508005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03002a0f95b2b19f46a67d10ff7c1cbc80ec27970aaa073ce796585bd201aab7ed7e00041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+test.each(models)('tx_staking_reapStash_normal', async function (m) {
+    const blob_staking_reapStash = '0d145ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03000000006501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
+      await txOperation(sim, app, blob_staking_reapStash, m, 'tx_staking_reapStash_normal');
+    } finally {
+      await sim.close()
+    }
+  })
+  test.each(models)('tx_staking_reapStash_expert', async function (m) {
+    const blob_staking_reapStash = '0d145ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03000000006501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
+      await sim.clickRight()
+      await sim.clickBoth()
+      await sim.clickLeft()
+      await txOperation(sim, app, blob_staking_reapStash, m, 'tx_staking_reapStash_expert');
+    } finally {
+      await sim.close()
+    }
+  })
+test.each(models)('tx_staking_kick_normal', async function (m) {
+    const blob_staking_kick = '0d1508005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03002a0f95b2b19f46a67d10ff7c1cbc80ec27970aaa073ce796585bd201aab7ed7e6501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const sim = new Zemu(m.path)
+    try {
+      await sim.start({ ...defaultOptions, model: m.name })
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_staking_kick, m, 'tx_staking_kick_normal');
     } finally {
       await sim.close()
     }
   })
   test.each(models)('tx_staking_kick_expert', async function (m) {
-    const blob_staking_kick = '0d1508005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03002a0f95b2b19f46a67d10ff7c1cbc80ec27970aaa073ce796585bd201aab7ed7e00041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_kick = '0d1508005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03002a0f95b2b19f46a67d10ff7c1cbc80ec27970aaa073ce796585bd201aab7ed7e6501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -434,22 +558,22 @@ test.each(models)('tx_staking_kick_normal', async function (m) {
     }
   })
 test.each(models)('tx_staking_chillOther_normal', async function (m) {
-    const blob_staking_chillOther = '0d175ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf0300041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_chillOther = '0d175ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf036501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_staking_chillOther, m, 'tx_staking_chillOther_normal');
     } finally {
       await sim.close()
     }
   })
   test.each(models)('tx_staking_chillOther_expert', async function (m) {
-    const blob_staking_chillOther = '0d175ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf0300041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_chillOther = '0d175ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf036501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -459,22 +583,22 @@ test.each(models)('tx_staking_chillOther_normal', async function (m) {
     }
   })
 test.each(models)('tx_staking_forceApplyMinCommission_normal', async function (m) {
-    const blob_staking_forceApplyMinCommission = '0d185ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf0300041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_forceApplyMinCommission = '0d185ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf036501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_staking_forceApplyMinCommission, m, 'tx_staking_forceApplyMinCommission_normal');
     } finally {
       await sim.close()
     }
   })
   test.each(models)('tx_staking_forceApplyMinCommission_expert', async function (m) {
-    const blob_staking_forceApplyMinCommission = '0d185ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf0300041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
+    const blob_staking_forceApplyMinCommission = '0d185ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf036501041300002cf61a24a2290b000000010000006859c81ca95ef624c9dfe4dc6e3381c33e5d6509e35e147092bfbc780f777c4ed2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -483,5 +607,4 @@ test.each(models)('tx_staking_forceApplyMinCommission_normal', async function (m
       await sim.close()
     }
   })
-
 })

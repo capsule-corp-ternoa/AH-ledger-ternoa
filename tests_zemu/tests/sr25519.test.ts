@@ -15,7 +15,7 @@
  ******************************************************************************* */
 
 import Zemu from '@zondax/zemu'
-import { newTernoaApp } from '@zondax/ledger-substrate'
+import { newSubstrateApp } from '@zondax/ledger-substrate'
 import { txBalances_transfer, txStaking_nominate } from './zemu_blobs'
 
 // @ts-ignore
@@ -38,7 +38,7 @@ describe('SR25519', function () {
     const sim = new Zemu(APP_PATH)
     try {
       await sim.start({ ...defaultOptions })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
 
       const resp = await app.getAddress(0x80000000, 0x80000000, 0x80000000, false, 1)
 
@@ -61,7 +61,7 @@ describe('SR25519', function () {
     const sim = new Zemu(APP_PATH)
     try {
       await sim.start({ ...defaultOptions, model: 'nanos' })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
 
       const respRequest = app.getAddress(0x80000000, 0x80000000, 0x80000000, true, 1)
       // Wait until we are not in the main menu
@@ -88,7 +88,7 @@ describe('SR25519', function () {
     const sim = new Zemu(APP_PATH)
     try {
       await sim.start({ ...defaultOptions })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
 
       const respRequest = app.getAddress(0x80000000, 0x80000000, 0x80000000, true, 1)
       // Wait until we are not in the main menu
@@ -109,7 +109,7 @@ describe('SR25519', function () {
     const sim = new Zemu(APP_PATH)
     try {
       await sim.start({ ...defaultOptions })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       const pathAccount = 0x80000000
       const pathChange = 0x80000000
       const pathIndex = 0x80000000
@@ -150,7 +150,7 @@ describe('SR25519', function () {
     const sim = new Zemu(APP_PATH)
     try {
       await sim.start({ ...defaultOptions })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       const pathAccount = 0x80000000
       const pathChange = 0x80000000
       const pathIndex = 0x80000000
@@ -197,7 +197,7 @@ describe('SR25519', function () {
     const sim = new Zemu(APP_PATH)
     try {
       await sim.start({ ...defaultOptions })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       const pathAccount = 0x80000000
       const pathChange = 0x80000000
       const pathIndex = 0x80000000
@@ -248,7 +248,7 @@ describe('SR25519', function () {
     const sim = new Zemu(APP_PATH)
     try {
       await sim.start({ ...defaultOptions })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       const pathAccount = 0x80000000
       const pathChange = 0x80000000
       const pathIndex = 0x80000000

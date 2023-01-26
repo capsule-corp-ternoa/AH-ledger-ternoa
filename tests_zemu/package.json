@@ -14,6 +14,7 @@
     "Ledger"
   ],
   "scripts": {
+    "testsCoverage":"jest --coverage",
     "test": "jest tests/standard.test.ts tests/staking.test.ts tests/council.test.ts tests/identity.test.ts tests/democracy.test.ts tests/system.test.ts tests/technicalCommittee.test.ts tests/technicalMembership.test.ts tests/treasury.test.ts tests/utility.test.ts tests/balances.test.ts",
     "testStandard": "jest tests/standard.test.ts",
     "teststaking": "jest tests/staking.test.ts",
@@ -30,7 +31,7 @@
     "testSR25519": "jest tests/sr25519.test.ts"
   },
   "dependencies": {
-    "@zondax/ledger-substrate": "^0.38.0",
+    "@zondax/ledger-substrate": "^0.40.4",
     "@zondax/zemu": "^0.33.1"
   },
   "devDependencies": {

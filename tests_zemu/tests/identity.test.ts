@@ -15,7 +15,7 @@
  ******************************************************************************* */
 
 import Zemu, { DEFAULT_START_OPTIONS } from '@zondax/zemu'
-import { newTernoaApp } from '@zondax/ledger-substrate'
+import { newSubstrateApp } from '@zondax/ledger-substrate'
 import { APP_SEED, models, txOperation, defaultOptions } from './common'
 
 jest.setTimeout(180000)
@@ -37,7 +37,7 @@ describe('identity', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_identity_addRegistrar, m, 'tx_identity_addRegistrar_normal');
     } finally {
       await sim.close()
@@ -48,7 +48,7 @@ describe('identity', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -62,7 +62,7 @@ test.each(models)('tx_identity_clearIdentity_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_identity_clearIdentity, m, 'tx_identity_clearIdentity_normal');
     } finally {
       await sim.close()
@@ -73,7 +73,7 @@ test.each(models)('tx_identity_clearIdentity_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -87,7 +87,7 @@ test.each(models)('tx_identity_requestJudgement_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_identity_requestJudgement, m, 'tx_identity_requestJudgement_normal');
     } finally {
       await sim.close()
@@ -98,7 +98,7 @@ test.each(models)('tx_identity_requestJudgement_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -112,7 +112,7 @@ test.each(models)('tx_identity_cancelRequest_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_identity_cancelRequest, m, 'tx_identity_cancelRequest_normal');
     } finally {
       await sim.close()
@@ -123,7 +123,7 @@ test.each(models)('tx_identity_cancelRequest_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -137,7 +137,7 @@ test.each(models)('tx_identity_setFee_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_identity_setFee, m, 'tx_identity_setFee_normal');
     } finally {
       await sim.close()
@@ -148,7 +148,7 @@ test.each(models)('tx_identity_setFee_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -162,7 +162,7 @@ test.each(models)('tx_identity_setAccountId_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_identity_setAccountId, m, 'tx_identity_setAccountId_normal');
     } finally {
       await sim.close()
@@ -173,7 +173,7 @@ test.each(models)('tx_identity_setAccountId_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -187,7 +187,7 @@ test.each(models)('tx_identity_killIdentity_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_identity_killIdentity, m, 'tx_identity_killIdentity_normal');
     } finally {
       await sim.close()
@@ -198,7 +198,7 @@ test.each(models)('tx_identity_killIdentity_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -212,7 +212,7 @@ test.each(models)('tx_identity_removeSub_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_identity_removeSub, m, 'tx_identity_removeSub_normal');
     } finally {
       await sim.close()
@@ -223,7 +223,7 @@ test.each(models)('tx_identity_removeSub_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -237,7 +237,7 @@ test.each(models)('tx_identity_quitSub_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_identity_quitSub, m, 'tx_identity_quitSub_normal');
     } finally {
       await sim.close()
@@ -248,7 +248,7 @@ test.each(models)('tx_identity_quitSub_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()

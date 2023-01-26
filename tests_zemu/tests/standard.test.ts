@@ -15,7 +15,7 @@
  ******************************************************************************* */
 
 import Zemu from '@zondax/zemu'
-import { newTernoaApp } from '@zondax/ledger-substrate'
+import { newSubstrateApp } from '@zondax/ledger-substrate'
 import { models, defaultOptions } from './common'
 
 
@@ -29,7 +29,7 @@ describe('Standard', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
     } finally {
       await sim.close()
     }
@@ -49,7 +49,7 @@ describe('Standard', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       const resp = await app.getVersion()
 
       console.log(resp)
@@ -69,7 +69,7 @@ describe('Standard', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
 
       const resp = await app.getAddress(0x80000000, 0x80000000, 0x80000000)
 
@@ -94,7 +94,7 @@ describe('Standard', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
 
       const respRequest = app.getAddress(0x80000000, 0x80000000, 0x80000000, true)
       // Wait until we are not in the main menu
@@ -124,7 +124,7 @@ describe('Standard', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
 
       const respRequest = app.getAddress(0x80000000, 0x80000000, 0x80000000, true)
       // Wait until we are not in the main menu
@@ -146,7 +146,7 @@ describe('Standard', function () {
   //   //   const sim = new Zemu(m.path)
   //   //   try {
   //   //     await sim.start({ ...defaultOptions, model: m.name })
-  //   //     const app = newTernoaApp(sim.getTransport())
+  //   //     const app = newSubstrateApp(sim.getTransport(),'ternoa')
   //   //     const pathAccount = 0x80000000
   //   //     const pathChange = 0x80000000
   //   //     const pathIndex = 0x80000000
@@ -186,7 +186,7 @@ describe('Standard', function () {
   //   //   const sim = new Zemu(m.path)
   //   //   try {
   //   //     await sim.start({ ...defaultOptions, model: m.name })
-  //   //     const app = newTernoaApp(sim.getTransport())
+  //   //     const app = newSubstrateApp(sim.getTransport(),'ternoa')
   //   //     const pathAccount = 0x80000000
   //   //     const pathChange = 0x80000000
   //   //     const pathIndex = 0x80000000

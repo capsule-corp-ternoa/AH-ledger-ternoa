@@ -15,7 +15,7 @@
  ******************************************************************************* */
 
 import Zemu, { DEFAULT_START_OPTIONS } from '@zondax/zemu'
-import { newTernoaApp } from '@zondax/ledger-substrate'
+import { newSubstrateApp } from '@zondax/ledger-substrate'
 import { APP_SEED, models, txOperation, defaultOptions } from './common'
 
 jest.setTimeout(180000)
@@ -34,7 +34,7 @@ describe('Balances', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_balances_transfer, m, 'tx_balances_transfer_normal');
     } finally {
       await sim.close()
@@ -45,7 +45,7 @@ describe('Balances', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -59,7 +59,7 @@ test.each(models)('tx_balances_setBalance_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_balances_setBalance, m, 'tx_balances_setBalance_normal');
     } finally {
       await sim.close()
@@ -70,7 +70,7 @@ test.each(models)('tx_balances_setBalance_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -84,7 +84,7 @@ test.each(models)('tx_balances_forceTransfer_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_balances_forceTransfer, m, 'tx_balances_forceTransfer_normal');
     } finally {
       await sim.close()
@@ -95,7 +95,7 @@ test.each(models)('tx_balances_forceTransfer_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -109,7 +109,7 @@ test.each(models)('tx_balances_transferKeepAlive_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_balances_transferKeepAlive, m, 'tx_balances_transferKeepAlive_normal');
     } finally {
       await sim.close()
@@ -120,7 +120,7 @@ test.each(models)('tx_balances_transferKeepAlive_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -134,7 +134,7 @@ test.each(models)('tx_balances_transferAll_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_balances_transferAll, m, 'tx_balances_transferAll_normal');
     } finally {
       await sim.close()
@@ -145,7 +145,7 @@ test.each(models)('tx_balances_transferAll_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -159,7 +159,7 @@ test.each(models)('tx_balances_forceUnreserve_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_balances_forceUnreserve, m, 'tx_balances_forceUnreserve_normal');
     } finally {
       await sim.close()
@@ -170,7 +170,7 @@ test.each(models)('tx_balances_forceUnreserve_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()

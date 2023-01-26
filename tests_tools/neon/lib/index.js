@@ -2,7 +2,7 @@ var addon = require('../native');
 
 // Here we can write some simple tests for play around
 console.log("--------------------------------------")
-console.log("- Kusama Tools Scratch Tests          -")
+console.log("- Ternoa Tools Scratch Tests          -")
 console.log("--------------------------------------\n\n")
 
 a = Buffer.from("b65abc66a8fdeac1197d03daa6c3791d0c0799a52db6b7127b1cd12d46e34364",'hex');

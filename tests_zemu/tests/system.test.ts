@@ -15,7 +15,7 @@
  ******************************************************************************* */
 
 import Zemu, { DEFAULT_START_OPTIONS } from '@zondax/zemu'
-import { newTernoaApp } from '@zondax/ledger-substrate'
+import { newSubstrateApp } from '@zondax/ledger-substrate'
 import { APP_SEED, models, txOperation, defaultOptions } from './common'
 
 jest.setTimeout(180000)
@@ -37,7 +37,7 @@ describe('System', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_system_fillBlock, m, 'tx_system_fillBlock_normal');
     } finally {
       await sim.close()
@@ -48,7 +48,7 @@ describe('System', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -62,7 +62,7 @@ test.each(models)('tx_system_remark_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_system_remark, m, 'tx_system_remark_normal');
     } finally {
       await sim.close()
@@ -73,7 +73,7 @@ test.each(models)('tx_system_remark_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -87,7 +87,7 @@ test.each(models)('tx_system_setCode_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_system_setCode, m, 'tx_system_setCode_normal');
     } finally {
       await sim.close()
@@ -98,7 +98,7 @@ test.each(models)('tx_system_setCode_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -112,7 +112,7 @@ test.each(models)('tx_system_setCodeWithoutChecks_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_system_setCodeWithoutChecks, m, 'tx_system_setCodeWithoutChecks_normal');
     } finally {
       await sim.close()
@@ -123,7 +123,7 @@ test.each(models)('tx_system_setCodeWithoutChecks_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -137,7 +137,7 @@ test.each(models)('tx_system_remarkWithEvent_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_system_remarkWithEvent, m, 'tx_system_remarkWithEvent_normal');
     } finally {
       await sim.close()
@@ -148,7 +148,7 @@ test.each(models)('tx_system_remarkWithEvent_normal', async function (m) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()

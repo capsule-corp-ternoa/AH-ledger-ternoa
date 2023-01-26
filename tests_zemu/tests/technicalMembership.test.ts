@@ -15,7 +15,7 @@
  ******************************************************************************* */
 
 import Zemu, { DEFAULT_START_OPTIONS } from '@zondax/zemu'
-import { newTernoaApp } from '@zondax/ledger-substrate'
+import { newSubstrateApp } from '@zondax/ledger-substrate'
 import { APP_SEED, models, txOperation, defaultOptions } from './common'
 
 jest.setTimeout(180000)
@@ -37,7 +37,7 @@ describe('technicalMembership', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_technicalMembership_addMember, m, 'tx_technicalMembership_addMember_normal');
     } finally {
       await sim.close()
@@ -48,7 +48,7 @@ describe('technicalMembership', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -62,7 +62,7 @@ describe('technicalMembership', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_technicalMembership_removeMember, m, 'tx_technicalMembership_removeMember_normal');
     } finally {
       await sim.close()
@@ -73,7 +73,7 @@ describe('technicalMembership', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -87,7 +87,7 @@ describe('technicalMembership', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_technicalMembership_swapMember, m, 'tx_technicalMembership_swapMember_normal');
     } finally {
       await sim.close()
@@ -98,7 +98,7 @@ describe('technicalMembership', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -112,7 +112,7 @@ describe('technicalMembership', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_technicalMembership_resetMembers, m, 'tx_technicalMembership_resetMembers_normal');
     } finally {
       await sim.close()
@@ -123,7 +123,7 @@ describe('technicalMembership', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -137,7 +137,7 @@ describe('technicalMembership', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_technicalMembership_changeKey, m, 'tx_technicalMembership_changeKey_normal');
     } finally {
       await sim.close()
@@ -148,7 +148,7 @@ describe('technicalMembership', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -162,7 +162,7 @@ describe('technicalMembership', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_technicalMembership_setPrime, m, 'tx_technicalMembership_setPrime_normal');
     } finally {
       await sim.close()
@@ -173,7 +173,7 @@ describe('technicalMembership', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
@@ -187,7 +187,7 @@ describe('technicalMembership', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await txOperation(sim, app, blob_technicalMembership_clearPrime, m, 'tx_technicalMembership_clearPrime_normal');
     } finally {
       await sim.close()
@@ -198,7 +198,7 @@ describe('technicalMembership', function () {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
-      const app = newTernoaApp(sim.getTransport())
+      const app = newSubstrateApp(sim.getTransport(),'ternoa')
       await sim.clickRight()
       await sim.clickBoth()
       await sim.clickLeft()
