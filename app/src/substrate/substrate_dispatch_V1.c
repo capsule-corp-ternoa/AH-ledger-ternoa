@@ -541,7 +541,7 @@ __Z_INLINE parser_error_t _readMethod_council_close_V1(
 {
     CHECK_ERROR(_readHash(c, &m->proposal_hash))
     CHECK_ERROR(_readCompactu32(c, &m->index))
-    CHECK_ERROR(_readCompactu64(c, &m->proposal_weight_bound))
+    CHECK_ERROR(_readWeight(c, &m->proposal_weight_bound))
     CHECK_ERROR(_readCompactu32(c, &m->length_bound))
     return parser_ok;
 }
@@ -593,7 +593,7 @@ __Z_INLINE parser_error_t _readMethod_technicalcommittee_close_V1(
 {
     CHECK_ERROR(_readHash(c, &m->proposal_hash))
     CHECK_ERROR(_readCompactu32(c, &m->index))
-    CHECK_ERROR(_readCompactu64(c, &m->proposal_weight_bound))
+    CHECK_ERROR(_readWeight(c, &m->proposal_weight_bound))
     CHECK_ERROR(_readCompactu32(c, &m->length_bound))
     return parser_ok;
 }
@@ -3465,7 +3465,7 @@ case 6150: /* module 24 call 06 pallet:council call:close */
                 outValue, outValueLen,
                 pageIdx, pageCount);
         case 2: /* council_close_V1 - proposal_weight_bound */;
-            return _toStringCompactu64(
+            return _toStringWeight(
                 &m->basic.council_close_V1.proposal_weight_bound,
                 outValue, outValueLen,
                 pageIdx, pageCount);
@@ -3575,7 +3575,7 @@ case 4358: /* module 17 call 06 pallet:technicalcommittee call:close */
                 outValue, outValueLen,
                 pageIdx, pageCount);
         case 2: /* technicalcommittee_close_V1 - proposal_weight_bound */;
-            return _toStringCompactu64(
+            return _toStringWeight(
                 &m->basic.technicalcommittee_close_V1.proposal_weight_bound,
                 outValue, outValueLen,
                 pageIdx, pageCount);

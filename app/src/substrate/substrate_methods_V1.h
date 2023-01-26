@@ -313,7 +313,7 @@ typedef struct {
 typedef struct {
     pd_Hash_t proposal_hash;
     pd_Compactu32_t index;
-    pd_Compactu64_t proposal_weight_bound;
+    pd_Weight_t proposal_weight_bound;
     pd_Compactu32_t length_bound;
 } pd_council_close_V1_t;
 
@@ -353,7 +353,7 @@ typedef struct {
 typedef struct {
     pd_Hash_t proposal_hash;
     pd_Compactu32_t index;
-    pd_Compactu64_t proposal_weight_bound;
+    pd_Weight_t proposal_weight_bound;
     pd_Compactu32_t length_bound;
 } pd_technicalcommittee_close_V1_t;
 
