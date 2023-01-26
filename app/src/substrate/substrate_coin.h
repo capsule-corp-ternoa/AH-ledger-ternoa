@@ -20,7 +20,7 @@ extern "C" {
 #endif
 
 #define COIN_ADDR_TYPE 42
-#define CLA 0xb3
+#define CLA 0xb5
 
 #define HDPATH_LEN_DEFAULT 5
 #define HDPATH_0_DEFAULT (0x80000000 | 0x2c)
@@ -57,7 +57,7 @@ typedef enum {
 
 #define COIN_AMOUNT_DECIMAL_PLACES 18
 
-#define COIN_GENESIS_HASH "18bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6ace"
+#define COIN_GENESIS_HASH "b830bd7275da92f5064e9fead7605a63d2a8c6841267b96f57122867ac9a3abc"
 #define COIN_NAME "Ternoa"
 #define COIN_TICKER "CAPS "
 

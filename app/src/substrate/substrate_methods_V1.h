@@ -36,6 +36,7 @@ extern "C" {
 #define PD_CALL_ELECTIONPROVIDERMULTIPHASE_V1 15
 #define PD_CALL_TECHNICALCOMMITTEE_V1 17
 #define PD_CALL_TECHNICALMEMBERSHIP_V1 18
+#define PD_CALL_MANDATE_V1 19
 #define PD_CALL_TREASURY_V1 20
 #define PD_CALL_UTILITY_V1 21
 #define PD_CALL_PREIMAGE_V1 22
@@ -423,6 +424,11 @@ typedef struct {
     pd_Compactu32_t proposal_id;
 } pd_treasury_remove_approval_V1_t;
 
+#define PD_CALL_MANDATE_MANDATE_V1 0
+typedef struct {
+    pd_Call_t call;
+} pd_mandate_mandate_V1_t;
+
 #define PD_CALL_IDENTITY_ADD_REGISTRAR_V1 0
 typedef struct {
     pd_AccountId_V1_t account;
@@ -754,9 +760,8 @@ typedef struct {
     pd_u16_t threshold;
     pd_VecAccountId_V1_t other_signatories;
     pd_OptionTimepoint_V1_t maybe_timepoint;
-    pd_OpaqueCall_V1_t call;
-    pd_bool_t store_call;
-    pd_Weight_V1_t max_weight;
+    pd_Call_t call;
+    pd_Weight_t max_weight;
 } pd_multisig_as_multi_V1_t;
 
 #define PD_CALL_MULTISIG_APPROVE_AS_MULTI_V1 2
@@ -765,7 +770,7 @@ typedef struct {
     pd_VecAccountId_V1_t other_signatories;
     pd_OptionTimepoint_V1_t maybe_timepoint;
     pd_H256_t call_hash;
-    pd_Weight_V1_t max_weight;
+    pd_Weight_t max_weight;
 } pd_multisig_approve_as_multi_V1_t;
 
 #define PD_CALL_MULTISIG_CANCEL_AS_MULTI_V1 3
@@ -792,6 +797,7 @@ typedef union {
     pd_system_set_code_without_checks_V1_t system_set_code_without_checks_V1;
     pd_system_remark_with_event_V1_t system_remark_with_event_V1;
     pd_balances_set_balance_V1_t balances_set_balance_V1;
+    pd_mandate_mandate_V1_t mandate_mandate_V1;
     pd_democracy_propose_V1_t democracy_propose_V1;
     pd_democracy_second_V1_t democracy_second_V1;
     pd_democracy_vote_V1_t democracy_vote_V1;

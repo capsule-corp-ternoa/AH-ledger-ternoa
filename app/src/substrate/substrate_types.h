@@ -186,6 +186,12 @@ typedef compactInt_t pd_CompactReferendumIndex_t;
 typedef compactInt_t pd_CompactRegistrarIndex_t;
 typedef compactInt_t pd_CompactWeight_t;
 
+
+typedef struct {
+    pd_Compactu64_t refTime;
+    pd_Compactu64_t proofSize;
+} pd_Weight_t;
+
 #ifdef __cplusplus
 }
 #endif

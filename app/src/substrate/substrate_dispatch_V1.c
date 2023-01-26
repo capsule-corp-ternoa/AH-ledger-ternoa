@@ -654,6 +654,13 @@ __Z_INLINE parser_error_t _readMethod_technicalmembership_clear_prime_V1(
     return parser_ok;
 }
 
+__Z_INLINE parser_error_t _readMethod_mandate_mandate_V1(
+    parser_context_t* c, pd_mandate_mandate_V1_t* m)
+{
+    CHECK_ERROR(_readCall(c, &m->call))
+    return parser_ok;
+}
+
 __Z_INLINE parser_error_t _readMethod_treasury_propose_spend_V1(
     parser_context_t* c, pd_treasury_propose_spend_V1_t* m)
 {
@@ -769,9 +776,8 @@ __Z_INLINE parser_error_t _readMethod_multisig_as_multi_V1(
     CHECK_ERROR(_readu16(c, &m->threshold))
     CHECK_ERROR(_readVecAccountId_V1(c, &m->other_signatories))
     CHECK_ERROR(_readOptionTimepoint_V1(c, &m->maybe_timepoint))
-    CHECK_ERROR(_readOpaqueCall_V1(c, &m->call))
-    CHECK_ERROR(_readbool(c, &m->store_call))
-    CHECK_ERROR(_readWeight_V1(c, &m->max_weight))
+    CHECK_ERROR(_readCall(c, &m->call))
+    CHECK_ERROR(_readWeight(c, &m->max_weight))
     return parser_ok;
 }
 
@@ -782,7 +788,7 @@ __Z_INLINE parser_error_t _readMethod_multisig_approve_as_multi_V1(
     CHECK_ERROR(_readVecAccountId_V1(c, &m->other_signatories))
     CHECK_ERROR(_readOptionTimepoint_V1(c, &m->maybe_timepoint))
     CHECK_ERROR(_readH256(c, &m->call_hash))
-    CHECK_ERROR(_readWeight_V1(c, &m->max_weight))
+    CHECK_ERROR(_readWeight(c, &m->max_weight))
     return parser_ok;
 }
 
@@ -1155,6 +1161,9 @@ case 5635: /* module 22 call 03 pallet:preimage call:unrequest_preimage */
 case 3844: /* module 15 call 04 pallet:electionprovidermultiphase call:governance_fallback */
         CHECK_ERROR(_readMethod_electionprovidermultiphase_governance_fallback_V1(c, &method->basic.electionprovidermultiphase_governance_fallback_V1))
         break;
+case 4864: /* module 19 call 00 pallet:mandate call:mandate */
+        CHECK_ERROR(_readMethod_mandate_mandate_V1(c, &method->nested.mandate_mandate_V1))
+        break;
 case 5120: /* module 20 call 00 pallet:treasury call:propose_spend */
         CHECK_ERROR(_readMethod_treasury_propose_spend_V1(c, &method->basic.treasury_propose_spend_V1))
         break;
@@ -1188,10 +1197,10 @@ const char* _getMethod_ModuleName_V1(uint8_t moduleIdx)
     switch (moduleIdx) {
     case 4:
         return STR_MO_BALANCES;
+    case 9:
+        return STR_MO_SESSION;    
     case 13:
         return STR_MO_STAKING;
-    case 9:
-        return STR_MO_SESSION;
     case 21:
         return STR_MO_UTILITY;
 
@@ -1202,24 +1211,27 @@ const char* _getMethod_ModuleName_V1(uint8_t moduleIdx)
         return STR_MO_TIMESTAMP;
     case 10:
         return STR_MO_GRANDPA;
-    case 26:
-        return STR_MO_DEMOCRACY;
-    case 24:
-        return STR_MO_COUNCIL;
+    case 15:
+        return STR_MO_ELECTIONPROVIDERMULTIPHASE;
     case 17:
         return STR_MO_TECHNICALCOMMITTEE;
     case 18:
         return STR_MO_TECHNICALMEMBERSHIP;
+    case 19:
+        return STR_MO_MANDATE;
     case 20:
         return STR_MO_TREASURY;
-    case 28:
-        return STR_MO_IDENTITY;
-    case 27:
-        return STR_MO_MULTISIG;
     case 22:
         return STR_MO_PREIMAGE;
-    case 15:
-        return STR_MO_ELECTIONPROVIDERMULTIPHASE;
+    case 24:
+        return STR_MO_COUNCIL;
+    case 26:
+        return STR_MO_DEMOCRACY;
+    case 27:
+        return STR_MO_MULTISIG;
+    case 28:
+        return STR_MO_IDENTITY;
+
 #endif
     default:
         return NULL;
@@ -1328,6 +1340,8 @@ case 3352: /* module 13 call 24 pallet:staking call:force_apply_min_commission *
         return STR_ME_FORCE_APPLY_MIN_COMMISSION;
 case 2562: /* module 10 call 02 pallet:grandpa call:note_stalled */
         return STR_ME_NOTE_STALLED;
+case 4864: /* module 19 call 00 pallet:mandate call:mandate */
+        return STR_ME_MANDATE;
 case 6656: /* module 26 call 00 pallet:democracy call:propose */
         return STR_ME_PROPOSE;
 case 6657: /* module 26 call 01 pallet:democracy call:second */
@@ -1558,6 +1572,8 @@ case 3352: /* module 13 call 24 pallet:staking call:force_apply_min_commission *
         return 1;
 case 2562: /* module 10 call 02 pallet:grandpa call:note_stalled */
         return 2;
+case 4864: /* module 19 call 00 pallet:mandate call:mandate */
+        return 1;
 case 6656: /* module 26 call 00 pallet:democracy call:propose */
         return 2;
 case 6657: /* module 26 call 01 pallet:democracy call:second */
@@ -1665,7 +1681,7 @@ case 7182: /* module 28 call 14 pallet:identity call:quit_sub */
 case 6912: /* module 27 call 00 pallet:multisig call:as_multi_threshold_1 */
         return 2;
 case 6913: /* module 27 call 01 pallet:multisig call:as_multi */
-        return 6;
+        return 5;
 case 6914: /* module 27 call 02 pallet:multisig call:approve_as_multi */
         return 5;
 case 6915: /* module 27 call 03 pallet:multisig call:cancel_as_multi */
@@ -2017,6 +2033,13 @@ case 2562: /* module 10 call 02 pallet:grandpa call:note_stalled */
             return STR_IT_delay;
         case 1:
             return STR_IT_best_finalized_block_number;
+        default:
+            return NULL;
+        }
+case 4864: /* module 19 call 00 pallet:mandate call:mandate */
+        switch (itemIdx) {
+        case 0:
+            return STR_IT_call;
         default:
             return NULL;
         }
@@ -2462,8 +2485,6 @@ case 6913: /* module 27 call 01 pallet:multisig call:as_multi */
         case 3:
             return STR_IT_call;
         case 4:
-            return STR_IT_store_call;
-        case 5:
             return STR_IT_max_weight;
         default:
             return NULL;
@@ -3061,6 +3082,16 @@ case 2562: /* module 10 call 02 pallet:grandpa call:note_stalled */
         case 1: /* grandpa_note_stalled_V1 - best_finalized_block_number */;
             return _toStringBlockNumber(
                 &m->basic.grandpa_note_stalled_V1.best_finalized_block_number,
+                outValue, outValueLen,
+                pageIdx, pageCount);
+        default:
+            return parser_no_data;
+        }
+case 4864: /* module 19 call 00 pallet:mandate call:mandate */
+        switch (itemIdx) {
+        case 0: /* mandate_mandate_V1 - call */;
+            return _toStringCall(
+                &m->nested.mandate_mandate_V1.call,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3764,17 +3795,12 @@ case 6913: /* module 27 call 01 pallet:multisig call:as_multi */
                 outValue, outValueLen,
                 pageIdx, pageCount);
         case 3: /* multisig_as_multi_V1 - call */;
-            return _toStringOpaqueCall_V1(
+            return _toStringCall(
                 &m->nested.multisig_as_multi_V1.call,
                 outValue, outValueLen,
                 pageIdx, pageCount);
-        case 4: /* multisig_as_multi_V1 - store_call */;
-            return _toStringbool(
-                &m->nested.multisig_as_multi_V1.store_call,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 5: /* multisig_as_multi_V1 - max_weight */;
-            return _toStringWeight_V1(
+        case 4: /* multisig_as_multi_V1 - max_weight */;
+            return _toStringWeight(
                 &m->nested.multisig_as_multi_V1.max_weight,
                 outValue, outValueLen,
                 pageIdx, pageCount);
@@ -3804,7 +3830,7 @@ case 6914: /* module 27 call 02 pallet:multisig call:approve_as_multi */
                 outValue, outValueLen,
                 pageIdx, pageCount);
         case 4: /* multisig_approve_as_multi_V1 - max_weight */;
-            return _toStringWeight_V1(
+            return _toStringWeight(
                 &m->nested.multisig_approve_as_multi_V1.max_weight,
                 outValue, outValueLen,
                 pageIdx, pageCount);
