@@ -863,13 +863,13 @@ case 1028: /* module 04 call 04 pallet:balances call:transfer_all */
         CHECK_ERROR(_readMethod_balances_transfer_all_V1(c, &method->basic.balances_transfer_all_V1))
         break;
 case 3328: /* module 13 call 00 pallet:staking call:bond */
-        CHECK_ERROR(_readMethod_staking_bond_V1(c, &method->basic.staking_bond_V1))
+        CHECK_ERROR(_readMethod_staking_bond_V1(c, &method->nested.staking_bond_V1))
         break;
 case 3329: /* module 13 call 01 pallet:staking call:bond_extra */
         CHECK_ERROR(_readMethod_staking_bond_extra_V1(c, &method->basic.staking_bond_extra_V1))
         break;
 case 3330: /* module 13 call 02 pallet:staking call:unbond */
-        CHECK_ERROR(_readMethod_staking_unbond_V1(c, &method->basic.staking_unbond_V1))
+        CHECK_ERROR(_readMethod_staking_unbond_V1(c, &method->nested.staking_unbond_V1))
         break;
 case 3331: /* module 13 call 03 pallet:staking call:withdraw_unbonded */
         CHECK_ERROR(_readMethod_staking_withdraw_unbonded_V1(c, &method->basic.staking_withdraw_unbonded_V1))
@@ -878,16 +878,16 @@ case 3332: /* module 13 call 04 pallet:staking call:validate */
         CHECK_ERROR(_readMethod_staking_validate_V1(c, &method->basic.staking_validate_V1))
         break;
 case 3333: /* module 13 call 05 pallet:staking call:nominate */
-        CHECK_ERROR(_readMethod_staking_nominate_V1(c, &method->basic.staking_nominate_V1))
+        CHECK_ERROR(_readMethod_staking_nominate_V1(c, &method->nested.staking_nominate_V1))
         break;
 case 3334: /* module 13 call 06 pallet:staking call:chill */
-        CHECK_ERROR(_readMethod_staking_chill_V1(c, &method->basic.staking_chill_V1))
+        CHECK_ERROR(_readMethod_staking_chill_V1(c, &method->nested.staking_chill_V1))
         break;
 case 3335: /* module 13 call 07 pallet:staking call:set_payee */
         CHECK_ERROR(_readMethod_staking_set_payee_V1(c, &method->basic.staking_set_payee_V1))
         break;
 case 3336: /* module 13 call 08 pallet:staking call:set_controller */
-        CHECK_ERROR(_readMethod_staking_set_controller_V1(c, &method->basic.staking_set_controller_V1))
+        CHECK_ERROR(_readMethod_staking_set_controller_V1(c, &method->nested.staking_set_controller_V1))
         break;
 case 3346: /* module 13 call 18 pallet:staking call:payout_stakers */
         CHECK_ERROR(_readMethod_staking_payout_stakers_V1(c, &method->basic.staking_payout_stakers_V1))
@@ -2679,17 +2679,17 @@ case 3328: /* module 13 call 00 pallet:staking call:bond */
         switch (itemIdx) {
         case 0: /* staking_bond_V1 - controller */;
             return _toStringLookupasStaticLookupSource_V1(
-                &m->basic.staking_bond_V1.controller,
+                &m->nested.staking_bond_V1.controller,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         case 1: /* staking_bond_V1 - amount */;
             return _toStringCompactBalance(
-                &m->basic.staking_bond_V1.amount,
+                &m->nested.staking_bond_V1.amount,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         case 2: /* staking_bond_V1 - payee */;
             return _toStringRewardDestination_V1(
-                &m->basic.staking_bond_V1.payee,
+                &m->nested.staking_bond_V1.payee,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -2709,7 +2709,7 @@ case 3330: /* module 13 call 02 pallet:staking call:unbond */
         switch (itemIdx) {
         case 0: /* staking_unbond_V1 - amount */;
             return _toStringCompactBalance(
-                &m->basic.staking_unbond_V1.amount,
+                &m->nested.staking_unbond_V1.amount,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -2739,7 +2739,7 @@ case 3333: /* module 13 call 05 pallet:staking call:nominate */
         switch (itemIdx) {
         case 0: /* staking_nominate_V1 - targets */;
             return _toStringVecLookupasStaticLookupSource_V1(
-                &m->basic.staking_nominate_V1.targets,
+                &m->nested.staking_nominate_V1.targets,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -2764,7 +2764,7 @@ case 3336: /* module 13 call 08 pallet:staking call:set_controller */
         switch (itemIdx) {
         case 0: /* staking_set_controller_V1 - controller */;
             return _toStringLookupasStaticLookupSource_V1(
-                &m->basic.staking_set_controller_V1.controller,
+                &m->nested.staking_set_controller_V1.controller,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
