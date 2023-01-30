@@ -61,8 +61,11 @@ typedef enum {
 #define COIN_NAME "Ternoa"
 #define COIN_TICKER "CAPS "
 
+#define COIN_SECRET_REQUIRED_CLICKS 10
+
 #define MENU_MAIN_APP_LINE1 "Ternoa"
 #define MENU_MAIN_APP_LINE2 "Ready"
+#define MENU_MAIN_APP_LINE2_SECRET "CAPS RECOVERY"
 #define APPVERSION_LINE1 "Ternoa"
 #define APPVERSION_LINE2 "v" APPVERSION
 

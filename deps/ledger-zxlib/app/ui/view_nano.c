@@ -1,6 +1,5 @@
 /*******************************************************************************
-*   (c) 2018, 2019 Zondax GmbH
-*   (c) 2016 Ledger
+*   (c) 2018 - 2022 Zondax GmbH
 *
 *  Licensed under the Apache License, Version 2.0 (the "License");
 *  you may not use this file except in compliance with the License.
@@ -14,6 +13,12 @@
 *  See the License for the specific language governing permissions and
 *  limitations under the License.
 ********************************************************************************/
+#include "bolos_target.h"
+
+#if defined(TARGET_NANOS) || defined(TARGET_NANOS2) || defined(TARGET_NANOX)
+
+#include "view_internal.h"
+#include "view_nano.h"
 
 #include "view.h"
 #include "coin.h"
@@ -35,32 +40,19 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-view_t viewdata;
+extern unsigned int review_type;
 
-void h_approve(__Z_UNUSED unsigned int _) {
-    zemu_log_stack("h_approve");
-
-    view_idle_show(0, NULL);
-    UX_WAIT();
-    if (viewdata.viewfuncAccept != NULL) {
-        viewdata.viewfuncAccept();
+uint8_t getIntroPages() {
+#if defined(SHORTCUT_MODE_ENABLED) && defined(TARGET_NANOS)
+    if (review_type == REVIEW_ADDRESS || !app_mode_shortcut()) {
+        return INTRO_PAGES ? INTRO_PAGES - 1 : 0;
     }
+#endif
+    return INTRO_PAGES;
 }
 
-void h_reject(unsigned int requireReply) {
-    zemu_log_stack("h_reject");
-
-    view_idle_show(0, NULL);
-    UX_WAIT();
-    if(requireReply > 0) {
-        app_reject();
-    }
-}
-
-void h_error_accept(__Z_UNUSED unsigned int _) {
-    view_idle_show(0, NULL);
-    UX_WAIT();
-    app_reply_error();
+bool h_paging_intro_screen() {
+    return viewdata.itemIdx < getIntroPages();
 }
 
 void h_initialize(__Z_UNUSED unsigned int _) {
@@ -68,18 +60,14 @@ void h_initialize(__Z_UNUSED unsigned int _) {
     UX_WAIT();
 }
 
-///////////////////////////////////
-// Paging related
-
-void h_paging_init() {
-    zemu_log_stack("h_paging_init");
-
-    viewdata.itemIdx = 0;
-    viewdata.pageIdx = 0;
-    viewdata.pageCount = 1;
-    viewdata.itemCount = 0xFF;
+void view_error_show() {
+    snprintf(viewdata.key, MAX_CHARS_PER_KEY_LINE, "ERROR");
+    snprintf(viewdata.value, MAX_CHARS_PER_VALUE1_LINE, "SHOWING DATA");
+    view_error_show_impl();
 }
 
+///////////////////////////////////
+// Paging related
 bool h_paging_can_increase() {
     if (viewdata.pageIdx + 1 < viewdata.pageCount) {
         zemu_log_stack("h_paging_can_increase");
@@ -128,9 +116,7 @@ bool h_paging_can_decrease() {
 }
 
 void h_paging_decrease() {
-    char buffer[50];
-    snprintf(buffer, sizeof(buffer), "h_paging_decrease Idx %d", viewdata.itemIdx);
-    zemu_log_stack(buffer);
+    ZEMU_LOGF(50, "h_paging_decrease Idx %d\n", viewdata.itemIdx)
 
     if (viewdata.pageIdx != 0) {
         viewdata.pageIdx--;
@@ -145,9 +131,6 @@ void h_paging_decrease() {
         viewdata.pageIdx = 255;
     }
 }
-
-///////////////////////////////////
-// Paging related
 
 #ifdef INCLUDE_ACTIONS_AS_ITEMS
 bool is_accept_item(){
@@ -179,7 +162,7 @@ void h_review_action(unsigned int requireReply) {
     }
 
     zemu_log_stack("quick accept");
-    if (app_mode_expert()) {
+    if (app_mode_expert() || app_mode_shortcut()) {
         set_accept_item();
         h_review_update();
         return;
@@ -231,14 +214,68 @@ zxerr_t h_review_update_data() {
         viewdata.pageIdx = 0;
         return zxerr_ok;
     }
+
+    if (h_paging_intro_screen()) {
+        char* intro_key = NULL;
+        char* intro_value = NULL;
+
+#if defined(REVIEW_SCREEN_ENABLED)
+        switch (viewdata.itemIdx) {
+            case 0:
+                intro_key = PIC(review_key);
+                switch (review_type)
+                {
+                case REVIEW_UI:
+                    intro_key = PIC(review_keyconfig);
+                    intro_value = PIC(review_configvalue);
+                    break;
+
+                case REVIEW_ADDRESS:
+                    intro_value = PIC(review_addrvalue);
+                    break;
+
+                case REVIEW_TXN:
+                default:
+                    intro_value = PIC(review_txvalue);
+                    break;
+                }
+                break;
+        #if defined(SHORTCUT_MODE_ENABLED)
+            case 1:
+                intro_key = PIC(shortcut_key);
+                intro_value = PIC(shortcut_value);
+                break;
+        #endif
+            default:
+                return zxerr_no_data;
+        }
+#elif defined(SHORTCUT_MODE_ENABLED)
+        intro_key = PIC(shortcut_key);
+        intro_value = PIC(shortcut_value);
+#else
+        return zxerr_no_data;
+#endif
+
+        snprintf(viewdata.key, MAX_CHARS_PER_KEY_LINE, "%s", intro_key);
+        snprintf(viewdata.value, MAX_CHARS_PER_VALUE1_LINE, "%s", intro_value);
+        splitValueField();
+        viewdata.pageIdx = 0;
+        return zxerr_ok;
+    }
 #endif
 
     do {
         CHECK_ZXERR(viewdata.viewfuncGetNumItems(&viewdata.itemCount))
+        viewdata.itemCount += getIntroPages();
+
+        if (viewdata.itemIdx - getIntroPages() < 0) {
+          return zxerr_out_of_bounds;
+        }
+        const uint8_t realItemIdx = viewdata.itemIdx - getIntroPages();
 
         //Verify how many chars fit in display (nanos)
         CHECK_ZXERR(viewdata.viewfuncGetItem(
-                viewdata.itemIdx,
+                realItemIdx,
                 viewdata.key, MAX_CHARS_PER_KEY_LINE,
                 viewdata.value, MAX_CHARS_PER_VALUE1_LINE,
                 0, &viewdata.pageCount))
@@ -247,7 +284,7 @@ zxerr_t h_review_update_data() {
 
         // be sure we are not out of bounds
         CHECK_ZXERR(viewdata.viewfuncGetItem(
-                viewdata.itemIdx,
+                realItemIdx,
                 viewdata.key, MAX_CHARS_PER_KEY_LINE,
                 viewdata.value, dyn_max_char_per_line1,
                 0, &viewdata.pageCount))
@@ -256,7 +293,7 @@ zxerr_t h_review_update_data() {
             viewdata.pageIdx = viewdata.pageCount - 1;
         }
         CHECK_ZXERR(viewdata.viewfuncGetItem(
-                viewdata.itemIdx,
+                realItemIdx,
                 viewdata.key, MAX_CHARS_PER_KEY_LINE,
                 viewdata.value, dyn_max_char_per_line1,
                 viewdata.pageIdx, &viewdata.pageCount))
@@ -264,7 +301,7 @@ zxerr_t h_review_update_data() {
         viewdata.itemCount++;
 
         if (viewdata.pageCount > 1) {
-            uint8_t keyLen = strlen(viewdata.key);
+            uint8_t keyLen = strnlen(viewdata.key, MAX_CHARS_PER_KEY_LINE);
             if (keyLen < MAX_CHARS_PER_KEY_LINE) {
                 snprintf(viewdata.key + keyLen,
                          MAX_CHARS_PER_KEY_LINE - keyLen,
@@ -285,42 +322,8 @@ zxerr_t h_review_update_data() {
 
 ///////////////////////////////////
 // General
-
 void io_seproxyhal_display(const bagl_element_t *element) {
-    io_seproxyhal_display_default((bagl_element_t *) element);
+    io_seproxyhal_display_default(element);
 }
 
-void view_init(void) {
-    UX_INIT();
-#ifdef APP_SECRET_MODE_ENABLED
-    viewdata.secret_click_count = 0;
 #endif
-}
-
-void view_idle_show(uint8_t item_idx, char *statusString) {
-    view_idle_show_impl(item_idx, statusString);
-}
-
-void view_message_show(char *title, char *message) {
-    view_message_impl(title, message);
-}
-
-void view_review_init(viewfunc_getItem_t viewfuncGetItem,
-                      viewfunc_getNumItems_t viewfuncGetNumItems,
-                      viewfunc_accept_t viewfuncAccept) {
-    viewdata.viewfuncGetItem = viewfuncGetItem;
-    viewdata.viewfuncGetNumItems = viewfuncGetNumItems;
-    viewdata.viewfuncAccept = viewfuncAccept;
-}
-
-void view_review_show(unsigned int requireReply) {
-    // Set > 0 to reply apdu message
-    view_review_show_impl(requireReply);
-}
-
-void view_error_show() {
-    snprintf(viewdata.key, MAX_CHARS_PER_KEY_LINE, "ERROR");
-    snprintf(viewdata.value, MAX_CHARS_PER_VALUE1_LINE, "SHOWING DATA");
-    splitValueField();
-    view_error_show_impl();
-}

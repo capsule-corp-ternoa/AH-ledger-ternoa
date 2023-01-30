@@ -22,6 +22,8 @@ extern "C" {
 #include "zxmacros.h"
 #include "zxerror.h"
 
+#define IS_PRINTABLE(c) (c >= 0x20 && c <= 0x7e)
+
 #define NUM_TO_STR(TYPE) __Z_INLINE const char * TYPE##_to_str(char *data, int dataLen, TYPE##_t number) { \
     if (dataLen < 2) return "Buffer too small";     \
     MEMZERO(data, dataLen);                         \
@@ -74,7 +76,7 @@ __Z_INLINE void bip32_to_str(char *s, uint32_t max, const uint32_t *path, uint8_
         // Warning: overcomplicated because Ledger's snprintf does not return number of written bytes
 
         snprintf(s + offset, max - offset, "%d", path[i] & 0x7FFFFFFFu);
-        written = strlen(s + offset);
+        written = strnlen(s + offset, max - offset);
         if (written == 0 || written >= max - offset) {
             snprintf(s, max, "ERROR");
             return;
@@ -83,7 +85,7 @@ __Z_INLINE void bip32_to_str(char *s, uint32_t max, const uint32_t *path, uint8_
 
         if ((path[i] & 0x80000000u) != 0) {
             snprintf(s + offset, max - offset, "'");
-            written = strlen(s + offset);
+            written = strnlen(s + offset, max - offset);
             if (written == 0 || written >= max - offset) {
                 snprintf(s, max, "ERROR");
                 return;
@@ -93,7 +95,7 @@ __Z_INLINE void bip32_to_str(char *s, uint32_t max, const uint32_t *path, uint8_
 
         if (i != pathLen - 1) {
             snprintf(s + offset, max - offset, "/");
-            written = strlen(s + offset);
+            written = strnlen(s + offset, max - offset);
             if (written == 0 || written >= max - offset) {
                 snprintf(s, max, "ERROR");
                 return;
@@ -233,7 +235,7 @@ __Z_INLINE uint16_t fpuint64_to_str(char *out, uint16_t outLen, const uint64_t v
     MEMZERO(buffer, sizeof(buffer));
     uint64_to_str(buffer, sizeof(buffer), value);
     fpstr_to_str(out, outLen, buffer, decimals);
-    return (uint16_t) strlen(out);
+    return (uint16_t)strnlen(out, outLen);
 }
 
 __Z_INLINE void number_inplace_trimming(char *s, uint8_t non_trimmed) {
@@ -283,6 +285,83 @@ __Z_INLINE uint32_t array_to_hexstr(char *dst, uint16_t dstLen, const uint8_t *s
     return (uint32_t) (count * 2);
 }
 
+__Z_INLINE uint32_t array_to_hexstr_uppercase(char *dst, uint16_t dstLen, const uint8_t *src, uint8_t count) {
+    MEMZERO(dst, dstLen);
+    if (dstLen < (count * 2 + 1)) {
+        return 0;
+    }
+
+    const char hexchars[] = "0123456789ABCDEF";
+    for (uint8_t i = 0; i < count; i++, src++) {
+        *dst++ = hexchars[*src >> 4u];
+        *dst++ = hexchars[*src & 0x0Fu];
+    }
+    *dst = 0; // terminate string
+
+    return (uint32_t) (count * 2);
+}
+
+__Z_INLINE uint32_t hexstr_to_array(uint8_t *dst, uint16_t dstLen, const char *src, const uint16_t srcLen) {
+    MEMZERO(dst, dstLen);
+    if (srcLen % 2 != 0 || dstLen < srcLen/2) {
+        return 0;
+    }
+
+    for (size_t i = 0; i < srcLen/2; i++) {
+        uint8_t ch0 = src[2 * i];
+        uint8_t ch1 = src[2 * i + 1];
+        uint8_t nib0 = (ch0 & 0xF) + (ch0 >> 6) | ((ch0 >> 3) & 0x8);
+        uint8_t nib1 = (ch1 & 0xF) + (ch1 >> 6) | ((ch1 >> 3) & 0x8);
+        dst[i] = (nib0 << 4) | nib1;
+    }
+
+  return srcLen/2;
+}
+
+__Z_INLINE zxerr_t to_uppercase(uint8_t *letter) {
+    if (letter == NULL) {
+        return zxerr_no_data;
+    }
+    //Check if lowercase letter
+    if(*letter >= 0x61  && *letter <= 0x7A) {
+        *letter = *letter - 0x20;
+    }
+    return zxerr_ok;
+}
+
+__Z_INLINE zxerr_t to_lowercase(uint8_t *letter) {
+    if (letter == NULL) {
+        return zxerr_no_data;
+    }
+    //Check if uppercase letter
+    if(*letter >= 0x41  && *letter <= 0x5A) {
+        *letter = *letter + 0x20;
+    }
+    return zxerr_ok;
+}
+
+__Z_INLINE zxerr_t array_to_uppercase(uint8_t *input, uint16_t inputLen) {
+    if (input == NULL) {
+        return zxerr_no_data;
+    }
+
+    for (uint16_t i = 0; i < inputLen; i++) {
+        to_uppercase(input+i);
+    }
+    return zxerr_ok;
+}
+
+__Z_INLINE zxerr_t array_to_lowercase(uint8_t *input, uint16_t inputLen) {
+    if (input == NULL) {
+        return zxerr_no_data;
+    }
+
+    for (uint16_t i = 0; i < inputLen; i++) {
+        to_uppercase(input+i);
+    }
+    return zxerr_ok;
+}
+
 __Z_INLINE void pageStringExt(char *outValue, uint16_t outValueLen,
                               const char *inValue, uint16_t inValueLen,
                               uint8_t pageIdx, uint8_t *pageCount) {
@@ -318,6 +397,37 @@ __Z_INLINE void pageString(char *outValue, uint16_t outValueLen,
                            const char *inValue,
                            uint8_t pageIdx, uint8_t *pageCount) {
     pageStringExt(outValue, outValueLen, inValue, (uint16_t) strlen(inValue), pageIdx, pageCount);
+}
+
+__Z_INLINE void pageStringHex(char *outValue, uint16_t outValueLen,
+                              const char *inValue, uint16_t inValueLen,
+                              uint8_t pageIdx, uint8_t *pageCount) {
+    MEMZERO(outValue, outValueLen);
+    *pageCount = 0;
+
+    //array_to_hexstr adds a null terminator
+    if (outValueLen < 1) {
+        return;
+    }
+
+    if (inValueLen == 0) {
+        return;
+    }
+    const uint16_t msgHexLen = inValueLen * 2;
+    *pageCount = (uint8_t) (msgHexLen / outValueLen);
+    const uint16_t lastChunkLen = (msgHexLen % outValueLen);
+
+    if (lastChunkLen > 0) {
+        (*pageCount)++;
+    }
+
+    if (pageIdx < *pageCount) {
+        if (lastChunkLen > 0 && pageIdx == *pageCount - 1) {
+            array_to_hexstr(outValue, outValueLen, (const uint8_t*)inValue+(pageIdx * (outValueLen/2)), lastChunkLen/2);
+        } else {
+            array_to_hexstr(outValue, outValueLen, (const uint8_t*)inValue+(pageIdx * (outValueLen/2)), outValueLen/2);
+        }
+    }
 }
 
 __Z_INLINE zxerr_t formatBufferData(

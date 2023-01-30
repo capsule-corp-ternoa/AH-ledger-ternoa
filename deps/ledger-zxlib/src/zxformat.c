@@ -40,7 +40,7 @@ size_t asciify_ext(const char *utf8_in, char *ascii_only_out) {
 }
 
 uint8_t intstr_to_fpstr_inplace(char *number, size_t number_max_size, uint8_t decimalPlaces) {
-    uint16_t numChars = strnlen(number, number_max_size);
+    size_t numChars = strnlen(number, number_max_size);
     MEMZERO(number + numChars, number_max_size - numChars);
 
     if (number_max_size < 1) {
@@ -60,8 +60,8 @@ uint8_t intstr_to_fpstr_inplace(char *number, size_t number_max_size, uint8_t de
     }
 
     // Check all are numbers
-    uint16_t firstDigit = numChars;
-    for (int i = 0; i < numChars; i++) {
+    size_t firstDigit = numChars;
+    for (size_t i = 0; i < numChars; i++) {
         if (number[i] < '0' || number[i] > '9') {
             snprintf(number, number_max_size, "ERR");
             return 0;
@@ -99,7 +99,7 @@ uint8_t intstr_to_fpstr_inplace(char *number, size_t number_max_size, uint8_t de
         const uint16_t padSize = decimalPlaces - numChars + 1;
         MEMMOVE(number + padSize, number, numChars);
         MEMSET(number, '0', padSize);
-        numChars = strlen(number);
+        numChars = strnlen(number, number_max_size);
     }
 
     // add decimal point
@@ -107,14 +107,18 @@ uint8_t intstr_to_fpstr_inplace(char *number, size_t number_max_size, uint8_t de
     MEMMOVE(number + pointPosition + 1, number + pointPosition, decimalPlaces);  // shift content
     number[pointPosition] = '.';
 
-    numChars = strlen(number);
-    return numChars;
+    numChars = strnlen(number, number_max_size);
+
+    if (numChars > UINT8_MAX) {
+        // Overflow
+        return 0;
+    }
+    return (uint8_t) numChars;
 }
 
 size_t z_strlen(const char *buffer, size_t maxSize) {
     if (buffer == NULL) return 0;
-    const size_t tmp = strlen(buffer);
-    return tmp < maxSize ? tmp : maxSize;
+    return strnlen(buffer, maxSize);
 }
 
 zxerr_t z_str3join(char *buffer, size_t bufferSize, const char *prefix, const char *suffix) {

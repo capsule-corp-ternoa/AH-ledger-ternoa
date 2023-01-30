@@ -93,7 +93,7 @@ all:
 
 .PHONY: check_python
 check_python:
-	true
+	@python -c 'import sys; sys.exit(3-sys.version_info.major)' || (echo "The python command does not point to Python 3"; exit 1)
 
 .PHONY: deps
 deps: check_python
@@ -123,8 +123,6 @@ build_rustS2:
 
 .PHONY: convert_icon
 convert_icon:
-	@echo $(LEDGER_SRC)
-	@ls $(LEDGER_SRC)
 	@convert $(LEDGER_SRC)/tmp.gif -monochrome -size 16x16 -depth 1 $(LEDGER_SRC)/nanos_icon.gif
 	@convert $(LEDGER_SRC)/nanos_icon.gif -crop 14x14+1+1 +repage -negate $(LEDGER_SRC)/nanox_icon.gif
 
@@ -227,13 +225,13 @@ dev_ca_delete: check_python
 	@python -m ledgerblue.resetCustomCA --targetId 0x31100004
 
 # This target will setup a custom developer certificate
-.PHONY: dev_ca2
-dev_ca2: check_python
-	@python -m ledgerblue.setupCustomCA --targetId 0x33000004 --public $(SCP_PUBKEY) --name zondax
+.PHONY: dev_caS2
+dev_caS2: check_python
+	@python -m ledgerblue.setupCustomCA --targetId 0x33100004 --public $(SCP_PUBKEY) --name zondax
 
-.PHONY: dev_ca_delete2
-dev_ca_delete2: check_python
-	@python -m ledgerblue.resetCustomCA --targetId 0x33000004
+.PHONY: dev_ca_deleteS2
+dev_ca_deleteS2: check_python
+	@python -m ledgerblue.resetCustomCA --targetId 0x33100004
 
 ########################## VUE Section ###############################
 

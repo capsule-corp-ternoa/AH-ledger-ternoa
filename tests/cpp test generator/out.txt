@@ -1,0 +1,264 @@
+USERID                : 501
+TESTS_ZEMU_DIR        : /Users/mohsinriaz/Mohsin/Netick/ledger/ledger-ternoa/tests_zemu
+EXAMPLE_VUE_DIR       : /Users/mohsinriaz/Mohsin/Netick/ledger/ledger-ternoa/example_vue
+TESTS_JS_DIR          : 
+TESTS_JS_PACKAGE      : 
+mkdir -p build && cd build && cmake -DCMAKE_BUILD_TYPE=Debug .. && make
+-- Conan: checking conan executable in path
+-- Conan: Found program /Users/mohsinriaz/.pyenv/shims/conan
+-- Conan: Version found Conan version 1.56.0
+
+-- Conan: Automatic detection of conan settings from cmake
+-- Conan: Settings= -s;build_type=Debug;-s;compiler=apple-clang;-s;compiler.version=14.0;-s;compiler.libcxx=libc++
+-- Conan executing: conan install /Users/mohsinriaz/mohsin/Netick/ledger/ledger-ternoa/conanfile.txt -s build_type=Debug -s compiler=apple-clang -s compiler.version=14.0 -s compiler.libcxx=libc++ -g=cmake --build=missing
+-- Configuration:
+[settings]
+arch=x86_64
+arch_build=x86_64
+build_type=Debug
+compiler=apple-clang
+compiler.libcxx=libc++
+compiler.version=14.0
+os=Macos
+os_build=Macos
+[options]
+[build_requires]
+[env]
+
+conanfile.txt: Installing package
+Requirements
+    fmt/7.0.2 from 'conancenter' - Cache
+    jsoncpp/1.9.3 from 'conancenter' - Cache
+Packages
+    fmt/7.0.2:3b79e4839e0ba8e5a8725f3ab6c79826a198d7e0 - Cache
+    jsoncpp/1.9.3:ce1a7b6e47d491a5794ab70be145a1cfae1e09f6 - Cache
+
+Installing (downloading, building) binaries...
+fmt/7.0.2: Already installed!
+jsoncpp/1.9.3: Already installed!
+conanfile.txt: Generator txt created conanbuildinfo.txt
+conanfile.txt: Generator cmake created conanbuildinfo.cmake
+conanfile.txt: Aggregating env generators
+conanfile.txt: Generated conaninfo.txt
+conanfile.txt: Generated graphinfo
+
+-- Conan: Loading conanbuildinfo.cmake
+-- Conan: Adjusting output directories
+-- Conan: Using cmake targets configuration
+-- Library jsoncpp found /Users/mohsinriaz/.conan/data/jsoncpp/1.9.3/_/_/package/ce1a7b6e47d491a5794ab70be145a1cfae1e09f6/lib/libjsoncpp.a
+-- Library fmtd found /Users/mohsinriaz/.conan/data/fmt/7.0.2/_/_/package/3b79e4839e0ba8e5a8725f3ab6c79826a198d7e0/lib/libfmtd.a
+-- Conan: Adjusting default RPATHs Conan policies
+-- Conan: Adjusting language standard
+-- Current conanbuildinfo.cmake directory: /Users/mohsinriaz/mohsin/Netick/ledger/ledger-ternoa/build
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/mohsinriaz/Mohsin/Netick/ledger/ledger-ternoa/build/googletest-download
+[ 11%] Performing update step for 'googletest'
+[ 22%] No patch step for 'googletest'
+[ 33%] No configure step for 'googletest'
+[ 44%] No build step for 'googletest'
+[ 55%] No install step for 'googletest'
+[ 66%] No test step for 'googletest'
+[ 77%] Completed 'googletest'
+[100%] Built target googletest
+-- LEDGER_MAJOR_VERSION [0]: 1
+-- LEDGER_MINOR_VERSION [0]: 11
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/mohsinriaz/mohsin/Netick/ledger/ledger-ternoa/build
+[ 53%] Built target app_lib
+[ 59%] Built target gtest
+[ 65%] Built target gtest_main
+[ 87%] Built target unittests
+[ 93%] Built target gmock
+[100%] Built target gmock_main
+cd build && GTEST_COLOR=1 ASAN_OPTIONS=detect_leaks=0 ctest -VV
+UpdateCTestConfiguration  from :/Users/mohsinriaz/mohsin/Netick/ledger/ledger-ternoa/build/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/Users/mohsinriaz/mohsin/Netick/ledger/ledger-ternoa/build/DartConfiguration.tcl
+Test project /Users/mohsinriaz/mohsin/Netick/ledger/ledger-ternoa/build
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: unittests
+
+1: Test command: /Users/mohsinriaz/mohsin/Netick/ledger/ledger-ternoa/build/bin/unittests
+1: Test timeout computed to be: 10000000
+1: Running main() from /Users/mohsinriaz/mohsin/Netick/ledger/ledger-ternoa/build/googletest-src/googletest/src/gtest_main.cc
+1: Number of testcases: 1
+1: Number of testcases: 1
+1: Number of testcases: 1
+1: Number of testcases: 1
+1: [0;32m[==========] [mRunning 37 tests from 6 test suites.
+1: [0;32m[----------] [mGlobal test environment set-up.
+1: [0;32m[----------] [m4 tests from SS58
+1: [0;32m[ RUN      ] [mSS58.PrefixEncodingSingleByte
+1: [0;32m[       OK ] [mSS58.PrefixEncodingSingleByte (0 ms)
+1: [0;32m[ RUN      ] [mSS58.PrefixEncodingDualByte1
+1: [0;32m[       OK ] [mSS58.PrefixEncodingDualByte1 (0 ms)
+1: [0;32m[ RUN      ] [mSS58.PrefixEncodingDualByte2
+1: [0;32m[       OK ] [mSS58.PrefixEncodingDualByte2 (0 ms)
+1: [0;32m[ RUN      ] [mSS58.PrefixEncodingDualByte3
+1: [0;32m[       OK ] [mSS58.PrefixEncodingDualByte3 (0 ms)
+1: [0;32m[----------] [m4 tests from SS58 (0 ms total)
+1: 
+1: [0;32m[----------] [m8 tests from SCALE
+1: [0;32m[ RUN      ] [mSCALE.UIntX
+1: [0;32m[       OK ] [mSCALE.UIntX (0 ms)
+1: [0;32m[ RUN      ] [mSCALE.Bool
+1: [0;32m[       OK ] [mSCALE.Bool (0 ms)
+1: [0;32m[ RUN      ] [mSCALE.Compact
+1: [0;32m[       OK ] [mSCALE.Compact (0 ms)
+1: [0;32m[ RUN      ] [mSCALE.Compact2
+1: [0;32m[       OK ] [mSCALE.Compact2 (0 ms)
+1: [0;32m[ RUN      ] [mSCALE.MortalEra
+1: [0;32m[       OK ] [mSCALE.MortalEra (0 ms)
+1: [0;32m[ RUN      ] [mSCALE.BadTX
+1: [0;32m[       OK ] [mSCALE.BadTX (0 ms)
+1: [0;32m[ RUN      ] [mSCALE.TransferTXBadTxVersion
+1: [0;32m[       OK ] [mSCALE.TransferTXBadTxVersion (0 ms)
+1: [0;32m[ RUN      ] [mSCALE.TransferTXBadSpec
+1: [0;32m[       OK ] [mSCALE.TransferTXBadSpec (0 ms)
+1: [0;32m[----------] [m8 tests from SCALE (0 ms total)
+1: 
+1: [0;32m[----------] [m12 tests from BytesPrintTestcases/BytesPrintTests
+1: [0;32m[ RUN      ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/0
+1: [0;32m[       OK ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/0 (0 ms)
+1: [0;32m[ RUN      ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/1
+1: [0;32m[       OK ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/1 (0 ms)
+1: [0;32m[ RUN      ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/2
+1: [0;32m[       OK ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/2 (0 ms)
+1: [0;32m[ RUN      ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/3
+1: [0;32m[       OK ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/3 (0 ms)
+1: [0;32m[ RUN      ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/4
+1: [0;32m[       OK ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/4 (0 ms)
+1: [0;32m[ RUN      ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/5
+1: [0;32m[       OK ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/5 (0 ms)
+1: [0;32m[ RUN      ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/6
+1: [0;32m[       OK ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/6 (0 ms)
+1: [0;32m[ RUN      ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/7
+1: [0;32m[       OK ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/7 (0 ms)
+1: [0;32m[ RUN      ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/8
+1: [0;32m[       OK ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/8 (0 ms)
+1: [0;32m[ RUN      ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/9
+1: [0;32m[       OK ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/9 (0 ms)
+1: [0;32m[ RUN      ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/10
+1: [0;32m[       OK ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/10 (0 ms)
+1: [0;32m[ RUN      ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/11
+1: [0;32m[       OK ] [mBytesPrintTestcases/BytesPrintTests.BytesPrinting/11 (0 ms)
+1: [0;32m[----------] [m12 tests from BytesPrintTestcases/BytesPrintTests (0 ms total)
+1: 
+1: [0;32m[----------] [m9 tests from CompactPrintTestcases/CompactPrintTests
+1: [0;32m[ RUN      ] [mCompactPrintTestcases/CompactPrintTests.CompactPrinting/0
+1: [0;32m[       OK ] [mCompactPrintTestcases/CompactPrintTests.CompactPrinting/0 (0 ms)
+1: [0;32m[ RUN      ] [mCompactPrintTestcases/CompactPrintTests.CompactPrinting/1
+1: [0;32m[       OK ] [mCompactPrintTestcases/CompactPrintTests.CompactPrinting/1 (0 ms)
+1: [0;32m[ RUN      ] [mCompactPrintTestcases/CompactPrintTests.CompactPrinting/2
+1: [0;32m[       OK ] [mCompactPrintTestcases/CompactPrintTests.CompactPrinting/2 (0 ms)
+1: [0;32m[ RUN      ] [mCompactPrintTestcases/CompactPrintTests.CompactPrinting/3
+1: [0;32m[       OK ] [mCompactPrintTestcases/CompactPrintTests.CompactPrinting/3 (0 ms)
+1: [0;32m[ RUN      ] [mCompactPrintTestcases/CompactPrintTests.CompactPrinting/4
+1: [0;32m[       OK ] [mCompactPrintTestcases/CompactPrintTests.CompactPrinting/4 (0 ms)
+1: [0;32m[ RUN      ] [mCompactPrintTestcases/CompactPrintTests.CompactPrinting/5
+1: [0;32m[       OK ] [mCompactPrintTestcases/CompactPrintTests.CompactPrinting/5 (0 ms)
+1: [0;32m[ RUN      ] [mCompactPrintTestcases/CompactPrintTests.CompactPrinting/6
+1: [0;32m[       OK ] [mCompactPrintTestcases/CompactPrintTests.CompactPrinting/6 (0 ms)
+1: [0;32m[ RUN      ] [mCompactPrintTestcases/CompactPrintTests.CompactPrinting/7
+1: [0;32m[       OK ] [mCompactPrintTestcases/CompactPrintTests.CompactPrinting/7 (0 ms)
+1: [0;32m[ RUN      ] [mCompactPrintTestcases/CompactPrintTests.CompactPrinting/8
+1: [0;32m[       OK ] [mCompactPrintTestcases/CompactPrintTests.CompactPrinting/8 (0 ms)
+1: [0;32m[----------] [m9 tests from CompactPrintTestcases/CompactPrintTests (0 ms total)
+1: 
+1: [0;32m[----------] [m2 tests from JsonTestCasesCurrentTxVer/JsonTestsA
+1: [0;32m[ RUN      ] [mJsonTestCasesCurrentTxVer/JsonTestsA.CheckUIOutput_CurrentTX_Normal/76_Balances_Transfer
+1: 
+1: 0 | Balances : Transfer
+1: 1 | Dest [1/2] : 5ED8FvTWgsk9AmJoBPj7UyfdTfpJYaKZGA9CKm
+1: 1 | Dest [2/2] : JWzb4Dk9Wd
+1: 2 | Amount : CAPS 500.0
+1: 3 | Tip : CAPS 3.0
+1: 
+1: 
+1: [0;32m[       OK ] [mJsonTestCasesCurrentTxVer/JsonTestsA.CheckUIOutput_CurrentTX_Normal/76_Balances_Transfer (0 ms)
+1: [0;32m[ RUN      ] [mJsonTestCasesCurrentTxVer/JsonTestsA.CheckUIOutput_CurrentTX_Expert/76_Balances_Transfer
+1: 
+1: 0 | Balances : Transfer
+1: 1 | Dest [1/2] : 5ED8FvTWgsk9AmJoBPj7UyfdTfpJYaKZGA9CKm
+1: 1 | Dest [2/2] : JWzb4Dk9Wd
+1: 2 | Amount : CAPS 500.0
+1: 3 | Chain : Ternoa
+1: 4 | Nonce : 1
+1: 5 | Tip : CAPS 3.0
+1: 6 | Era Phase : 0
+1: 7 | Era Period : 0
+1: 8 | Block [1/2] : d2b169b41debe3843d84ec7baca76ccdad3408
+1: 8 | Block [2/2] : cb6ed0a8ce7fa3f3f0119cd8db
+1: 
+1: 
+1: /Users/mohsinriaz/mohsin/Netick/ledger/ledger-ternoa/tests/ui_tests.cpp:133: Failure
+1: Value of: output[i]
+1: Expected: is equal to "6 | Era Phase : 61"
+1:   Actual: "6 | Era Phase : 0"
+1: /Users/mohsinriaz/mohsin/Netick/ledger/ledger-ternoa/tests/ui_tests.cpp:133: Failure
+1: Value of: output[i]
+1: Expected: is equal to "7 | Era Period : 64"
+1:   Actual: "7 | Era Period : 0"
+1: [0;31m[  FAILED  ] [mJsonTestCasesCurrentTxVer/JsonTestsA.CheckUIOutput_CurrentTX_Expert/76_Balances_Transfer, where GetParam() = 104-byte object <4C-00 00-00 00-00 00-00 22-42 61-6C 61-6E 63-65 73-5F 54-72 61-6E 73-66 65-72 00-0F 01-00 00-00 11-01 00-00 00-00 00-00 00-01 00-00 00-00 00-00 E0-CF F0-7C 8E-7F 00-00 F0-D0 F0-7C 8E-7F 00-00 68-D1 F0-7C 8E-7F 00-00 68-D1 F0-7C 8E-7F 00-00 F0-82 F0-7C 8E-7F 00-00 F8-83 F0-7C 8E-7F 00-00 F8-83 F0-7C 8E-7F 00-00> (0 ms)
+1: [0;32m[----------] [m2 tests from JsonTestCasesCurrentTxVer/JsonTestsA (0 ms total)
+1: 
+1: [0;32m[----------] [m2 tests from JsonTestCasesPreviousTxVer/JsonTestsB
+1: [0;32m[ RUN      ] [mJsonTestCasesPreviousTxVer/JsonTestsB.CheckUIOutput_PreviousTX_Normal/76_Balances_Transfer
+1: 
+1: 0 | Balances : Transfer
+1: 1 | Dest [1/2] : 5ED8FvTWgsk9AmJoBPj7UyfdTfpJYaKZGA9CKm
+1: 1 | Dest [2/2] : JWzb4Dk9Wd
+1: 2 | Amount : CAPS 500.0
+1: 3 | Tip : CAPS 3.0
+1: 
+1: 
+1: [0;32m[       OK ] [mJsonTestCasesPreviousTxVer/JsonTestsB.CheckUIOutput_PreviousTX_Normal/76_Balances_Transfer (0 ms)
+1: [0;32m[ RUN      ] [mJsonTestCasesPreviousTxVer/JsonTestsB.CheckUIOutput_PreviousTX_Expert/76_Balances_Transfer
+1: 
+1: 0 | Balances : Transfer
+1: 1 | Dest [1/2] : 5ED8FvTWgsk9AmJoBPj7UyfdTfpJYaKZGA9CKm
+1: 1 | Dest [2/2] : JWzb4Dk9Wd
+1: 2 | Amount : CAPS 500.0
+1: 3 | Chain : Ternoa
+1: 4 | Nonce : 1
+1: 5 | Tip : CAPS 3.0
+1: 6 | Era Phase : 0
+1: 7 | Era Period : 0
+1: 8 | Block [1/2] : d2b169b41debe3843d84ec7baca76ccdad3408
+1: 8 | Block [2/2] : cb6ed0a8ce7fa3f3f0119cd8db
+1: 
+1: 
+1: /Users/mohsinriaz/mohsin/Netick/ledger/ledger-ternoa/tests/ui_tests.cpp:133: Failure
+1: Value of: output[i]
+1: Expected: is equal to "6 | Era Phase : 61"
+1:   Actual: "6 | Era Phase : 0"
+1: /Users/mohsinriaz/mohsin/Netick/ledger/ledger-ternoa/tests/ui_tests.cpp:133: Failure
+1: Value of: output[i]
+1: Expected: is equal to "7 | Era Period : 64"
+1:   Actual: "7 | Era Period : 0"
+1: [0;31m[  FAILED  ] [mJsonTestCasesPreviousTxVer/JsonTestsB.CheckUIOutput_PreviousTX_Expert/76_Balances_Transfer, where GetParam() = 104-byte object <4C-00 00-00 00-00 00-00 22-42 61-6C 61-6E 63-65 73-5F 54-72 61-6E 73-66 65-72 00-0F 01-00 00-00 11-01 00-00 00-00 00-00 00-01 00-00 00-00 00-00 F0-CC F0-7C 8E-7F 00-00 00-CE F0-7C 8E-7F 00-00 78-CE F0-7C 8E-7F 00-00 78-CE F0-7C 8E-7F 00-00 20-83 F0-7C 8E-7F 00-00 28-84 F0-7C 8E-7F 00-00 28-84 F0-7C 8E-7F 00-00> (0 ms)
+1: [0;32m[----------] [m2 tests from JsonTestCasesPreviousTxVer/JsonTestsB (0 ms total)
+1: 
+1: [0;32m[----------] [mGlobal test environment tear-down
+1: [0;32m[==========] [m37 tests from 6 test suites ran. (2 ms total)
+1: [0;32m[  PASSED  ] [m35 tests.
+1: [0;31m[  FAILED  ] [m2 tests, listed below:
+1: [0;31m[  FAILED  ] [mJsonTestCasesCurrentTxVer/JsonTestsA.CheckUIOutput_CurrentTX_Expert/76_Balances_Transfer, where GetParam() = 104-byte object <4C-00 00-00 00-00 00-00 22-42 61-6C 61-6E 63-65 73-5F 54-72 61-6E 73-66 65-72 00-0F 01-00 00-00 11-01 00-00 00-00 00-00 00-01 00-00 00-00 00-00 E0-CF F0-7C 8E-7F 00-00 F0-D0 F0-7C 8E-7F 00-00 68-D1 F0-7C 8E-7F 00-00 68-D1 F0-7C 8E-7F 00-00 F0-82 F0-7C 8E-7F 00-00 F8-83 F0-7C 8E-7F 00-00 F8-83 F0-7C 8E-7F 00-00>
+1: [0;31m[  FAILED  ] [mJsonTestCasesPreviousTxVer/JsonTestsB.CheckUIOutput_PreviousTX_Expert/76_Balances_Transfer, where GetParam() = 104-byte object <4C-00 00-00 00-00 00-00 22-42 61-6C 61-6E 63-65 73-5F 54-72 61-6E 73-66 65-72 00-0F 01-00 00-00 11-01 00-00 00-00 00-00 00-01 00-00 00-00 00-00 F0-CC F0-7C 8E-7F 00-00 00-CE F0-7C 8E-7F 00-00 78-CE F0-7C 8E-7F 00-00 78-CE F0-7C 8E-7F 00-00 20-83 F0-7C 8E-7F 00-00 28-84 F0-7C 8E-7F 00-00 28-84 F0-7C 8E-7F 00-00>
+1: 
+1:  2 FAILED TESTS
+1/1 Test #1: unittests ........................***Failed    0.01 sec
+
+0% tests passed, 1 tests failed out of 1
+
+Total Test time (real) =   0.01 sec
+
+The following tests FAILED:
+	  1 - unittests (Failed)
