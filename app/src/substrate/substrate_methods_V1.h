@@ -41,7 +41,6 @@ extern "C" {
 #define PD_CALL_UTILITY_V1 21
 #define PD_CALL_COUNCIL_V1 24
 #define PD_CALL_PHRAGMENELECTION_V1 25
-#define PD_CALL_DEMOCRACY_V1 26
 #define PD_CALL_MULTISIG_V1 27
 #define PD_CALL_IDENTITY_V1 28
 
@@ -218,12 +217,6 @@ typedef struct {
 typedef struct {
     pd_Perbill_t new_;
 } pd_staking_set_min_commission_V1_t;
-
-#define PD_CALL_DEMOCRACY_BLACKLIST_V1 23
-typedef struct {
-    pd_H256_t proposal_hash;
-    pd_OptionReferendumIndex_t maybe_ref_index;
-} pd_democracy_blacklist_V1_t;
 
 #define PD_CALL_COUNCIL_SET_MEMBERS_V1 0
 typedef struct {
@@ -533,7 +526,6 @@ typedef union {
     pd_staking_chill_other_V1_t staking_chill_other_V1;
     pd_staking_force_apply_min_commission_V1_t staking_force_apply_min_commission_V1;
     pd_staking_set_min_commission_V1_t staking_set_min_commission_V1;
-    pd_democracy_blacklist_V1_t democracy_blacklist_V1;
     pd_council_set_members_V1_t council_set_members_V1;
     pd_council_execute_V1_t council_execute_V1;
     pd_council_propose_V1_t council_propose_V1;
@@ -663,96 +655,6 @@ typedef struct {
     pd_CompactBalance_t new_reserved;
 } pd_balances_set_balance_V1_t;
 
-#define PD_CALL_DEMOCRACY_PROPOSE_V1 0
-typedef struct {
-    pd_BoundedCallOfT_t proposal;
-    pd_CompactBalance_t amount;
-} pd_democracy_propose_V1_t;
-
-#define PD_CALL_DEMOCRACY_SECOND_V1 1
-typedef struct {
-    pd_Compactu32_t proposal;
-} pd_democracy_second_V1_t;
-
-#define PD_CALL_DEMOCRACY_VOTE_V1 2
-typedef struct {
-    pd_Compactu32_t ref_index;
-    pd_AccountVote_t vote;
-} pd_democracy_vote_V1_t;
-
-#define PD_CALL_DEMOCRACY_EMERGENCY_CANCEL_V1 3
-typedef struct {
-    pd_ReferendumIndex_t ref_index;
-} pd_democracy_emergency_cancel_V1_t;
-
-#define PD_CALL_DEMOCRACY_EXTERNAL_PROPOSE_V1 4
-typedef struct {
-    pd_BoundedCallOfT_t proposal;
-} pd_democracy_external_propose_V1_t;
-
-#define PD_CALL_DEMOCRACY_EXTERNAL_PROPOSE_MAJORITY_V1 5
-typedef struct {
-    pd_BoundedCallOfT_t proposal;
-} pd_democracy_external_propose_majority_V1_t;
-
-#define PD_CALL_DEMOCRACY_EXTERNAL_PROPOSE_DEFAULT_V1 6
-typedef struct {
-    pd_BoundedCallOfT_t proposal;
-} pd_democracy_external_propose_default_V1_t;
-
-#define PD_CALL_DEMOCRACY_FAST_TRACK_V1 7
-typedef struct {
-    pd_H256_t proposal_hash;
-    pd_BlockNumber_t voting_period;
-    pd_BlockNumber_t delay;
-} pd_democracy_fast_track_V1_t;
-
-#define PD_CALL_DEMOCRACY_VETO_EXTERNAL_V1 8
-typedef struct {
-    pd_H256_t proposal_hash;
-} pd_democracy_veto_external_V1_t;
-
-#define PD_CALL_DEMOCRACY_CANCEL_REFERENDUM_V1 9
-typedef struct {
-    pd_Compactu32_t ref_index;
-} pd_democracy_cancel_referendum_V1_t;
-
-#define PD_CALL_DEMOCRACY_DELEGATE_V1 11
-typedef struct {
-    pd_AccountIdLookupOfT_t to;
-    pd_Conviction_t conviction;
-    pd_Balance_t balance;
-} pd_democracy_delegate_V1_t;
-
-#define PD_CALL_DEMOCRACY_UNDELEGATE_V1 12
-typedef struct {
-} pd_democracy_undelegate_V1_t;
-
-#define PD_CALL_DEMOCRACY_CLEAR_PUBLIC_PROPOSALS_V1 13
-typedef struct {
-} pd_democracy_clear_public_proposals_V1_t;
-
-#define PD_CALL_DEMOCRACY_UNLOCK_V1 19
-typedef struct {
-    pd_AccountIdLookupOfT_t target;
-} pd_democracy_unlock_V1_t;
-
-#define PD_CALL_DEMOCRACY_REMOVE_VOTE_V1 20
-typedef struct {
-    pd_ReferendumIndex_t index;
-} pd_democracy_remove_vote_V1_t;
-
-#define PD_CALL_DEMOCRACY_REMOVE_OTHER_VOTE_V1 21
-typedef struct {
-    pd_AccountIdLookupOfT_t target;
-    pd_ReferendumIndex_t index;
-} pd_democracy_remove_other_vote_V1_t;
-
-#define PD_CALL_DEMOCRACY_CANCEL_PROPOSAL_V1 24
-typedef struct {
-    pd_Compactu32_t prop_index;
-} pd_democracy_cancel_proposal_V1_t;
-
 #define PD_CALL_MULTISIG_AS_MULTI_THRESHOLD_1_V1 0
 typedef struct {
     pd_VecAccountId_t other_signatories;
@@ -806,23 +708,6 @@ typedef union {
     pd_system_remark_with_event_V1_t system_remark_with_event_V1;
     pd_balances_set_balance_V1_t balances_set_balance_V1;
     pd_mandate_mandate_V1_t mandate_mandate_V1;
-    pd_democracy_propose_V1_t democracy_propose_V1;
-    pd_democracy_second_V1_t democracy_second_V1;
-    pd_democracy_vote_V1_t democracy_vote_V1;
-    pd_democracy_emergency_cancel_V1_t democracy_emergency_cancel_V1;
-    pd_democracy_external_propose_V1_t democracy_external_propose_V1;
-    pd_democracy_external_propose_majority_V1_t democracy_external_propose_majority_V1;
-    pd_democracy_external_propose_default_V1_t democracy_external_propose_default_V1;
-    pd_democracy_fast_track_V1_t democracy_fast_track_V1;
-    pd_democracy_veto_external_V1_t democracy_veto_external_V1;
-    pd_democracy_cancel_referendum_V1_t democracy_cancel_referendum_V1;
-    pd_democracy_delegate_V1_t democracy_delegate_V1;
-    pd_democracy_undelegate_V1_t democracy_undelegate_V1;
-    pd_democracy_clear_public_proposals_V1_t democracy_clear_public_proposals_V1;
-    pd_democracy_unlock_V1_t democracy_unlock_V1;
-    pd_democracy_remove_vote_V1_t democracy_remove_vote_V1;
-    pd_democracy_remove_other_vote_V1_t democracy_remove_other_vote_V1;
-    pd_democracy_cancel_proposal_V1_t democracy_cancel_proposal_V1;
     pd_multisig_as_multi_threshold_1_V1_t multisig_as_multi_threshold_1_V1;
     pd_multisig_as_multi_V1_t multisig_as_multi_V1;
     pd_multisig_approve_as_multi_V1_t multisig_approve_as_multi_V1;
