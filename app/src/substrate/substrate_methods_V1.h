@@ -324,7 +324,7 @@ typedef struct {
 #define PD_CALL_PHRAGMENELECTION_VOTE_V1 0
 typedef struct {
     pd_VecAccountId_t votes;
-    pd_Compactu128_t amount;
+    pd_CompactBalance_t amount;
 } pd_phragmenelection_vote_V1_t;
 
 #define PD_CALL_PHRAGMENELECTION_REMOVE_VOTER_V1 1
@@ -416,11 +416,6 @@ typedef struct {
     pd_Call_t call;
 } pd_mandate_mandate_V1_t;
 
-#define PD_CALL_WHITELIST_DISPATCH_WHITELISTED_CALL_WITH_PREIMAGE_V1 3
-typedef struct {
-    pd_Call_t call;
-} pd_whitelist_dispatch_whitelisted_call_with_preimage_V1_t;
-
 #define PD_CALL_UTILITY_WITH_WEIGHT_V1 5
 typedef struct {
     pd_Call_t call;
@@ -503,16 +498,6 @@ typedef struct {
 typedef struct {
 } pd_identity_quit_sub_V1_t;
 
-#define PD_CALL_CONFIGURATION_SET_UMP_SERVICE_TOTAL_WEIGHT_V1 26
-typedef struct {
-    pd_Weight_t new_;
-} pd_configuration_set_ump_service_total_weight_V1_t;
-
-#define PD_CALL_CONFIGURATION_SET_UMP_MAX_INDIVIDUAL_WEIGHT_V1 40
-typedef struct {
-    pd_Weight_t new_;
-} pd_configuration_set_ump_max_individual_weight_V1_t;
-
 #endif
 
 typedef union {
@@ -580,7 +565,6 @@ typedef union {
     pd_treasury_approve_proposal_V1_t treasury_approve_proposal_V1;
     pd_treasury_spend_V1_t treasury_spend_V1;
     pd_treasury_remove_approval_V1_t treasury_remove_approval_V1;
-    pd_whitelist_dispatch_whitelisted_call_with_preimage_V1_t whitelist_dispatch_whitelisted_call_with_preimage_V1;
     pd_utility_with_weight_V1_t utility_with_weight_V1;
     pd_identity_add_registrar_V1_t identity_add_registrar_V1;
     pd_identity_set_identity_V1_t identity_set_identity_V1;
@@ -596,8 +580,6 @@ typedef union {
     pd_identity_rename_sub_V1_t identity_rename_sub_V1;
     pd_identity_remove_sub_V1_t identity_remove_sub_V1;
     pd_identity_quit_sub_V1_t identity_quit_sub_V1;
-    pd_configuration_set_ump_service_total_weight_V1_t configuration_set_ump_service_total_weight_V1;
-    pd_configuration_set_ump_max_individual_weight_V1_t configuration_set_ump_max_individual_weight_V1;
 #endif
 } pd_MethodBasic_V1_t;
 

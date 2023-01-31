@@ -593,7 +593,7 @@ __Z_INLINE parser_error_t _readMethod_phragmenelection_vote_V1(
    parser_context_t* c, pd_phragmenelection_vote_V1_t* m)
 {
    CHECK_ERROR(_readVecAccountId(c, &m->votes))
-   CHECK_ERROR(_readCompactu128(c, &m->amount))
+   CHECK_ERROR(_readCompactBalance(c, &m->amount))
    return parser_ok;
 }
 
@@ -1250,6 +1250,8 @@ const char* _getMethod_ModuleName_V1(uint8_t moduleIdx)
         return STR_MO_TREASURY;
     case 24:
         return STR_MO_COUNCIL;
+    case 25:
+        return STR_MO_PHRAGMENELECTION;
     case 26:
         return STR_MO_DEMOCRACY;
     case 27:
@@ -3676,7 +3678,7 @@ case 6400: /* module 25 call 00 pallet:phragmenelection call:vote */
                outValue, outValueLen,
                pageIdx, pageCount);
        case 1: /* phragmenelection_vote_V1 - amount */;
-           return _toStringCompactu128(
+           return _toStringCompactBalance(
                &m->basic.phragmenelection_vote_V1.amount,
                outValue, outValueLen,
                pageIdx, pageCount);
@@ -4146,21 +4148,21 @@ bool _getMethod_ItemIsExpert_V1(uint8_t moduleIdx, uint8_t callIdx, uint8_t item
    uint16_t callPrivIdx = ((uint16_t)moduleIdx << 8u) + callIdx;
 
    switch (callPrivIdx) {
-   case 1539: // Staking:Withdraw Unbonded
+   case 3331: // Staking:Withdraw Unbonded
        switch (itemIdx) {
        case 0: // Num slashing spans
            return true;
        default:
            return false;
        }
-   case 1551: // Staking:Force unstake
+   case 3343: // Staking:Force unstake
        switch (itemIdx) {
        case 1: // Num slashing spans
            return true;
        default:
            return false;
        }
-   case 1556: // Staking:Reap stash
+   case 3348: // Staking:Reap stash
        switch (itemIdx) {
        case 1: // Num slashing spans
            return true;
@@ -4196,6 +4198,7 @@ case 1028: /* module 04 call 04 pallet:balances call:transfer_all */
 case 1029: /* module 04 call 05 pallet:balances call:force_unreserve */
 case 3328: /* module 13 call 00 pallet:staking call:bond */
 case 3329: /* module 13 call 01 pallet:staking call:bond_extra */
+case 3331: /* module 13 call 03 pallet:staking call:withdraw_unbonded */
 case 3332: /* module 13 call 04 pallet:staking call:validate */
 case 3335: /* module 13 call 07 pallet:staking call:set_payee */
 case 3337: /* module 13 call 09 pallet:staking call:set_validator_count */
@@ -4232,6 +4235,11 @@ case 4355: /* module 17 call 03 pallet:technicalcommittee call:vote */
 case 4356: /* module 17 call 04 pallet:technicalcommittee call:close_old_weight */
 case 4357: /* module 17 call 05 pallet:technicalcommittee call:disapprove_proposal */
 case 4358: /* module 17 call 06 pallet:technicalcommittee call:close */
+case 6400: /* module 25 call 00 pallet:phragmenelection call:vote */
+case 6401: /* module 25 call 01 pallet:phragmenelection call:remove_voter */
+case 6402: /* module 25 call 02 pallet:phragmenelection call:submit_candidacy */
+case 6404: /* module 25 call 04 pallet:phragmenelection call:remove_member */
+case 6405: /* module 25 call 05 pallet:phragmenelection call:clean_defunct_voters */
 case 4608: /* module 18 call 00 pallet:technicalmembership call:add_member */
 case 4609: /* module 18 call 01 pallet:technicalmembership call:remove_member */
 case 4610: /* module 18 call 02 pallet:technicalmembership call:swap_member */

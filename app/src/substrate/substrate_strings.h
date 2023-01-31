@@ -32,6 +32,7 @@ static const char* STR_MO_TECHNICALCOMMITTEE = "Technicalcommittee";
 static const char* STR_MO_MANDATE = "Mandate";
 static const char* STR_MO_TECHNICALMEMBERSHIP = "Technicalmembership";
 static const char* STR_MO_TREASURY = "Treasury";
+static const char* STR_MO_PHRAGMENELECTION = "Phragmenelection";
 static const char* STR_MO_UTILITY = "Utility";
 static const char* STR_MO_IDENTITY = "Identity";
 static const char* STR_MO_MULTISIG = "Multisig";
