@@ -285,13 +285,6 @@ __Z_INLINE parser_error_t _readMethod_staking_force_new_era_always_V1(
    return parser_ok;
 }
 
-__Z_INLINE parser_error_t _readMethod_staking_cancel_deferred_slash_V1(
-   parser_context_t* c, pd_staking_cancel_deferred_slash_V1_t* m)
-{
-   CHECK_ERROR(_readEraIndex(c, &m->era))
-   return parser_ok;
-}
-
 __Z_INLINE parser_error_t _readMethod_staking_reap_stash_V1(
    parser_context_t* c, pd_staking_reap_stash_V1_t* m)
 {
@@ -856,9 +849,6 @@ case 3343: /* module 13 call 15 pallet:staking call:force_unstake */
 case 3344: /* module 13 call 16 pallet:staking call:force_new_era_always */
        CHECK_ERROR(_readMethod_staking_force_new_era_always_V1(c, &method->basic.staking_force_new_era_always_V1))
        break;
-case 3345: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
-       CHECK_ERROR(_readMethod_staking_cancel_deferred_slash_V1(c, &method->basic.staking_cancel_deferred_slash_V1))
-       break;
 case 3348: /* module 13 call 20 pallet:staking call:reap_stash */
        CHECK_ERROR(_readMethod_staking_reap_stash_V1(c, &method->basic.staking_reap_stash_V1))
        break;
@@ -1169,8 +1159,6 @@ case 3343: /* module 13 call 15 pallet:staking call:force_unstake */
        return STR_ME_FORCE_UNSTAKE;
 case 3344: /* module 13 call 16 pallet:staking call:force_new_era_always */
        return STR_ME_FORCE_NEW_ERA_ALWAYS;
-case 3345: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
-       return STR_ME_CANCEL_DEFERRED_SLASH;
 case 3348: /* module 13 call 20 pallet:staking call:reap_stash */
        return STR_ME_REAP_STASH;
 case 3349: /* module 13 call 21 pallet:staking call:kick */
@@ -1369,8 +1357,6 @@ case 3343: /* module 13 call 15 pallet:staking call:force_unstake */
        return 2;
 case 3344: /* module 13 call 16 pallet:staking call:force_new_era_always */
        return 0;
-case 3345: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
-       return 2;
 case 3348: /* module 13 call 20 pallet:staking call:reap_stash */
        return 2;
 case 3349: /* module 13 call 21 pallet:staking call:kick */
@@ -1762,14 +1748,6 @@ case 3343: /* module 13 call 15 pallet:staking call:force_unstake */
        }
 case 3344: /* module 13 call 16 pallet:staking call:force_new_era_always */
        switch (itemIdx) {
-       default:
-           return NULL;
-       }
-case 3345: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
-       switch (itemIdx) {
-       case 0:
-           return STR_IT_era;
-       case 1:
        default:
            return NULL;
        }
@@ -2688,20 +2666,6 @@ case 3344: /* module 13 call 16 pallet:staking call:force_new_era_always */
        default:
            return parser_no_data;
        }
-case 3345: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
-       switch (itemIdx) {
-       case 0: /* staking_cancel_deferred_slash_V1 - era */;
-           return _toStringEraIndex(
-               &m->basic.staking_cancel_deferred_slash_V1.era,
-               outValue, outValueLen,
-               pageIdx, pageCount);
-           return _toStringVecu32(
-               &m->basic.staking_cancel_deferred_slash_V1.slash_indices,
-               outValue, outValueLen,
-               pageIdx, pageCount);
-       default:
-           return parser_no_data;
-       }
 case 3348: /* module 13 call 20 pallet:staking call:reap_stash */
        switch (itemIdx) {
        case 0: /* staking_reap_stash_V1 - stash */;
@@ -3601,7 +3565,6 @@ case 3341: /* module 13 call 13 pallet:staking call:force_new_era */
 case 3342: /* module 13 call 14 pallet:staking call:set_invulnerables */
 case 3343: /* module 13 call 15 pallet:staking call:force_unstake */
 case 3344: /* module 13 call 16 pallet:staking call:force_new_era_always */
-case 3345: /* module 13 call 17 pallet:staking call:cancel_deferred_slash */
 case 3346: /* module 13 call 18 pallet:staking call:payout_stakers */
 case 3347: /* module 13 call 19 pallet:staking call:rebond */
 case 3348: /* module 13 call 20 pallet:staking call:reap_stash */

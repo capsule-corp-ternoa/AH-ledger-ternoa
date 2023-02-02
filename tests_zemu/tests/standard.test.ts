@@ -21,11 +21,8 @@ import { models, defaultOptions } from './common'
 
 jest.setTimeout(180000)
 
-beforeAll(async () => {
-  await Zemu.checkAndPullImage()
-})
 describe('Standard', function () {
-  test.each(models)('can start and stop container', async function (m) {
+  test.each(models)('can start and stop container', async function (m:any) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
@@ -35,7 +32,7 @@ describe('Standard', function () {
     }
   })
 
-  test.each(models)('main menu', async function (m) {
+  test.each(models)('main menu', async function (m:any) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
@@ -45,7 +42,7 @@ describe('Standard', function () {
     }
   })
 
-  test.each(models)('get app version', async function (m) {
+  test.each(models)('get app version', async function (m:any) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
@@ -65,7 +62,7 @@ describe('Standard', function () {
     }
   })
 
-  test.each(models)('get address', async function (m) {
+  test.each(models)('get address', async function (m:any) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
@@ -90,7 +87,7 @@ describe('Standard', function () {
     }
   })
 
-  test.each(models)('show address', async function (m) {
+  test.each(models)('show address', async function (m:any) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
@@ -120,7 +117,7 @@ describe('Standard', function () {
     }
   })
 
-  test.each(models)('show address - reject', async function (m) {
+  test.each(models)('show address - reject', async function (m:any) {
     const sim = new Zemu(m.path)
     try {
       await sim.start({ ...defaultOptions, model: m.name })
@@ -140,85 +137,4 @@ describe('Standard', function () {
       await sim.close()
     }
   })
-
-
-  //   // test.each(models)('sign large nomination', async function (m) {
-  //   //   const sim = new Zemu(m.path)
-  //   //   try {
-  //   //     await sim.start({ ...defaultOptions, model: m.name })
-  //   //     const app = newSubstrateApp(sim.getTransport(),'ternoa')
-  //   //     const pathAccount = 0x80000000
-  //   //     const pathChange = 0x80000000
-  //   //     const pathIndex = 0x80000000
-
-  //   //     const txBlob = Buffer.from(txStaking_nominate, 'hex')
-
-  //   //     const responseAddr = await app.getAddress(pathAccount, pathChange, pathIndex)
-  //   //     const pubKey = Buffer.from(responseAddr.pubKey, 'hex')
-
-  //   //     // do not wait here.. we need to navigate
-  //   //     const signatureRequest = app.sign(pathAccount, pathChange, pathIndex, txBlob)
-  //   //     // Wait until we are not in the main menu
-  //   //     await sim.waitUntilScreenIsNot(sim.getMainMenuSnapshot())
-  //   //     await sim.compareSnapshotsAndApprove('.', `${m.prefix.toLowerCase()}-sign_large_nomination`)
-
-  //   //     const signatureResponse = await signatureRequest
-  //   //     console.log(signatureResponse)
-
-  //   //     expect(signatureResponse.return_code).toEqual(0x9000)
-  //   //     expect(signatureResponse.error_message).toEqual('No errors')
-
-  //   //     // Now verify the signature
-  //   //     let prehash = txBlob
-  //   //     if (txBlob.length > 256) {
-  //   //       const context = blake2bInit(32)
-  //   //       blake2bUpdate(context, txBlob)
-  //   //       prehash = Buffer.from(blake2bFinal(context))
-  //   //     }
-  //   //     const valid = ed25519.verify(signatureResponse.signature.slice(1), prehash, pubKey)
-  //   //     expect(valid).toEqual(true)
-  //   //   } finally {
-  //   //     await sim.close()
-  //   //   }
-  //   // })
-
-  //   // test.each(models)('set keys', async function (m) {
-  //   //   const sim = new Zemu(m.path)
-  //   //   try {
-  //   //     await sim.start({ ...defaultOptions, model: m.name })
-  //   //     const app = newSubstrateApp(sim.getTransport(),'ternoa')
-  //   //     const pathAccount = 0x80000000
-  //   //     const pathChange = 0x80000000
-  //   //     const pathIndex = 0x80000000
-
-  //   //     const txBlob = Buffer.from(txSession_setKeys, 'hex')
-
-  //   //     const responseAddr = await app.getAddress(pathAccount, pathChange, pathIndex)
-  //   //     const pubKey = Buffer.from(responseAddr.pubKey, 'hex')
-
-  //   //     // do not wait here.. we need to navigate
-  //   //     const signatureRequest = app.sign(pathAccount, pathChange, pathIndex, txBlob)
-  //   //     // Wait until we are not in the main menu
-  //   //     await sim.waitUntilScreenIsNot(sim.getMainMenuSnapshot())
-  //   //     await sim.compareSnapshotsAndApprove('.', `${m.prefix.toLowerCase()}-set-keys`)
-
-  //   //     const signatureResponse = await signatureRequest
-  //   //     console.log(signatureResponse)
-
-  //   //     expect(signatureResponse.return_code).toEqual(0x9000)
-  //   //     expect(signatureResponse.error_message).toEqual('No errors')
-
-  //   //     // Now verify the signature
-  //   //     let prehash = txBlob
-  //   //     if (txBlob.length > 256) {
-  //   //       const context = blake2bInit(32)
-  //   //       blake2bUpdate(context, txBlob)
-  //   //       prehash = Buffer.from(blake2bFinal(context))
-  //   //     }
-  //   //     const valid = ed25519.verify(signatureResponse.signature.slice(1), prehash, pubKey)
-  //   //     expect(valid).toEqual(true)
-  //   //   } finally {
-  //   //     await sim.close()
-  //   //   }
-  //   // })
 })

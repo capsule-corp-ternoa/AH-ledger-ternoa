@@ -176,12 +176,6 @@ typedef struct {
 typedef struct {
 } pd_staking_force_new_era_always_V1_t;
 
-#define PD_CALL_STAKING_CANCEL_DEFERRED_SLASH_V1 17
-typedef struct {
-    pd_EraIndex_t era;
-    pd_Vecu32_t slash_indices;
-} pd_staking_cancel_deferred_slash_V1_t;
-
 #define PD_CALL_STAKING_REAP_STASH_V1 20
 typedef struct {
     pd_AccountId_t stash;
@@ -519,7 +513,6 @@ typedef union {
     pd_staking_set_invulnerables_V1_t staking_set_invulnerables_V1;
     pd_staking_force_unstake_V1_t staking_force_unstake_V1;
     pd_staking_force_new_era_always_V1_t staking_force_new_era_always_V1;
-    pd_staking_cancel_deferred_slash_V1_t staking_cancel_deferred_slash_V1;
     pd_staking_reap_stash_V1_t staking_reap_stash_V1;
     pd_staking_kick_V1_t staking_kick_V1;
     pd_staking_set_staking_configs_V1_t staking_set_staking_configs_V1;

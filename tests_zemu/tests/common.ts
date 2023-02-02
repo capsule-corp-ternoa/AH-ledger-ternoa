@@ -11,6 +11,7 @@ const Resolve = require('path').resolve
 
 
 export const txOperation = async (sim: Zemu, app: SubstrateApp, blob: string, m: any, testName: string, sr25519: boolean = false, shortcut: boolean = false) => {
+  console.log('performing:', `${m.prefix.toLowerCase()}-${testName}`)
   const pathAccount = 0x80000000
   const pathChange = 0x80000000
   const pathIndex = 0x80000000
@@ -21,6 +22,7 @@ export const txOperation = async (sim: Zemu, app: SubstrateApp, blob: string, m:
   // do not wait here.. we need to navigate
   const signatureRequest = app.sign(pathAccount, pathChange, pathIndex, txBlob)
   // Wait until we are not in the main menu
+  
   await sim.waitUntilScreenIsNot(sim.getMainMenuSnapshot())
   if (shortcut) {
     // Shortcut to accept menu
@@ -33,7 +35,6 @@ export const txOperation = async (sim: Zemu, app: SubstrateApp, blob: string, m:
   }
 
   const signatureResponse = await signatureRequest
-  console.log(signatureResponse)
   expect(signatureResponse.return_code).toEqual(0x9000)
   expect(signatureResponse.error_message).toEqual('No errors')
   // Now verify the signature
