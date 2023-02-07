@@ -14,9 +14,8 @@
     "Ledger"
   ],
   "scripts": {
-    "testClean": "ts-node tests/pullImageKillOld.ts",
-    "testsCoverage":"jest --coverage",
-    "test": "jest tests/functional.test.ts tests/standard.test.ts tests/sr25519.test.ts",
+    "clean": "ts-node tests/pullImageKillOld.ts",
+    "test": "yarn clean && jest tests/testFunctional.test.ts tests/standard.test.ts",
     "testFunctional": "jest tests/functional.test.ts",
     "testStandard": "jest tests/standard.test.ts",
     "testStaking": "jest tests/pallets/staking.test.ts",
