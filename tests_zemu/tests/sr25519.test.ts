@@ -31,12 +31,7 @@
 
 import Zemu from '@zondax/zemu'
 import { newSubstrateApp } from '@zondax/ledger-substrate'
-
-// @ts-ignore
-import { blake2bFinal, blake2bInit, blake2bUpdate } from 'blakejs'
 import { defaultOptions } from './common'
-const blob_balances_transfer = '0400005ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03170000b89d0d6955a00100041300002cf61a24a2290b0000000100000018bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6aced2b169b41debe3843d84ec7baca76ccdad3408cb6ed0a8ce7fa3f3f0119cd8db'
-const addon = require('../../tests_tools/neon/native')
 
 const Resolve = require('path').resolve
 const APP_PATH = Resolve('../app/output/app_sr25519.elf')
@@ -57,8 +52,8 @@ describe('SR25519', function () {
       expect(resp.return_code).toEqual(0x9000)
       expect(resp.error_message).toEqual('No errors')
 
-      const expected_address = '5ED8FvTWgsk9AmJoBPj7UyfdTfpJYaKZGA9CKmJWzb4Dk9Wd'
-      const expected_pk = '5ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03'
+      const expected_address = '5FTcptCwxeNfiNvpJig39hQJk1zFzPH74dARxBxgzVyEiZ2m'
+      const expected_pk = '962e68d88572bdcaa116ef66d68835813fc5a35e2282aa16ee54a4fad7787d6f'
 
       expect(resp.address).toEqual(expected_address)
       expect(resp.pubKey).toEqual(expected_pk)
@@ -84,8 +79,8 @@ describe('SR25519', function () {
       expect(resp.return_code).toEqual(0x9000)
       expect(resp.error_message).toEqual('No errors')
 
-      const expected_address = '5ED8FvTWgsk9AmJoBPj7UyfdTfpJYaKZGA9CKmJWzb4Dk9Wd'
-      const expected_pk = '5ee4922bdb199b22175df9f13b8b7bf282896b7dccfce815c9621f9c2a9fdf03'
+      const expected_address = '5FTcptCwxeNfiNvpJig39hQJk1zFzPH74dARxBxgzVyEiZ2m'
+      const expected_pk = '962e68d88572bdcaa116ef66d68835813fc5a35e2282aa16ee54a4fad7787d6f'
 
       expect(resp.address).toEqual(expected_address)
       expect(resp.pubKey).toEqual(expected_pk)
