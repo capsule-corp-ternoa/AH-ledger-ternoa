@@ -85,8 +85,7 @@ If you see conan is not found, check that you installed the package in the same 
 
 ## How to test with Zemu?
 
-> What is Zemu?? Great you asked!!
-> As part of this project, we are making public a beta version of our internal testing+emulation framework for Ledger apps.
+> Zemu is testing+emulation framework for Ledger apps developed by Zondax
 >
 > Npm Package here: https://www.npmjs.com/package/@zondax/zemu
 >

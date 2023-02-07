@@ -1,3 +1,7 @@
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![GithubActions](https://github.com/capsule-corp-ternoa/ledger-ternoa/actions/workflows/main.yml/badge.svg)](https://github.com/capsule-corp-ternoa/ledger-ternoa/blob/main/.github/workflows/main.yaml)
+
+For more information: [How to build](docs/build.md)
 
 # Ternoa 1.11.x
 
