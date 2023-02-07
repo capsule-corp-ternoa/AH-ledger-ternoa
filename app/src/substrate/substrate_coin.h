@@ -13,6 +13,21 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  ********************************************************************************/
+/** ******************************************************************************
+ *  (c) 2023 CapsuleCorp
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ ******************************************************************************* */
 #pragma once
 
 #ifdef __cplusplus
@@ -20,7 +35,7 @@ extern "C" {
 #endif
 
 #define COIN_ADDR_TYPE 42
-#define CLA 0xb3
+#define CLA 0xb5
 
 #define HDPATH_LEN_DEFAULT 5
 #define HDPATH_0_DEFAULT (0x80000000 | 0x2c)
@@ -57,15 +72,18 @@ typedef enum {
 
 #define COIN_AMOUNT_DECIMAL_PLACES 18
 
-#define COIN_GENESIS_HASH "18bcdb75a0bba577b084878db2dc2546eb21504eaad4b564bb7d47f9d02b6ace"
+#define COIN_GENESIS_HASH "b830bd7275da92f5064e9fead7605a63d2a8c6841267b96f57122867ac9a3abc"
 #define COIN_NAME "Ternoa"
 #define COIN_TICKER "CAPS "
 
+#define COIN_SECRET_REQUIRED_CLICKS 10
+
 #define MENU_MAIN_APP_LINE1 "Ternoa"
 #define MENU_MAIN_APP_LINE2 "Ready"
+#define MENU_MAIN_APP_LINE2_SECRET "CAPS RECOVERY"
 #define APPVERSION_LINE1 "Ternoa"
 #define APPVERSION_LINE2 "v" APPVERSION
-
+#define DEVELOPER "CapsuleCorp"
 #ifdef __cplusplus
 }
 #endif
